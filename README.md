@@ -82,8 +82,8 @@ The collection reflects my learning journey through the complete data science wo
 
 📁 **Rudra_Mehta_DPGU/**
 
-* Developed an advanced **Retrieval-Augmented Generation (RAG)** application using **Python** and **Gradio**.
-* Built a hybrid retrieval pipeline by combining semantic vector search with **BM25 keyword retrieval** using **ChromaDB** and **all-MiniLM-L6-v2** embeddings.
+* Developed an advanced **Retrieval-Augmented Generation (RAG)** pipeline.
+* Built a hybrid retrieval pipeline by combining semantic vector search with **BM25 keyword retrieval** using **FAISS** and **all-MiniLM-L6-v2** embeddings.
 * Integrated **Google Gemini 2.0 Flash** to generate accurate, context-aware responses.
 * Implemented robust fallback mechanisms to ensure smooth functionality even during API limitations or offline scenarios.
 
@@ -112,8 +112,7 @@ The collection reflects my learning journey through the complete data science wo
 ### Database
 
 * FAISS (Vector Database)
-
-
+* 
 ---
 
 ## 👨‍💻 Developed By
