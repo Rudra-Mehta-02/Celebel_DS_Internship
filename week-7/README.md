@@ -1,6 +1,6 @@
 # Retrieval-Augmented Generation (RAG) System
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/<Rudra-Mehta-02>/<Celebel_DS_Internship
+(https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/<Rudra-Mehta-02>/<Celebel_DS_Internship
 >/blob/main/Week7_Rudra_Mehta_DPGU.ipynb)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -104,7 +104,7 @@ Clone the repository:
 ```bash
 git clone https://github.com/<Rudra-Mehta-02>/<Celebel_DS_Internship
 >.git
-cd <repo-name>
+cd <Celebal_DS_Internship>
 ```
 
 Install dependencies:
