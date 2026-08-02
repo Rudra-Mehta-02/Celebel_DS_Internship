@@ -1,0 +1,1004 @@
+From Wikipedia, the free encyclopedia
+Extracting features from raw data for machine learning
+Part of
+a series
+on
+Machine learning
+and
+data mining
+Paradigms
+Supervised learning
+Unsupervised learning
+Semi-supervised learning
+Self-supervised learning
+Reinforcement learning
+Transfer learning
+Meta-learning
+Few-shot learning
+Zero-shot learning
+Online learning
+Batch learning
+Curriculum learning
+Rule-based learning
+Neuro-symbolic AI
+Neuromorphic engineering
+Quantum machine learning
+Problems
+Classification
+Generative modeling
+Regression
+Clustering
+Dimensionality reduction
+Density estimation
+Anomaly detection
+Data cleaning
+AutoML
+Association rules
+Semantic analysis
+Structured prediction
+Feature engineering
+Feature learning
+Learning to rank
+Grammar induction
+Ontology learning
+Multimodal learning
+Supervised learning
+(
+classification
+•
+regression
+)
+Apprenticeship learning
+Decision trees
+Ensembles
+Bagging
+Boosting
+Random forest
+k
+-NN
+Linear regression
+Naive Bayes
+Artificial neural networks
+Logistic regression
+Perceptron
+Relevance vector machine (RVM)
+Support vector machine (SVM)
+Clustering
+BIRCH
+CURE
+Hierarchical
+k
+-means
+Fuzzy
+Expectation–maximization (EM)
+DBSCAN
+OPTICS
+Mean shift
+Dimensionality reduction
+Factor analysis
+Exploratory
+CCA
+ICA
+LDA
+NMF
+PCA
+PGD
+t-SNE
+SDL
+Structured prediction
+Graphical models
+Bayes net
+Conditional random field
+Hidden Markov
+Anomaly detection
+RANSAC
+k
+-NN
+Local outlier factor
+Isolation forest
+Neural networks
+Autoencoder
+Deep learning
+Feedforward neural network
+Recurrent neural network
+LSTM
+GRU
+ESN
+reservoir computing
+Boltzmann machine
+Restricted
+GAN
+Diffusion model
+SOM
+Convolutional neural network
+U-Net
+LeNet
+AlexNet
+DeepDream
+Neural field
+Neural radiance field
+Physics-informed neural networks
+Transformer
+Vision
+Mamba
+Spiking neural network
+Memtransistor
+Electrochemical RAM
+(ECRAM)
+Reinforcement learning
+Q-learning
+Policy gradient
+SARSA
+Temporal difference (TD)
+Multi-agent
+Self-play
+Learning with humans
+Active learning
+Crowdsourcing
+Human-in-the-loop
+Mechanistic interpretability
+RLHF
+Model diagnostics
+Coefficient of determination
+Confusion matrix
+Learning curve
+ROC curve
+Mathematical foundations
+Kernel machines
+Bias–variance tradeoff
+Computational learning theory
+Empirical risk minimization
+Occam learning
+PAC learning
+Statistical learning
+VC theory
+Topological deep learning
+Journals and conferences
+AAAI
+CVPR
+ECCV
+ECML PKDD
+EMNLP
+ICCV
+NeurIPS
+ICML
+ICLR
+IJCAI
+ML
+JMLR
+Related articles
+Glossary of artificial intelligence
+List of datasets for machine-learning research
+List of datasets in computer vision and image processing
+Outline of machine learning
+v
+t
+e
+This article needs to be
+updated
+.
+Please help update this article to reflect recent events or newly available information.
+(
+February 2024
+)
+Feature engineering
+is a preprocessing step in
+supervised machine learning
+and
+statistical modeling
+[
+1
+]
+which transforms raw data into a more effective set of inputs. Each input comprises several attributes, known as
+features
+. By providing models with relevant information, feature engineering significantly enhances their predictive accuracy and decision-making capability.
+[
+2
+]
+[
+3
+]
+[
+4
+]
+Beyond machine learning, the principles of feature engineering are applied in various scientific fields, including physics. For example, physicists construct
+dimensionless numbers
+such as the
+Reynolds number
+in
+fluid dynamics
+, the
+Nusselt number
+in
+heat transfer
+, and the
+Archimedes number
+in
+sedimentation
+. They also develop first approximations of solutions, such as analytical solutions for the
+strength of materials
+in mechanics.
+[
+5
+]
+Clustering
+[
+edit
+]
+One of the applications of feature engineering has been clustering of feature-objects or sample-objects in a dataset. Especially, feature engineering based on
+matrix decomposition
+has been extensively used for data clustering under non-negativity constraints on the feature coefficients. These include
+Non-Negative Matrix Factorization
+(NMF),
+[
+6
+]
+Non-Negative Matrix-Tri Factorization
+(NMTF),
+[
+7
+]
+Non-Negative Tensor Decomposition/Factorization
+(NTF/NTD),
+[
+8
+]
+etc. The non-negativity constraints on coefficients of the feature vectors mined by the above-stated algorithms yields a part-based representation, and different factor matrices exhibit natural clustering properties. Several extensions of the above-stated feature engineering methods have been reported in literature, including
+orthogonality-constrained factorization
+for hard clustering, and
+manifold learning
+to overcome inherent issues with these algorithms.
+Other classes of feature engineering algorithms include leveraging a common hidden structure across multiple inter-related datasets to obtain a consensus (common) clustering scheme. An example is
+Multi-view Classification based on Consensus Matrix Decomposition
+(MCMD),
+[
+2
+]
+which mines a common clustering scheme across multiple datasets. MCMD is designed to output two types of class labels (scale-variant and scale-invariant clustering), and:
+is
+computationally robust
+to missing information,
+can obtain shape- and scale-based outliers,
+and can handle high-dimensional data effectively.
+Coupled matrix and tensor decompositions are popular in multi-view feature engineering.
+[
+9
+]
+Predictive modelling
+[
+edit
+]
+Feature engineering in
+machine learning
+and
+statistical modeling
+involves selecting, creating, transforming, and extracting data features. Key components include feature creation from existing data, transforming and imputing missing or invalid features, reducing data dimensionality through methods like
+Principal Components Analysis
+(PCA),
+Independent Component Analysis
+(ICA), and
+Linear Discriminant Analysis
+(LDA), and selecting the most relevant features for model training based on importance scores and
+correlation matrices
+.
+[
+10
+]
+Features vary in significance.
+[
+11
+]
+Even relatively insignificant features may contribute to a model.
+Feature selection
+can reduce the number of features to prevent a model from becoming too specific to the training data set (overfitting).
+[
+12
+]
+Feature explosion occurs when the number of identified features is too large for effective model estimation or optimization. Common causes include:
+Feature templates - implementing feature templates instead of coding new features
+Feature combinations - combinations that cannot be represented by a linear system
+Feature explosion can be limited via techniques such as
+regularization
+,
+kernel methods
+, and
+feature selection
+.
+[
+13
+]
+Automation
+[
+edit
+]
+Automation of feature engineering is a research topic that dates back to the 1990s.
+[
+14
+]
+Machine learning software that incorporates
+automated feature engineering
+has been commercially available since 2016.
+[
+15
+]
+Related academic literature can be roughly separated into two types:
+Multi-relational Decision Tree Learning (MRDTL) uses a supervised algorithm that is similar to a
+decision tree
+.
+Deep Feature Synthesis uses simpler methods.
+[
+citation needed
+]
+Multi-relational Decision Tree Learning (MRDTL)
+[
+edit
+]
+Multi-relational Decision Tree Learning (MRDTL) extends traditional decision tree methods to
+relational databases
+, handling complex data relationships across tables. It innovatively uses selection graphs as
+decision nodes
+, refined systematically until a specific termination criterion is reached.
+[
+14
+]
+Most MRDTL studies base implementations on relational databases, which results in many redundant operations. These redundancies can be reduced by using techniques such as tuple id propagation.
+[
+16
+]
+[
+17
+]
+Open-source implementations
+[
+edit
+]
+There are a number of open-source libraries and tools that automate feature engineering on relational data and time series:
+featuretools
+is a
+Python
+library for transforming time series and relational data into feature matrices for machine learning.
+[
+18
+]
+[
+19
+]
+[
+20
+]
+MCMD:
+An open-source feature engineering algorithm for joint clustering of multiple datasets.
+[
+21
+]
+[
+2
+]
+OneBM
+or One-Button Machine combines feature transformations and feature selection on relational data with feature selection techniques.
+[
+22
+]
+OneBM helps data scientists reduce data exploration time allowing them to try and error many ideas in short time. On the other hand, it enables non-experts, who are not familiar with data science, to quickly extract value from their data with a little effort, time, and cost.
+[
+22
+]
+getML community
+is an open source tool for automated feature engineering on time series and relational data.
+[
+23
+]
+[
+24
+]
+It is implemented in
+C
+/
+C++
+with a Python interface.
+[
+24
+]
+It has been shown to be at least 60 times faster than tsflex, tsfresh, tsfel, featuretools or kats.
+[
+24
+]
+tsfresh
+is a Python library for feature extraction on time series data.
+[
+25
+]
+It evaluates the quality of the features using hypothesis testing.
+[
+26
+]
+tsflex
+is an open source Python library for extracting features from time series data.
+[
+27
+]
+Despite being 100% written in Python, it has been shown to be faster and more memory efficient than tsfresh, seglearn or tsfel.
+[
+28
+]
+seglearn
+is an extension for multivariate, sequential time series data to the
+scikit-learn
+Python library.
+[
+29
+]
+tsfel
+is a Python package for feature extraction on time series data.
+[
+30
+]
+kats
+is a Python toolkit for analyzing time series data.
+[
+31
+]
+Deep feature synthesis
+[
+edit
+]
+The deep feature synthesis (DFS) algorithm beat 615 of 906 human teams in a competition.
+[
+32
+]
+[
+33
+]
+Feature stores
+[
+edit
+]
+The
+feature store
+is where the features are stored and organized for the explicit purpose of being used to either train models (by data scientists) or make predictions (by applications that have a trained model). It is a central location where you can either create or update groups of features created from multiple different data sources, or create and update new datasets from those feature groups for training models or for use in applications that do not want to compute the features but just retrieve them when it needs them to make predictions.
+[
+34
+]
+A feature store includes the ability to store code used to generate features, apply the code to raw data, and serve those features to models upon request. Useful capabilities include feature versioning and policies governing the circumstances under which features can be used.
+[
+35
+]
+Feature stores can be standalone software tools or built into machine learning platforms.
+Alternatives
+[
+edit
+]
+Feature engineering can be a time-consuming and error-prone process, as it requires domain expertise and often involves trial and error.
+[
+36
+]
+[
+37
+]
+Deep learning algorithms
+may be used to process a large raw dataset without having to resort to feature engineering.
+[
+38
+]
+However, deep learning algorithms still require careful preprocessing and cleaning of the input data.
+[
+39
+]
+In addition, choosing the right architecture, hyperparameters, and optimization algorithm for a deep neural network can be a challenging and iterative process.
+[
+40
+]
+See also
+[
+edit
+]
+Covariate
+Data transformation
+Feature extraction
+Feature learning
+Hashing trick
+Instrumental variables estimation
+Kernel method
+List of datasets for machine learning research
+Scale co-occurrence matrix
+Space mapping
+References
+[
+edit
+]
+↑
+Hastie, Trevor; Tibshirani, Robert; Friedman, Jerome H. (2009).
+The Elements of Statistical Learning: Data Mining, Inference, and Prediction
+. Springer.
+ISBN
+978-0-387-84884-6
+.
+1
+2
+3
+Sharma, Shubham; Nayak, Richi; Bhaskar, Ashish (2024-05-01).
+"Multi-view feature engineering for day-to-day joint clustering of multiple traffic datasets"
+.
+Transportation Research Part C: Emerging Technologies
+.
+162
+104607.
+Bibcode
+:
+2024TRPC..16204607S
+.
+doi
+:
+10.1016/j.trc.2024.104607
+.
+ISSN
+0968-090X
+.
+↑
+Shalev-Shwartz, Shai; Ben-David, Shai (2014).
+Understanding Machine Learning: From Theory to Algorithms
+. Cambridge: Cambridge University Press.
+ISBN
+978-1-107-05713-5
+.
+↑
+Murphy, Kevin P. (2022).
+Probabilistic Machine Learning
+. Cambridge, Massachusetts: The MIT Press (Copyright 2022 Massachusetts Institute of Technology, this work is subject to a Creative Commons CC-BY-NC-ND license).
+ISBN
+978-0-262-04682-4
+.
+↑
+MacQueron C (2021).
+SOLID-LIQUID MIXING IN STIRRED TANKS: Modeling, Validation, Design Optimization and Suspension Quality Prediction
+(Report).
+doi
+:
+10.13140/RG.2.2.11074.84164/1
+.
+↑
+Lee, Daniel D.; Seung, H. Sebastian (1999).
+"Learning the parts of objects by non-negative matrix factorization"
+.
+Nature
+.
+401
+(6755):
+788–
+791.
+Bibcode
+:
+1999Natur.401..788L
+.
+doi
+:
+10.1038/44565
+.
+ISSN
+1476-4687
+.
+PMID
+10548103
+.
+↑
+Wang, Hua; Nie, Feiping; Huang, Heng; Ding, Chris (2011).
+"Nonnegative Matrix Tri-factorization Based High-Order Co-clustering and Its Fast Implementation"
+.
+2011 IEEE 11th International Conference on Data Mining
+. IEEE. pp.
+774–
+783.
+doi
+:
+10.1109/icdm.2011.109
+.
+ISBN
+978-1-4577-2075-8
+.
+↑
+Lim, Lek-Heng; Comon, Pierre (2009-04-12). "Nonnegative approximations of nonnegative tensors".
+arXiv
+:
+0903.4530
+[
+cs.NA
+].
+↑
+Nayak, Richi; Luong, Khanh (2023). "Multi-aspect Learning".
+Intelligent Systems Reference Library
+.
+242
+.
+doi
+:
+10.1007/978-3-031-33560-0
+.
+ISBN
+978-3-031-33559-4
+.
+ISSN
+1868-4394
+.
+↑
+"Feature engineering - Machine Learning Lens"
+.
+docs.aws.amazon.com
+. Retrieved
+2024-03-01
+.
+↑
+"Feature Engineering"
+(PDF)
+. 2010-04-22
+. Retrieved
+12 November
+2015
+.
+↑
+"Feature engineering and selection"
+(PDF)
+. Alexandre Bouchard-Côté. October 1, 2009
+. Retrieved
+12 November
+2015
+.
+↑
+"Feature engineering in Machine Learning"
+(PDF)
+. Zdenek Zabokrtsky. Archived from
+the original
+(PDF)
+on 4 March 2016
+. Retrieved
+12 November
+2015
+.
+1
+2
+Knobbe AJ, Siebes A, Van Der Wallen D (1999).
+"Multi-relational Decision Tree Induction"
+(PDF)
+.
+Principles of Data Mining and Knowledge Discovery
+. Lecture Notes in Computer Science. Vol.
+1704. pp.
+378–
+383.
+doi
+:
+10.1007/978-3-540-48247-5_46
+.
+ISBN
+978-3-540-66490-1
+.
+↑
+"Its all about the features"
+.
+Reality AI Blog
+. September 2017.
+↑
+Yin X, Han J, Yang J, Yu PS (2004). "CrossMine: Efficient classification across multiple database relations".
+Proceedings. 20th International Conference on Data Engineering
+. pp.
+399–
+410.
+doi
+:
+10.1109/ICDE.2004.1320014
+.
+ISBN
+0-7695-2065-0
+.
+S2CID
+1183403
+.
+↑
+Frank R, Moser F, Ester M (2007). "A Method for Multi-relational Classification Using Single and Multi-feature Aggregation Functions".
+Knowledge Discovery in Databases: PKDD 2007
+. Lecture Notes in Computer Science. Vol.
+4702. pp.
+430–
+437.
+doi
+:
+10.1007/978-3-540-74976-9_43
+.
+ISBN
+978-3-540-74975-2
+.
+↑
+"What is Featuretools?"
+. Retrieved
+September 7,
+2022
+.
+↑
+"Featuretools - An open source python framework for automated feature engineering"
+. Archived from
+the original
+on August 18, 2019
+. Retrieved
+September 7,
+2022
+.
+↑
+"github: alteryx/featuretools"
+.
+GitHub
+. Retrieved
+September 7,
+2022
+.
+↑
+Sharma, Shubham,
+mcmd: Multi-view Classification framework based on Consensus Matrix Decomposition developed by Shubham Sharma at QUT
+, retrieved
+2024-04-14
+1
+2
+Thanh Lam, Hoang; Thiebaut, Johann-Michael; Sinn, Mathieu; Chen, Bei; Mai, Tiep; Alkan, Oznur (2017-06-01). "One button machine for automating feature engineering in relational databases".
+arXiv
+:
+1706.00327
+[
+cs.DB
+].
+↑
+"getML documentation"
+. Retrieved
+September 7,
+2022
+.
+1
+2
+3
+"github: getml/getml-community"
+.
+GitHub
+. Retrieved
+September 7,
+2022
+.
+↑
+"tsfresh documentation"
+. Retrieved
+September 7,
+2022
+.
+↑
+"Time Series FeatuRe Extraction on basis of Scalable Hypothesis tests (tsfresh – A Python package)"
+. Retrieved
+September 7,
+2022
+.
+↑
+"predict-idlab/tsflex"
+.
+GitHub
+. Retrieved
+September 7,
+2022
+.
+↑
+Van Der Donckt, Jonas; Van Der Donckt, Jeroen; Deprost, Emiel; Van Hoecke, Sofie (2022).
+"tsflex: Flexible time series processing & feature extraction"
+.
+SoftwareX
+.
+17
+100971.
+arXiv
+:
+2111.12429
+.
+Bibcode
+:
+2022SoftX..1700971V
+.
+doi
+:
+10.1016/j.softx.2021.100971
+.
+S2CID
+244527198
+. Retrieved
+September 7,
+2022
+.
+↑
+"seglearn user guide"
+. Retrieved
+September 7,
+2022
+.
+↑
+"Welcome to TSFEL documentation!"
+. Retrieved
+September 7,
+2022
+.
+↑
+"github: facebookresearch/Kats"
+.
+GitHub
+. Retrieved
+September 7,
+2022
+.
+↑
+"Automating big-data analysis"
+. 16 October 2015.
+↑
+Kanter, James Max; Veeramachaneni, Kalyan (2015). "Deep feature synthesis: Towards automating data science endeavors".
+2015 IEEE International Conference on Data Science and Advanced Analytics (DSAA)
+. pp.
+1–
+10.
+doi
+:
+10.1109/DSAA.2015.7344858
+.
+ISBN
+978-1-4673-8272-4
+.
+S2CID
+206610380
+.
+↑
+"What is a feature store"
+. Retrieved
+2022-04-19
+.
+↑
+"An Introduction to Feature Stores"
+. Retrieved
+2021-04-15
+.
+↑
+"Feature Engineering in Machine Learning"
+.
+Engineering Education (EngEd) Program | Section
+. Retrieved
+2023-03-21
+.
+↑
+explorium_admin (2021-10-25).
+"5 Reasons Why Feature Engineering is Challenging"
+.
+Explorium
+. Retrieved
+2023-03-21
+.
+↑
+Spiegelhalter, D. J. (2019).
+The art of statistics: learning from data
+. [London] UK.
+ISBN
+978-0-241-39863-0
+.
+OCLC
+1064776283
+.
+{{
+cite book
+}}
+: CS1 maint: location missing publisher (
+link
+)
+↑
+Sarker IH (November 2021).
+"Deep Learning: A Comprehensive Overview on Techniques, Taxonomy, Applications and Research Directions"
+.
+SN Computer Science
+.
+2
+(6) 420.
+doi
+:
+10.1007/s42979-021-00815-1
+.
+PMC
+8372231
+.
+PMID
+34426802
+.
+↑
+Bengio, Yoshua (2012),
+"Practical Recommendations for Gradient-Based Training of Deep Architectures"
+,
+Neural Networks: Tricks of the Trade
+, Lecture Notes in Computer Science, vol.
+7700, Berlin, Heidelberg: Springer Berlin Heidelberg, pp.
+437–
+478,
+arXiv
+:
+1206.5533
+,
+doi
+:
+10.1007/978-3-642-35289-8_26
+,
+ISBN
+978-3-642-35288-1
+,
+S2CID
+10808461
+, retrieved
+2023-03-21
+Further reading
+[
+edit
+]
+Boehmke B, Greenwell B (2019). "Feature & Target Engineering".
+Hands-On Machine Learning with R
+. Chapman & Hall. pp.
+41–
+75.
+ISBN
+978-1-138-49568-5
+.
+Zheng A, Casari A (2018).
+Feature Engineering for Machine Learning: Principles and Techniques for Data Scientists
+. O'Reilly.
+ISBN
+978-1-4919-5324-2
+.
+Zumel N, Mount (2020). "Data Engineering and Data Shaping".
+Practical Data Science with R
+(2nd
+ed.). Manning. pp.
+113–
+160.
+ISBN
+978-1-61729-587-4
+.
+Abououf, M., Singh, S., Mizouni, R., Otrok, H. (2024), "Feature engineering and deep learning-based approach for event detection in Medical Internet of Things (MIoT)",
+Internet of Things
+,
+26
+101191, Elsevier BV,
+doi
+:
+10.1016/j.iot.2024.101191
+Chicco D, Oneto L, Tavazzi E (December 2022).
+"Eleven quick tips for data cleaning and feature engineering"
+.
+PLOS Computational Biology
+.
+18
+(12) e1010718.
+Bibcode
+:
+2022PLSCB..18E0718C
+.
+doi
+:
+10.1371/journal.pcbi.1010718
+.
+PMC
+9754225
+.
+PMID
+36520712
+.
+S2CID
+254733288
+.
+Retrieved from "
+https://en.wikipedia.org/w/index.php?title=Feature_engineering&oldid=1362499473
+"
+Categories
+:
+Machine learning
+Data analysis
+Hidden categories:
+Articles with short description
+Short description is different from Wikidata
+Wikipedia articles in need of updating from February 2024
+All Wikipedia articles in need of updating
+All articles with unsourced statements
+Articles with unsourced statements from January 2020
+CS1 maint: location missing publisher
+CS1:Vancouver names with accept markup

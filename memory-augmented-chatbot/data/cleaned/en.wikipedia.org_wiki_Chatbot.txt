@@ -1,0 +1,2657 @@
+From Wikipedia, the free encyclopedia
+Conversational software
+For other uses, see
+Chatbot (disambiguation)
+.
+Part of
+a series
+on
+Machine learning
+and
+data mining
+Paradigms
+Supervised learning
+Unsupervised learning
+Semi-supervised learning
+Self-supervised learning
+Reinforcement learning
+Transfer learning
+Meta-learning
+Few-shot learning
+Zero-shot learning
+Online learning
+Batch learning
+Curriculum learning
+Rule-based learning
+Neuro-symbolic AI
+Neuromorphic engineering
+Quantum machine learning
+Problems
+Classification
+Generative modeling
+Regression
+Clustering
+Dimensionality reduction
+Density estimation
+Anomaly detection
+Data cleaning
+AutoML
+Association rules
+Semantic analysis
+Structured prediction
+Feature engineering
+Feature learning
+Learning to rank
+Grammar induction
+Ontology learning
+Multimodal learning
+Supervised learning
+(
+classification
+•
+regression
+)
+Apprenticeship learning
+Decision trees
+Ensembles
+Bagging
+Boosting
+Random forest
+k
+-NN
+Linear regression
+Naive Bayes
+Artificial neural networks
+Logistic regression
+Perceptron
+Relevance vector machine (RVM)
+Support vector machine (SVM)
+Clustering
+BIRCH
+CURE
+Hierarchical
+k
+-means
+Fuzzy
+Expectation–maximization (EM)
+DBSCAN
+OPTICS
+Mean shift
+Dimensionality reduction
+Factor analysis
+Exploratory
+CCA
+ICA
+LDA
+NMF
+PCA
+PGD
+t-SNE
+SDL
+Structured prediction
+Graphical models
+Bayes net
+Conditional random field
+Hidden Markov
+Anomaly detection
+RANSAC
+k
+-NN
+Local outlier factor
+Isolation forest
+Neural networks
+Autoencoder
+Deep learning
+Feedforward neural network
+Recurrent neural network
+LSTM
+GRU
+ESN
+reservoir computing
+Boltzmann machine
+Restricted
+GAN
+Diffusion model
+SOM
+Convolutional neural network
+U-Net
+LeNet
+AlexNet
+DeepDream
+Neural field
+Neural radiance field
+Physics-informed neural networks
+Transformer
+Vision
+Mamba
+Spiking neural network
+Memtransistor
+Electrochemical RAM
+(ECRAM)
+Reinforcement learning
+Q-learning
+Policy gradient
+SARSA
+Temporal difference (TD)
+Multi-agent
+Self-play
+Learning with humans
+Active learning
+Crowdsourcing
+Human-in-the-loop
+Mechanistic interpretability
+RLHF
+Model diagnostics
+Coefficient of determination
+Confusion matrix
+Learning curve
+ROC curve
+Mathematical foundations
+Kernel machines
+Bias–variance tradeoff
+Computational learning theory
+Empirical risk minimization
+Occam learning
+PAC learning
+Statistical learning
+VC theory
+Topological deep learning
+Journals and conferences
+AAAI
+CVPR
+ECCV
+ECML PKDD
+EMNLP
+ICCV
+NeurIPS
+ICML
+ICLR
+IJCAI
+ML
+JMLR
+Related articles
+Glossary of artificial intelligence
+List of datasets for machine-learning research
+List of datasets in computer vision and image processing
+Outline of machine learning
+v
+t
+e
+A
+chatbot
+(originally
+chatterbot
+)
+[
+1
+]
+is a
+software
+application or web interface designed to converse through text or speech, functioning as a conversation partner.
+[
+2
+]
+[
+3
+]
+[
+4
+]
+Chatbots have existed for decades, but chatbots based on
+deep learning
+have gained popularity during the
+AI boom
+of the 2020s, with the releases of
+generative AI
+chatbots such as
+ChatGPT
+,
+Gemini
+,
+Claude
+, and
+Grok
+. These chatbots typically use
+fine-tuned
+large language models
+to generate text.
+A major area where chatbots have long been used is
+customer service
+and
+support
+, with various sorts of
+virtual assistants
+.
+[
+5
+]
+History
+[
+edit
+]
+Turing test
+[
+edit
+]
+In 1950,
+Alan Turing
+published an article entitled "
+Computing Machinery and Intelligence
+" in which he proposed what is now called the
+Turing test
+as a criterion of
+intelligence
+. This criterion depends on the ability of a
+computer program
+to impersonate a human in a
+real-time
+written conversation with a human judge, to the extent that the judge is incapable of reliably distinguishing, on the basis of the conversational content alone, between the program and a real human.
+[
+6
+]
+Early chatbots
+[
+edit
+]
+Joseph Weizenbaum
+'s program
+ELIZA
+was first published in 1966. Weizenbaum did not claim that ELIZA was genuinely intelligent, and the introduction to his paper presented it more as a debunking exercise:
+In artificial intelligence, machines are made to behave in wondrous ways, often sufficient to dazzle even the most experienced observer. But once a particular program is unmasked, once its inner workings are explained, its magic crumbles away; it stands revealed as a mere collection of procedures. The observer says to himself "I could have written that". With that thought, he moves the program in question from the shelf marked "intelligent", to that reserved for curios. The object of this paper is to cause just such a re-evaluation of the program about to be "explained". Few programs ever needed it more.
+[
+7
+]
+ELIZA's key method of operation involves the recognition of clue words or phrases in the input, and the output of the corresponding pre-prepared or pre-programmed responses that can move the conversation forward in an apparently meaningful way (e.g. by responding to any input that contains the word 'MOTHER' with 'TELL ME MORE ABOUT YOUR FAMILY').
+[
+7
+]
+Thus an
+illusion of understanding
+is generated, even though the processing involved has been merely superficial. ELIZA showed that such an illusion is surprisingly easy to generate because human judges are ready to give the benefit of the doubt when conversational responses are
+capable of being interpreted
+as "intelligent".
+Following ELIZA, psychiatrist
+Kenneth Colby
+developed
+PARRY
+in 1972.
+[
+8
+]
+[
+9
+]
+[
+10
+]
+[
+11
+]
+From 1978
+[
+12
+]
+to some time after 1983,
+[
+13
+]
+the CYRUS project led by
+Janet Kolodner
+constructed a chatbot simulating
+Cyrus Vance
+(57th
+United States Secretary of State
+). It used
+case-based reasoning
+, and updated its database daily by parsing wire news from
+United Press International
+. The program was unable to process the news items subsequent to the surprise resignation of Cyrus Vance in April 1980, and the team constructed another chatbot simulating his successor,
+Edmund Muskie
+.
+[
+14
+]
+[
+13
+]
+In 1984, an interactive version of the program
+Racter
+was released which acted as a chatbot.
+[
+15
+]
+A.L.I.C.E.
+was released in 1995. This uses a
+markup language
+called AIML,
+[
+3
+]
+which is specific to its function as a
+conversational agent
+, and has since been adopted by various other developers of, so-called, Alicebots. A.L.I.C.E. is a
+weak AI
+without any reasoning capabilities. It is based on a similar
+pattern matching
+technique as ELIZA in 1966. This is not strong AI, which would require
+sapience
+and
+logical reasoning
+abilities.
+Jabberwacky
+, released in 1997, learns new responses and context based on
+real-time
+user interactions
+, rather than being driven from a static
+database
+.
+Chatbot competitions focus on the Turing test or more specific goals. Two such annual contests are the
+Loebner Prize
+and The Chatterbox Challenge; although the latter has been offline since 2015, its materials remain accessible via web archives.
+[
+16
+]
+Pre-dating the current generation of large language models, Gavagai, a Swedish language technology startup, created a Twitter-based bot in 2015
+[
+17
+]
+and
+DBpedia
+created a chatbot during the 2017
+Google Summer of Code
+[
+18
+]
+that communicated through
+Facebook Messenger
+.
+Modern chatbots based on large language models
+[
+edit
+]
+Modern chatbots like
+ChatGPT
+are often based on
+foundational
+large language models
+called
+generative pre-trained transformers
+(GPT). They are based on a
+deep learning
+architecture called the
+transformer
+, which contains
+artificial neural networks
+. They generate text after being trained on a large
+text corpus
+, exhibiting capabilities beyond their explicit training.
+Chatbots integrated into apps and websites can call
+image-generation models
+or search the web.
+[
+19
+]
+[
+20
+]
+Some platforms also enable users to interact with conversational interfaces directly through web-based chat environments, allowing real-time assistance, content generation, and task automation without requiring software installation.
+Application
+[
+edit
+]
+This section needs to be
+updated
+.
+Please help update this article to reflect recent events or newly available information.
+(
+December 2024
+)
+See also:
+Virtual assistant
+Messaging apps
+[
+edit
+]
+Many companies' chatbots run on
+messaging apps
+or simply via
+SMS
+. They are used for
+B2C
+customer service, sales and marketing.
+[
+21
+]
+In 2016, Facebook Messenger allowed developers to place chatbots on their platform. There were 30,000 bots created for Messenger in the first six months, rising to 100,000 by September 2017.
+[
+22
+]
+Since September 2017, this has also been as part of a pilot program on WhatsApp. Airlines
+KLM
+and
+Aeroméxico
+both announced their participation in the testing;
+[
+23
+]
+[
+24
+]
+[
+25
+]
+[
+26
+]
+both airlines had previously launched customer services on the Facebook Messenger platform.
+The bots usually appear as one of the user's contacts, but can sometimes act as participants in a
+group chat
+.
+Many banks, insurers, media companies, e-commerce companies, airlines, hotel chains, retailers, health care providers, government entities, and restaurant chains have used chatbots to
+answer simple questions
+, increase
+customer engagement
+,
+[
+27
+]
+for promotion, and to offer additional ways to order from them.
+[
+28
+]
+Chatbots are also used in
+market research
+to collect short survey responses.
+[
+29
+]
+A 2017 study showed 4% of companies used chatbots.
+[
+30
+]
+In a 2016 study, 80% of businesses said they intended to have one by 2020.
+[
+31
+]
+As part of company apps and websites
+[
+edit
+]
+Previous generations of chatbots were present on company websites, e.g. Ask Jenn from
+Alaska Airlines
+which debuted in 2008
+[
+32
+]
+or
+Expedia
+'s virtual customer service agent which launched in 2011.
+[
+32
+]
+[
+33
+]
+The newer generation of chatbots includes
+IBM Watson
+-powered "Rocky", introduced in February 2017 by the New York City-based
+e-commerce
+company Rare Carat to provide information to prospective diamond buyers.
+[
+34
+]
+[
+35
+]
+Chatbot sequences
+[
+edit
+]
+Used by marketers to script sequences of messages, very similar to an
+autoresponder
+sequence. Such sequences can be triggered by user opt-in or the use of keywords within user interactions. After a trigger occurs a sequence of messages is delivered until the next anticipated user response. Each user response is used in the decision tree to help the chatbot navigate the response sequences to deliver the correct response message.
+Company internal platforms
+[
+edit
+]
+Companies have used chatbots for customer support, human resources, or in
+Internet-of-Things
+(IoT) projects.
+Overstock.com
+, for one, has reportedly launched a chatbot named Mila to attempt to automate certain processes when customer service employees request sick leave.
+[
+36
+]
+Other large companies such as Lloyds Banking Group, Royal Bank of Scotland, Renault and Citroën are now using chatbots instead of call centres with humans to provide a first point of contact.
+[
+citation needed
+]
+In large companies, like in hospitals and aviation organizations, chatbots are also used to share information within organizations, and to assist and replace service desks.
+[
+37
+]
+Customer service
+[
+edit
+]
+Chatbots have been proposed as a replacement for
+customer service
+departments.
+[
+38
+]
+In 2026,
+The Financial Times
+reported on agentic chatbots that could do shopping for customers once given instructions.
+[
+39
+]
+In 2016, Russia-based Tochka Bank launched a chatbot on
+Facebook
+for a range of financial services, including a possibility of making payments.
+[
+40
+]
+In July 2016,
+Barclays Africa
+also launched a Facebook chatbot.
+[
+41
+]
+Healthcare
+[
+edit
+]
+See also:
+Artificial intelligence in healthcare
+Chatbots are also appearing in the healthcare industry.
+[
+42
+]
+[
+43
+]
+A study suggested that physicians in the United States believed that chatbots would be most beneficial for scheduling doctor appointments, locating health clinics, or providing medication information.
+[
+44
+]
+A 2025 review found that participants often rated chatbot responses as more empathic than those from clinicians.
+[
+45
+]
+In 2020,
+WhatsApp
+worked with the
+World Health Organization
+and the
+Government of India
+to make chatbots to answers users' questions on
+COVID-19
+.
+[
+46
+]
+[
+47
+]
+[
+48
+]
+[
+49
+]
+In 2023, US-based
+National Eating Disorders Association
+replaced its human
+helpline
+staff with a chatbot but had to take it offline after users reported receiving harmful advice from it.
+[
+50
+]
+[
+51
+]
+[
+52
+]
+Politics
+[
+edit
+]
+See also:
+Government by algorithm §
+AI politicians
+In New Zealand, the chatbot SAM – short for
+Semantic Analysis Machine
+[
+53
+]
+– has been developed by Nick Gerritsen of Touchtech.
+[
+54
+]
+It is designed to share its political thoughts, for example on topics such as climate change, healthcare and education, etc. It talks to people through Facebook Messenger.
+[
+55
+]
+[
+56
+]
+[
+57
+]
+[
+58
+]
+In 2022, the chatbot "Leader Lars" or "Leder Lars" was nominated for
+The Synthetic Party
+to run in the
+Danish
+parliamentary election,
+[
+59
+]
+and was built by the artist collective Computer Lars.
+[
+60
+]
+Leader Lars differed from earlier virtual politicians by leading a
+political party
+and by not pretending to be an objective candidate.
+[
+61
+]
+This chatbot engaged in critical discussions on politics with users from around the world.
+[
+62
+]
+In
+India
+, the state government has launched a chatbot for its Aaple Sarkar platform,
+[
+63
+]
+which provides conversational access to information regarding public services managed.
+[
+64
+]
+[
+65
+]
+Toys
+[
+edit
+]
+Chatbots have also been incorporated into devices not primarily meant for computing, such as toys.
+[
+66
+]
+Hello
+Barbie
+is an Internet-connected version of the doll that uses a chatbot provided by the company ToyTalk,
+[
+67
+]
+which previously used the chatbot for a range of smartphone-based characters for children.
+[
+68
+]
+These characters' behaviors are constrained by a set of rules that in effect emulate a particular character and produce a storyline.
+[
+69
+]
+The
+My Friend Cayla
+doll was marketed as a line of
+18-inch (46
+cm)
+dolls which uses
+speech recognition
+technology in conjunction with an
+Android
+or
+iOS
+mobile app to recognize the child's speech and have a conversation. Like the Hello Barbie doll, it attracted controversy due to vulnerabilities with the doll's
+Bluetooth
+stack and its use of data collected from the child's speech.
+IBM's
+Watson computer
+has been used as the basis for chatbot-based educational toys for companies such as
+CogniToys,
+[
+66
+]
+intended to interact with children for educational purposes.
+[
+70
+]
+Malicious use
+[
+edit
+]
+Malicious chatbots are frequently used to fill
+chat rooms
+with spam and advertisements by mimicking human behavior and conversations or to entice people into revealing personal information, such as bank account numbers. They were commonly found on
+Yahoo! Messenger
+,
+Windows Live Messenger
+,
+AOL Instant Messenger
+and other
+instant messaging
+protocols. There has also been a published report of a chatbot used in a fake personal ad on a dating service's website.
+[
+71
+]
+Tay
+, an AI chatbot designed to learn from previous interactions, caused major controversy after being targeted by internet trolls on Twitter. Soon after its launch, the bot was exploited, and with its "repeat after me" capability, it started releasing racist, sexist, and controversial responses to Twitter users.
+[
+72
+]
+This suggests that although the bot learned effectively from experience, adequate protection was not put in place to prevent misuse.
+[
+73
+]
+If a text-sending
+algorithm
+can pass itself off as a human instead of a chatbot, its message would be more credible. Therefore, human-seeming chatbots with well-crafted online identities could start scattering fake news that seems plausible, for instance making false claims during an election. With enough chatbots, it might be even possible to achieve artificial
+social proof
+.
+[
+74
+]
+[
+75
+]
+Data security
+[
+edit
+]
+Data security
+is one of the major concerns of chatbot technologies. Security threats and system vulnerabilities are weaknesses that are often exploited by malicious users. Storage of user data and past communication, that is highly valuable for training and development of chatbots, can also give rise to security threats.
+[
+76
+]
+Chatbots operating on third-party networks may be subject to various security issues if owners of the third-party applications have policies regarding user data that differ from those of the chatbot.
+[
+76
+]
+Security threats can be reduced or prevented by incorporating protective mechanisms. User
+authentication
+, chat
+End-to-end encryption
+, and self-destructing messages are some effective solutions to resist potential security threats.
+[
+76
+]
+Mental health
+[
+edit
+]
+Chatbots have shown to be an emerging technology used in the field of mental health. Its usage may encourage users to seek advice on matters of mental health as a means to avoid the stigmatization that may come from sharing such matters with other people.
+[
+77
+]
+This is because chatbots can give a sense of privacy and anonymity when sharing sensitive information, as well as providing a space that allows for the user to be free of judgment.
+[
+77
+]
+An example of this can be seen in a study which found that with social media and AI chatbots both being possible outlets to express mental health online, users were more willing to share their darker and more depressive emotions to the chatbot.
+[
+77
+]
+Users may also turn to chatbots because their replies can be perceived as empathic and emotionally supportive.
+[
+78
+]
+Findings prove that chatbots have great potential in scenarios in which it is difficult for users to reach out to family or friends for support.
+[
+77
+]
+It has been noted that it demonstrates the ability to give young people "various types of social support such as appraisal, informational, emotional, and instrumental support".
+[
+77
+]
+Studies have found that chatbots are able to assist users in managing things such as depression and anxiety.
+[
+77
+]
+Some examples of chatbots that serve this function are "Woebot, Wysa, Vivibot, and Tess".
+[
+77
+]
+Evidence indicates that when mental health chatbots interact with users, they tend to follow certain conversation flows.
+[
+79
+]
+These being guided conversation, semi guided conversation, and open ended conversation.
+[
+79
+]
+The most popular, guided conversation, "only allows the users to communicate with the chatbot with predefined responses from the chatbot. It does not allow any form of open input from the users".
+[
+79
+]
+It has also been noted in a study looking at the methods employed by various mental health chatbots, that most of them employed a form of cognitive behavior therapy with the user.
+[
+79
+]
+Adverse effects
+[
+edit
+]
+Further information:
+Chatbot psychosis
+Research has identified potential barriers to entry that come with the usage of chatbots for mental health.
+[
+80
+]
+There are ongoing privacy concerns with sharing user's personal data in chat logs with chatbots.
+[
+80
+]
+There is a lack of willingness from those in lower socioeconomic statuses to adopt interactions with chatbots as a meaningful way to improve upon mental health.
+[
+80
+]
+Though chatbots may be capable of detecting simple human emotions in interactions with users, they are incapable of replicating the level of empathy that human therapists do.
+[
+80
+]
+There is a lack of research about how exactly these interactions help with a user's real life.
+[
+79
+]
+There are concerns regarding the safety of users when interacting with such chatbots.
+[
+79
+]
+When improvements and advancements are made to such technologies, how that may affect humans is not a priority.
+[
+79
+]
+It is possible that this can lead to "unintended negative consequences, such as biases, inadequate and failed responses, and privacy issues".
+[
+79
+]
+A risk in the usage of chatbots to deal with mental health is increased isolation, as well as a lack of support in times of crisis.
+[
+79
+]
+A 2025 study by Sentio University evaluated how six major chatbots responded to disclosures of suicide risk and other acute mental health crises, finding that none consistently met clinician determined safety standards.
+[
+81
+]
+Another notable risk is a general lack of a strong understanding of mental health.
+[
+79
+]
+Studies have indicated that mental-health-oriented chatbots have been prone to recommending users medical solutions and to rely upon themselves heavily.
+[
+79
+]
+Obsessive use of chatbots has been linked to
+chatbot psychosis
+[
+82
+]
+in people already prone to delusional and conspiratorial thinking. This is caused in part by chatbots "hallucinating" information,
+[
+83
+]
+as they are designed for engagement, and to keep people talking.
+[
+84
+]
+Limitations
+[
+edit
+]
+Traditional chatbots particularly lacked understanding of user requests, leading to clunky, repetitive conversations. Their pre-programmed responses would often fail to satisfy unexpected user queries, causing frustration. These chatbots were particularly unhelpful for users who lacked a clear understanding of their problem or the service they needed.
+[
+85
+]
+Chatbots based on
+large language models
+are much more versatile, but require a large amount of conversational data to train. These models generate new responses word by word based on user input, and are usually trained on a large dataset of natural-language phrases.
+[
+3
+]
+They sometimes provide plausible-sounding but incorrect or nonsensical answers, referred to as "
+hallucinations
+". They can for example make up names, dates, or historical events.
+[
+86
+]
+When humans use and apply chatbot content contaminated with hallucinations, this results in "botshit".
+[
+87
+]
+Given the increasing adoption and use of chatbots for generating content, there are concerns that this technology will significantly reduce the cost it takes humans to generate
+misinformation
+.
+[
+88
+]
+Algorithmic bias
+[
+edit
+]
+Due to the nature of chatbots being language-learning models trained on numerous datasets, the issue of
+algorithmic bias
+exists.
+[
+80
+]
+Chatbots with built in biases from their training can have them brought out against individuals of certain backgrounds and may result in incorrect information being conveyed.
+[
+80
+]
+Impact on jobs
+[
+edit
+]
+Chatbots and technology in general are used to automate repetitive tasks. But advanced chatbots like
+ChatGPT
+are also targeting high-paying, creative, and knowledge-based jobs, raising concerns about workforce disruption and quality trade-offs in favor of cost-cutting.
+[
+89
+]
+Chatbots are increasingly used by
+small and medium enterprises
+, to handle customer interactions efficiently, reducing reliance on large
+call centers
+and lowering operational costs.
+[
+90
+]
+Prompt engineering
+, the task of designing and refining prompts (inputs) leading to desired AI-generated responses has quickly gained significant demand with the advent of large language models,
+[
+91
+]
+although the viability of this job is questioned due to new techniques for automating prompt engineering.
+[
+92
+]
+Impact on the environment
+[
+edit
+]
+See also:
+Environmental impact of artificial intelligence
+and
+Data center §
+Energy use
+Generative AI uses a high amount of
+electric power
+. Due to reliance on
+fossil fuels
+in its
+generation
+, this increases
+air pollution
+,
+water pollution
+, and
+greenhouse gas emissions
+. In 2023, a question to
+ChatGPT
+consumed on average 10 times as much energy as a Google search.
+[
+93
+]
+Data centres in general, and those used for AI tasks specifically, use significant amounts of water for cooling.
+[
+94
+]
+[
+95
+]
+See also
+[
+edit
+]
+Applications of artificial intelligence
+Artificial human companion
+Artificial intelligence and elections
+Autonomous agent
+Conversational user interface
+Deadbot
+Dead Internet theory
+Deaths linked to chatbots
+Friendly artificial intelligence
+Hybrid intelligent system
+Intelligent agent
+Internet bot
+Human–AI interaction
+List of AI-assisted software development tools
+List of chatbots
+Multi-agent system
+Social bot
+Software agent
+Software bot
+Stochastic parrot
+Technological unemployment
+Twitterbot
+References
+[
+edit
+]
+↑
+Mauldin, Michael (1994), "ChatterBots, TinyMuds, and the Turing Test: Entering the Loebner Prize Competition",
+Proceedings of the Eleventh National Conference on Artificial Intelligence
+,
+AAAI Press
+,
+archived
+from the original on 13 December 2007
+, retrieved
+5 March
+2008
+↑
+"What is a chatbot?"
+.
+techtarget.com
+. 1 May 2024.
+1
+2
+3
+Caldarini, Guendalina; Jaf, Sardar; McGarry, Kenneth (2022).
+"A Literature Survey of Recent Advances in Chatbots"
+.
+Information
+.
+13
+(1) 41.
+MDPI
+.
+arXiv
+:
+2201.06657
+.
+doi
+:
+10.3390/info13010041
+.
+↑
+Adamopoulou, Eleni; Moussiades, Lefteris (2020).
+"Chatbots: History, technology, and applications"
+.
+Machine Learning with Applications
+.
+2
+100006.
+doi
+:
+10.1016/j.mlwa.2020.100006
+.
+↑
+"2017 Messenger Bot Landscape, a Public Spreadsheet Gathering 1000+ Messenger Bots"
+. 3 May 2017.
+Archived
+from the original on 2 February 2019
+. Retrieved
+1 February
+2019
+.
+↑
+Turing, Alan
+(1950), "Computing Machinery and Intelligence",
+Mind
+,
+59
+(236):
+433–
+460,
+doi
+:
+10.1093/mind/lix.236.433
+1
+2
+Weizenbaum, Joseph
+(January 1966), "ELIZA – A Computer Program For the Study of Natural Language Communication Between Man And Machine",
+Communications of the ACM
+,
+9
+(1):
+36–
+45,
+doi
+:
+10.1145/365153.365168
+,
+S2CID
+1896290
+↑
+Güzeldere, Güven; Franchi, Stefano (24 July 1995),
+"Constructions of the Mind"
+,
+Stanford Humanities Review
+, SEHR,
+4
+(2),
+Stanford University
+, archived from
+the original
+on 11 July 2007
+, retrieved
+5 March
+2008
+↑
+Computer History Museum (2006),
+"Internet History – 1970's"
+,
+Exhibits
+,
+Computer History Museum
+, archived from
+the original
+on 21 February 2008
+, retrieved
+5 March
+2008
+↑
+Sondheim, Alan J (1997),
+<nettime> Important Documents from the Early Internet (1972)
+, nettime.org, archived from
+the original
+on 13 June 2008
+, retrieved
+5 March
+2008
+↑
+Network Working Group (1973).
+"PARRY Encounters the DOCTOR"
+.
+Internet Engineering Task Force
+.
+Internet Society
+.
+doi
+:
+10.17487/RFC0439
+.
+RFC
+439
+.
+– Transcript of a session between Parry and Eliza. (This is
+not
+the dialogue from the ICCC, which took place 24–26 October 1972, whereas this session is from 18 September 1972.)
+↑
+Kolodner, Janet L.
+Memory organization for natural language data-base inquiry
+. Advanced Research Projects Agency, 1978.
+1
+2
+Kolodner, Janet L. (1 October 1983). "Maintaining organization in a dynamic long-term memory".
+Cognitive Science
+.
+7
+(4):
+243–
+280.
+doi
+:
+10.1016/S0364-0213(83)80001-9
+(inactive 30 August 2025).
+ISSN
+0364-0213
+.
+{{
+cite journal
+}}
+: CS1 maint: DOI inactive as of August 2025 (
+link
+)
+↑
+Dennett, Daniel C. (2004). "Can Machines Think?". In Teuscher, Christof (ed.).
+Alan Turing: Life and Legacy of a Great Thinker
+. Berlin, Heidelberg: Springer. pp.
+295–
+316.
+doi
+:
+10.1007/978-3-662-05642-4_12
+.
+ISBN
+978-3-662-05642-4
+.
+↑
+The Policeman's Beard is Half Constructed
+Archived
+4 February 2010 at the
+Wayback Machine
+. everything2.com. 13 November 1999
+↑
+"Chat Robots Simiulate People"
+. 11 October 2015.
+↑
+Nilsson, David, Magnus Sahlgren, and Jussi Karlgren. "Dead Man Tweeting." In Workshop on Collecting and Generating Resources for Chatbots and Conversational Agents-Development and Evaluation, Portorož (Slovenia), May 28, 2016. 2016.
+↑
+"Meet the DBpedia Chatbot
+|
+DBpedia"
+.
+wiki.dbpedia.org
+. 22 August 2018.
+Archived
+from the original on 2 September 2019
+. Retrieved
+2 September
+2019
+.
+↑
+Edwards, Benj (17 December 2025).
+"OpenAI's new ChatGPT image generator makes faking photos easy"
+.
+Ars Technica
+.
+↑
+Orland, Kyle (15 September 2025).
+"What do people actually use ChatGPT for? OpenAI provides some numbers"
+.
+Ars Technica
+.
+↑
+Beaver, Laurie (July 2016).
+"The Chatbots Explainer"
+.
+Business Insider
+. BI Intelligence.
+Archived
+from the original on 3 May 2019
+. Retrieved
+4 November
+2019
+.
+↑
+"Facebook Messenger Hits 100,000 bots"
+.
+VentureBeat
+. 18 April 2017.
+Archived
+from the original on 22 September 2017
+. Retrieved
+22 September
+2017
+.
+↑
+"KLM claims airline first with WhatsApp Business Platform"
+.
+www.phocuswire.com
+.
+Archived
+from the original on 5 February 2020
+. Retrieved
+12 December
+2021
+.
+↑
+Forbes Staff (26 October 2017).
+"Aeroméxico te atenderá por WhatsApp durante 2018"
+.
+Archived
+from the original on 2 July 2018
+. Retrieved
+2 July
+2018
+.
+↑
+"Podrás hacer 'check in' y consultar tu vuelo con Aeroméxico a través de WhatsApp"
+.
+Huffington Post
+. 27 October 2017. Archived from
+the original
+on 10 March 2018
+. Retrieved
+2 July
+2018
+.
+↑
+"Building for People, and Now Businesses"
+.
+WhatsApp.com
+.
+Archived
+from the original on 9 February 2018
+. Retrieved
+2 July
+2018
+.
+↑
+"She is the company's most effective employee"
+.
+Nordea News
+. September 2017.
+Archived
+from the original on 23 March 2023
+. Retrieved
+23 March
+2023
+.
+↑
+"Better believe the bot boom is blowing up big for B2B, B2C businesses"
+.
+VentureBeat
+. 24 July 2016.
+Archived
+from the original on 3 August 2017
+. Retrieved
+30 August
+2017
+.
+↑
+Dandapani, Arundati (30 April 2020). "Redesigning Conversations with Artificial Intelligence (Chapter 11)". In Sha, Mandy (ed.).
+The Essential Role of Language in Survey Research
+. RTI Press. pp.
+221–
+230.
+doi
+:
+10.3768/rtipress.bk.0023.2004
+.
+ISBN
+978-1-934831-24-3
+.
+↑
+Capan, Faruk (18 October 2017).
+"The AI Revolution is Underway!"
+.
+www.PM360online.com
+.
+Archived
+from the original on 8 March 2018
+. Retrieved
+7 March
+2018
+.
+↑
+"80% of businesses want chatbots by 2020"
+.
+Business Insider
+. 15 December 2016.
+Archived
+from the original on 8 March 2018
+. Retrieved
+7 March
+2018
+.
+1
+2
+"A Virtual Travel Agent With All the Answers"
+.
+The New York Times
+. 4 March 2008.
+Archived
+from the original on 15 June 2017
+. Retrieved
+3 August
+2017
+.
+↑
+"Chatbot vendor directory released"
+.
+www.hypergridbusiness.com
+. October 2011.
+Archived
+from the original on 23 April 2017
+. Retrieved
+23 April
+2017
+.
+↑
+"Rare Carat's Watson-powered chatbot will help you put a diamond ring on it"
+. TechCrunch. 15 February 2017.
+Archived
+from the original on 22 August 2017
+. Retrieved
+22 August
+2017
+.
+↑
+"10 ways you may have already used IBM Watson"
+. VentureBeat. 10 March 2017.
+Archived
+from the original on 22 August 2017
+. Retrieved
+22 August
+2017
+.
+↑
+Greenfield, Rebecca (5 May 2016).
+"Chatbots Are Your Newest, Dumbest Co-Workers"
+.
+Bloomberg.com
+.
+Archived
+from the original on 6 April 2017
+. Retrieved
+6 March
+2017
+.
+↑
+Adamopoulou, Eleni; Moussiades, Lefteris (2020). "An Overview of Chatbot Technology".
+IFIP Advances in Information and Communication Technology
+.
+584
+:
+373–
+383.
+doi
+:
+10.1007/978-3-030-49186-4_31
+.
+↑
+Følstad, Asbjørn; Nordheim, Cecilie Bertinussen; Bjørkli, Cato Alexander (2018).
+"What Makes Users Trust a Chatbot for Customer Service? An Exploratory Interview Study"
+. In Bodrunova, Svetlana S. (ed.).
+Internet Science
+. Lecture Notes in Computer Science. Vol.
+11193. Cham: Springer International Publishing. pp.
+194–
+208.
+doi
+:
+10.1007/978-3-030-01437-7_16
+.
+hdl
+:
+11250/2571164
+.
+ISBN
+978-3-030-01437-7
+.
+↑
+"How shopping chatbots might transform retail"
+.
+Financial Times
+. 2026.
+↑
+"Российский банк запустил чат-бота в Facebook"
+.
+Vedomosti.ru
+. 13 July 2016.
+Archived
+from the original on 1 April 2019
+. Retrieved
+1 April
+2019
+.
+↑
+"Absa launches 'world-first' Facebook Messenger banking"
+. 19 July 2016.
+Archived
+from the original on 1 April 2019
+. Retrieved
+1 April
+2019
+.
+↑
+Larson, Selena (11 October 2016).
+"Baidu is bringing AI chatbots to healthcare"
+.
+CNN Money
+. Archived from
+the original
+on 3 January 2020
+. Retrieved
+3 January
+2020
+.
+↑
+"AI chatbots have a future in healthcare, with caveats"
+.
+AI in Healthcare
+.
+Archived
+from the original on 23 March 2023
+. Retrieved
+17 September
+2019
+.
+↑
+Palanica, Adam; Flaschner, Peter; Thommandram, Anirudh; Li, Michael; Fossat, Yan (3 January 2019).
+"Physicians' Perceptions of Chatbots in Health Care: Cross-Sectional Web-Based Survey"
+.
+Journal of Medical Internet Research
+.
+21
+(4) e12887.
+doi
+:
+10.2196/12887
+.
+PMC
+6473203
+.
+PMID
+30950796
+.
+↑
+Howcroft, Alastair; Bennett-Weston, Amber; Khan, Ahmad; Griffiths, Joseff; Gay, Simon; Howick, Jeremy (22 September 2025).
+"AI chatbots versus human healthcare professionals: a systematic review and meta-analysis of empathy in patient care"
+.
+British Medical Bulletin
+.
+156
+(1) ldaf017.
+doi
+:
+10.1093/bmb/ldaf017
+.
+ISSN
+0007-1420
+.
+PMC
+12536877
+.
+PMID
+41115171
+.
+↑
+Ahaskar, Abhijit (27 March 2020).
+"How WhatsApp chatbots are helping in the fight against Covid-19"
+.
+Mint
+.
+Archived
+from the original on 23 July 2020
+. Retrieved
+23 July
+2020
+.
+↑
+"India's Coronavirus Chatbot on WhatsApp Crosses 1.7 Crore Users in 10 Days"
+.
+NDTV Gadgets 360
+. April 2020.
+Archived
+from the original on 21 June 2020
+. Retrieved
+23 July
+2020
+.
+↑
+Kurup, Rajesh (21 March 2020).
+"COVID-19: Govt of India launches a WhatsApp chatbot"
+.
+Business Line
+.
+Archived
+from the original on 23 July 2020
+. Retrieved
+23 July
+2020
+.
+↑
+"In focus: Mumbai-based Haptik which developed India's official WhatsApp chatbot for Covid-19"
+.
+Hindustan Times
+. 7 April 2020.
+Archived
+from the original on 23 July 2020
+. Retrieved
+23 July
+2020
+.
+↑
+Crimmins, Tricia (30 May 2023).
+"
+'This robot causes harm': National Eating Disorders Association's new chatbot advises people with disordering eating to lose weight"
+.
+The Daily Dot
+. Retrieved
+2 June
+2023
+.
+↑
+Knight, Taylor (31 May 2023).
+"Eating disorder helpline fires AI for harmful advice after sacking humans"
+.
+↑
+Aratani, Lauren (31 May 2023).
+"US eating disorder helpline takes down AI chatbot over harmful advice"
+.
+The Guardian
+.
+ISSN
+0261-3077
+. Retrieved
+1 June
+2023
+.
+↑
+"Sam, the virtual politician"
+.
+Tuia Innovation
+.
+Archived
+from the original on 1 September 2019
+. Retrieved
+9 September
+2019
+.
+↑
+Wellington, Victoria University of (15 December 2017).
+"Meet the world's first virtual politician"
+.
+Victoria University of Wellington
+.
+Archived
+from the original on 3 January 2020
+. Retrieved
+3 January
+2020
+.
+↑
+Wagner, Meg (23 November 2017).
+"This virtual politician wants to run for office"
+.
+CNN
+.
+Archived
+from the original on 1 September 2019
+. Retrieved
+9 September
+2019
+.
+↑
+"Talk with the first-ever robot politician on Facebook Messenger"
+.
+Engadget
+. 25 November 2017.
+Archived
+from the original on 4 August 2019
+. Retrieved
+9 September
+2019
+.
+↑
+Prakash, Abishur (8 August 2018).
+"AI-Politicians: A Revolution In Politics"
+.
+Medium
+.
+Archived
+from the original on 10 August 2019
+. Retrieved
+1 September
+2019
+.
+↑
+"SAM website"
+.
+Archived
+from the original on 11 May 2021
+. Retrieved
+23 May
+2021
+.
+↑
+Sternberg, Sarah (20 June 2022).
+"Danskere vil ind på den politiske scene med kunstig intelligens"
+[
+Danes want to enter the political scene with artificial intelligence
+]
+.
+Jyllands-Posten
+.
+Archived
+from the original on 20 June 2022
+. Retrieved
+20 June
+2022
+.
+↑
+Diwakar, Amar (22 August 2022).
+"Can an AI-led Danish party usher in an age of algorithmic politics?"
+.
+TRT World
+.
+Archived
+from the original on 22 August 2022
+. Retrieved
+22 August
+2022
+.
+↑
+Xiang, Chloe (13 October 2022).
+"This Danish Political Party Is Led by an AI"
+.
+Vice: Motherboard
+.
+Archived
+from the original on 13 October 2022
+. Retrieved
+13 October
+2022
+.
+↑
+Hearing, Alice (14 October 2022).
+"A.I. chatbot is leading a Danish political party and setting its policies. Now users are grilling it for its stance on political landmines"
+.
+Fortune
+.
+Archived
+from the original on 22 December 2022
+. Retrieved
+8 December
+2022
+.
+↑
+"Maharashtra government launches Aaple Sarkar chatbot to provide info on 1,400 public services"
+.
+CNBC TV18
+. 5 March 2019.
+Archived
+from the original on 23 July 2020
+. Retrieved
+23 July
+2020
+.
+↑
+"Government of Maharashtra launches Aaple Sarkar chatbot with Haptik"
+.
+The Economic Times
+.
+Archived
+from the original on 16 December 2020
+. Retrieved
+23 July
+2020
+.
+↑
+Aggarwal, Varun (5 March 2019).
+"Maharashtra launches Aaple Sarkar chatbot"
+.
+Business Line
+.
+Archived
+from the original on 23 July 2020
+. Retrieved
+23 July
+2020
+.
+1
+2
+Amy (23 February 2015).
+"Conversational Toys – The Latest Trend in Speech Technology"
+.
+Virtual Agent Chat
+. Archived from the original on 21 February 2018
+. Retrieved
+11 August
+2016
+.
+↑
+Nagy, Evie (13 February 2015).
+"Using Toy-talk Technology, New Hello Barbie Will Have Real Conversations With Kids"
+.
+Fast Company
+.
+Archived
+from the original on 15 March 2015
+. Retrieved
+18 March
+2015
+.
+↑
+Oren Jacob, the co-founder and CEO of ToyTalk
+interviewed on the TV show
+Triangulation
+on the
+TWiT.tv
+network
+↑
+"Artificial intelligence script tool"
+.
+Archived
+from the original on 12 December 2021
+. Retrieved
+12 December
+2021
+.
+↑
+Takahashi, Dean (23 February 2015).
+"Elemental's smart connected toy taps IBM's Watson supercomputer for its brains"
+.
+Venture Beat
+.
+Archived
+from the original on 20 May 2015
+. Retrieved
+15 May
+2015
+.
+↑
+Epstein, Robert (October 2007).
+"From Russia With Love: How I got fooled (and somewhat humiliated) by a computer"
+(PDF)
+.
+Scientific American: Mind
+. pp.
+16–
+17.
+Archived
+(PDF)
+from the original on 19 October 2010
+. Retrieved
+9 December
+2007
+.
+Psychologist
+Robert Epstein
+reports how he was initially fooled by a chatterbot posing as an attractive girl in a personal ad he answered on a dating website. In the ad, the girl portrayed herself as being in Southern California and then soon revealed, in poor English, that she was actually in Russia. He became suspicious after a couple of months of email exchanges, sent her an email test of gibberish, and she still replied in general terms. The dating website is not named.
+↑
+Neff, Gina; Nagy, Peter (12 October 2016).
+"Automation, Algorithms, and Politics| Talking to Bots: Symbiotic Agency and the Case of Tay"
+.
+International Journal of Communication
+.
+10
+: 17.
+ISSN
+1932-8036
+.
+↑
+Bird, Jordan J.; Ekart, Aniko; Faria, Diego R. (June 2018). "Learning from Interaction: An Intelligent Networked-Based Human-Bot and Bot-Bot Chatbot System".
+Advances in Computational Intelligence Systems
+. Advances in Intelligent Systems and Computing. Vol.
+840 (1st
+ed.). Nottingham, UK: Springer. pp.
+179–
+190.
+doi
+:
+10.1007/978-3-319-97982-3_15
+.
+ISBN
+978-3-319-97982-3
+.
+S2CID
+52069140
+.
+↑
+Temming, Maria (20 November 2018).
+"How Twitter bots get people to spread fake news"
+.
+Science News
+.
+Archived
+from the original on 27 November 2018
+. Retrieved
+20 November
+2018
+.
+↑
+Epp, Len (11 May 2016).
+"Five Potential Malicious Uses For Chatbots"
+.
+Archived
+from the original on 24 February 2023
+. Retrieved
+24 February
+2023
+.
+1
+2
+3
+Hasal, Martin; Nowaková, Jana; Ahmed Saghair, Khalifa; Abdulla, Hussam; Snášel, Václav; Ogiela, Lidia (10 October 2021).
+"Chatbots: Security, privacy, data protection, and social aspects"
+.
+Concurrency and Computation: Practice and Experience
+.
+33
+(19) e6426.
+doi
+:
+10.1002/cpe.6426
+.
+hdl
+:
+10084/145153
+.
+ISSN
+1532-0626
+.
+1
+2
+3
+4
+5
+6
+7
+Chin, Hyojin; Song, Hyeonho; Baek, Gumhee; Shin, Mingi; Jung, Chani; Cha, Meeyoung; Choi, Junghoi; Cha, Chiyoung (20 October 2023).
+"The Potential of Chatbots for Emotional Support and Promoting Mental Well-Being in Different Cultures: Mixed Methods Study"
+.
+Journal of Medical Internet Research
+.
+25
+e51712.
+doi
+:
+10.2196/51712
+.
+ISSN
+1438-8871
+.
+PMC
+10625083
+.
+PMID
+37862063
+.
+↑
+Alanezi, Fahad (31 January 2024).
+"Assessing the Effectiveness of ChatGPT in Delivering Mental Health Support: A Qualitative Study"
+.
+Journal of Multidisciplinary Healthcare
+.
+17
+:
+461–
+471.
+doi
+:
+10.2147/JMDH.S447368
+.
+PMID
+38314011
+.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+Haque, M D Romael; Rubya, Sabirat (22 May 2023).
+"An Overview of Chatbot-Based Mobile Mental Health Apps: Insights From App Description and User Reviews"
+.
+JMIR mHealth and uHealth
+.
+11
+e44838.
+doi
+:
+10.2196/44838
+.
+ISSN
+2291-5222
+.
+PMC
+10242473
+.
+PMID
+37213181
+.
+1
+2
+3
+4
+5
+6
+Coghlan, Simon; Leins, Kobi; Sheldrick, Susie; Cheong, Marc; Gooding, Piers; D'Alfonso, Simon (January 2023).
+"To chat or bot to chat: Ethical issues with using chatbots in mental health"
+.
+Digital Health
+.
+9
+20552076231183542.
+doi
+:
+10.1177/20552076231183542
+.
+ISSN
+2055-2076
+.
+PMC
+10291862
+.
+PMID
+37377565
+.
+↑
+Santos, João M.; Shah, Siddharth; Gupta, Amit; Mann, Aarav; Vaz, Alexandre; Caldwell, Benjamin E.; Scholz, Robert; Awad, Peter; Allemandi, Rocky (14 August 2025),
+Evaluating the Clinical Safety of LLMs in Response to High-Risk Mental Health Disclosures
+,
+doi
+:
+10.21203/rs.3.rs-7364128/v1
+, retrieved
+19 November
+2025
+↑
+Harrison Dupré, Maggie (28 June 2025).
+"People Are Being Involuntarily Committed, Jailed After Spiraling Into "ChatGPT Psychosis"
+"
+.
+Futurism
+. Retrieved
+29 June
+2025
+.
+↑
+Klee, Miles (4 May 2025).
+"People Are Losing Loved Ones to AI-Fueled Spiritual Fantasies"
+.
+Rolling Stone
+. Retrieved
+29 June
+2025
+.
+↑
+Hill, Kashmir (13 June 2025).
+"They Asked an A.I. Chatbot Questions. The Answers Sent Them Spiraling"
+.
+The New York Times
+. Archived from
+the original
+on 20 February 2026
+. Retrieved
+29 June
+2025
+.
+↑
+Navaluri, Vijay (9 April 2024).
+"Chatbots are dead: How generative AI & automation is transforming the way we interact with technology"
+.
+The Economic Times
+.
+ISSN
+0013-0389
+. Retrieved
+25 May
+2025
+.
+↑
+Stover, Dawn (3 September 2023).
+"Will AI make us crazy?"
+.
+Bulletin of the Atomic Scientists
+.
+79
+(5):
+299–
+303.
+Bibcode
+:
+2023BuAtS..79e.299S
+.
+doi
+:
+10.1080/00963402.2023.2245247
+.
+ISSN
+0096-3402
+.
+↑
+Hannigan, Timothy R.; McCarthy, Ian P.; Spicer, André (20 March 2024).
+"Beware of botshit: How to manage the epistemic risks of generative chatbots"
+.
+Business Horizons
+.
+67
+(5):
+471–
+486.
+doi
+:
+10.1016/j.bushor.2024.03.001
+.
+ISSN
+0007-6813
+.
+↑
+"Transcript: Ezra Klein Interviews Gary Marcus"
+.
+The New York Times
+. 6 January 2023.
+ISSN
+0362-4331
+. Retrieved
+21 April
+2024
+.
+↑
+"ChatGPT took their jobs. Now they walk dogs and fix air conditioners"
+.
+The Washington Post
+. 2 June 2023.
+↑
+Haugeland, Isabel Kathleen Fornell; Følstad, Asbjørn; Taylor, Cameron; Bjørkli, Cato Alexander (1 May 2022).
+"Understanding the user experience of customer service chatbots: An experimental study of chatbot interaction design"
+.
+International Journal of Human-Computer Studies
+.
+161
+102788.
+doi
+:
+10.1016/j.ijhcs.2022.102788
+.
+hdl
+:
+10852/104483
+.
+ISSN
+1071-5819
+.
+↑
+"The Future Belongs to Prompt Engineers"
+.
+Inc
+. 12 March 2024.
+↑
+"Is The End of Prompt Engineering Here?"
+.
+The Information
+. 19 November 2024
+. Retrieved
+14 December
+2024
+.
+↑
+"AI is poised to drive 160% increase in data center power demand"
+.
+Goldman Sachs
+. 14 May 2024
+. Retrieved
+2 December
+2024
+.
+↑
+Sreedhar, Nitin (22 October 2023).
+"AI and its carbon footprint: How much water does ChatGPT consume?"
+.
+Mint Lounge
+.
+↑
+Crownhart, Casey (23 May 2024).
+"AI is an energy hog. This is what it means for climate change"
+.
+MIT Technology Review
+.
+Further reading
+[
+edit
+]
+Gertner, Jon (18 July 2023).
+"Wikipedia's Moment of Truth: Can the online encyclopedia help teach A.I. chatbots to get their facts right — without destroying itself in the process?"
+.
+The New York Times Magazine
+.
+Archived
+from the original on 1 August 2023.
+Searle, John
+(1980),
+"Minds, Brains and Programs"
+,
+Behavioral and Brain Sciences
+,
+3
+(3):
+417–
+457,
+doi
+:
+10.1017/S0140525X00005756
+,
+S2CID
+55303721
+Vincent, James, "Horny Robot Baby Voice: James Vincent on AI chatbots",
+London Review of Books
+, vol. 46, no. 19 (10 October 2024), pp.
+29–32. "[AI chatbot] programs are made possible by new technologies but rely on the timelelss human tendency to
+anthropomorphise
+." (p.
+29.)
+Adamopoulou, Eleni; Moussiades, Lefteris (2020). "An Overview of Chatbot Technology". In Maglogiannis, Ilias; Iliadis, Lazaros; Pimenidis, Elias (eds.).
+Artificial Intelligence Applications and Innovations
+. IFIP Advances in Information and Communication Technology. Vol.
+584. Cham: Springer. pp.
+373–
+383.
+doi
+:
+10.1007/978-3-030-49186-4_31
+.
+ISBN
+978-3-030-49185-7
+.
+PMC
+7256567
+.
+Ciesla, Robert (2024).
+The Book of Chatbots: From ELIZA to ChatGPT
+. Springer Cham.
+doi
+:
+10.1007/978-3-031-51004-5
+.
+ISBN
+978-3-031-51004-5
+.
+External links
+[
+edit
+]
+Media related to
+Chatbots
+at Wikimedia Commons
+v
+t
+e
+Generative AI
+chatbots
+Arena
+List of chatbots
+List of LLMs
+Deaths linked to chatbots
+Amazon Q
+Alice AI
+Character.ai
+ChatGPT
+Claude
+Copilot
+DeepSeek
+Doubao
+Ernie
+HKChat
+Gemini
+GLM
+Grok
+Kimi
+MiniMax
+Mistral
+Muse Spark
+Perplexity
+Poe
+Qwen
+Tencent Hy
+Xiaomi MiMo
+You.com
+Category
+v
+t
+e
+Instant messaging
+Protocols
+(
+comparison
+)
+Open
+DDP
+IMPP
+IRC
+Matrix
+MLS
+MTProto
+Retroshare
+Signal Protocol
+SIP
+MSRP
+SIMPLE
+Tox
+XMPP
+Jingle
+Zephyr
+Closed
+MSNP
+OSCAR
+TOC
+Skype
+Services
+Band
+BBM Enterprise
+Beeper
+BiP
+Bitchat
+Briar
+DingTalk
+Discord
+Element
+Google Chat
+Google Meet
+Google Messages
+GroupMe
+iGap
+iMessage
+Imo
+Instagram Direct Messenger
+JioChat
+Jongla
+KakaoTalk
+Kik
+Lark
+Libon
+Line
+Marco Polo
+Mattermost
+Max
+Facebook Messenger
+Messenger Kids
+Olvid
+Paltalk
+The Palace
+QQ
+Rocket.Chat
+Sandes
+Session
+ShareChat
+Signal
+Slack
+Snapchat
+Snow
+Stoat
+Tango Live
+Telegram
+Textfree
+Threema
+Trillian
+Viber
+VK Messenger
+WeChat
+WhatsApp
+Wickr
+WOLF
+Zalo
+Zoom
+Zulip
+Clients
+(
+comparison
+)
+Single protocol
+Baidu Hi
+BBM Enterprise
+Briar
+Element
+FaceTime
+Gadu-Gadu
+GroupMe
+HCL Sametime
+IMVU
+Jami
+Jongla
+Linphone
+Facebook Messenger
+Olvid
+QQ
+Retroshare
+Ricochet
+Session
+Signal
+Telegram
+Tox
+WeChat
+WhatsApp
+Wickr
+Wire
+WOLF
+Multi-protocol
+Adium
+Ayttm
+Beeper
+BitlBee
+Centericq
+eBuddy
+Jitsi
+Kopete
+Messages
+Miranda NG
+Nimbuzz
+Pidgin
+Finch
+Telepathy
+Thunderbird
+Trillian
+XMPP (Jabber)
+Conversations
+Gajim
+Movim
+Psi
+Spark
+Xabber
+MSNP
+Microsoft Teams
+Defunct
+List of defunct instant messaging platforms
+Related
+Backchannel
+Chat log
+Chatbot
+Circuit
+Comparison of user features of messaging platforms
+Contact list
+Emoticon
+File sharing
+FirstClass
+Flock
+Fuze Box
+Hall.com
+LAN messenger
+Online chat
+Presence information
+RingCentral Glip
+SMS language
+Status message
+U-Report
+Videotelephony
+Viva Engage
+VoIP
+Webcam
+v
+t
+e
+Natural language processing
+General terms
+AI-complete
+Bag-of-words
+n
+-gram
+Bigram
+Trigram
+Computational linguistics
+Natural language understanding
+Stop words
+Text processing
+Text analysis
+Argument mining
+Collocation extraction
+Concept mining
+Coreference resolution
+Deep linguistic processing
+Distant reading
+Information extraction
+Knowledge extraction
+Logic translation
+Named-entity recognition
+Ontology learning
+Parsing
+semantic
+syntactic
+Part-of-speech tagging
+Semantic analysis
+Semantic role labeling
+Semantic decomposition
+Semantic similarity
+Sentiment analysis
+Stance detection
+Stylometry
+adversarial
+Terminology extraction
+Text mining
+Textual entailment
+Truecasing
+Word-sense disambiguation
+Word-sense induction
+Text segmentation
+Compound-term processing
+Lemmatization
+Lexical analysis
+Text chunking
+Stemming
+Sentence segmentation
+Word segmentation
+Automatic summarization
+Multi-document summarization
+Sentence extraction
+Text simplification
+Machine translation
+Computer-assisted
+Example-based
+Rule-based
+Statistical
+Transfer-based
+Neural
+Distributional semantics
+models
+BERT
+Document-term matrix
+Explicit semantic analysis
+fastText
+GloVe
+Language model
+large
+small
+Latent semantic analysis
+Long short-term memory
+Seq2seq
+Transformer
+Word embedding
+Word2vec
+Language resources
+,
+datasets and corpora
+Types and
+standards
+Corpus linguistics
+Lexical resource
+Linguistic Linked Open Data
+Machine-readable dictionary
+Parallel text
+PropBank
+Semantic network
+Simple Knowledge Organization System
+Speech corpus
+Text corpus
+Thesaurus (information retrieval)
+Treebank
+Universal Dependencies
+Data
+BabelNet
+Bank of English
+DBpedia
+FrameNet
+Google Ngram Viewer
+UBY
+WordNet
+Wikidata
+Automatic identification
+and data capture
+Speech recognition
+Speech segmentation
+Speech synthesis
+Natural language generation
+Topic model
+Document classification
+Dynamic topic model
+Latent Dirichlet allocation
+Pachinko allocation
+Computer-assisted
+reviewing
+Automated essay scoring
+Concordancer
+Grammar checker
+Predictive text
+Pronunciation assessment
+Spell checker
+Natural language
+user interface
+Chatbot
+Interactive fiction
+Prompt engineering
+Question answering
+Virtual assistant
+Voice user interface
+Visual-linguistic
+Automatic image annotation
+CLIP
+Multimodal sentiment analysis
+Optical character recognition
+Vision-language model
+Vision–language–action model
+Related
+Formal semantics
+Gensim
+Hallucination
+Language model benchmark
+Natural Language Toolkit
+spaCy
+v
+t
+e
+User interfaces
+Natural-language user interfaces
+Chatbot
+Dialogue system
+Voice user interfaces
+Conversational user interface
+Virtual assistant
+Voice search
+Graphical user interfaces
+Widgets
+Zooming user interface
+Touch user interfaces
+Multi-touch
+Tangible user interface
+3D user interfaces
+Augmented
+and
+virtual reality
+Finger tracking
+Positional tracking
+Other user interfaces
+Text-based user interface
+Natural user interface
+Multimodal user interface
+Portals
+:
+Computer programming
+Linguistics
+Technology
+Video games
+Authority control databases
+International
+GND
+National
+Czech Republic
+Latvia
+Israel
+Retrieved from "
+https://en.wikipedia.org/w/index.php?title=Chatbot&oldid=1367035200
+"
+Categories
+:
+Chatbots
+Instant messaging
+Interactive narrative
+Natural language parsing
+Hidden categories:
+Articles with short description
+Short description is different from Wikidata
+Use dmy dates from March 2024
+CS1 maint: DOI inactive as of August 2025
+Webarchive template wayback links
+Wikipedia articles in need of updating from December 2024
+All Wikipedia articles in need of updating
+All articles with unsourced statements
+Articles with unsourced statements from June 2026
+CS1: unfit URL
+Commons category link from Wikidata

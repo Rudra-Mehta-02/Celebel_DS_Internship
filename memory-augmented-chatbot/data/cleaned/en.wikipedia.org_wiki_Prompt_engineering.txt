@@ -1,0 +1,2184 @@
+From Wikipedia, the free encyclopedia
+Structuring text as input to generative artificial intelligence
+Prompt engineering
+is the process of structuring
+natural language
+inputs
+(known as
+prompts
+) to produce specified outputs from a
+generative artificial intelligence
+(GenAI) model.
+Context engineering
+is the related area of
+software engineering
+that focuses on the management of non-prompt and prompt contexts supplied to the GenAI model, such as system instructions,
+metadata
+,
+API
+tools and tokens.
+It can also be defined as the practice of designing and refining input instructions given to a generative AI model to produce more accurate, relevant, or useful outputs. Effective prompt engineering involves understanding how a model interprets language, and may include techniques such as few-shot prompting, chain-of-thought prompting, and role assignment. It is increasingly considered a skill for working with
+large language models
+(LLMs) in both research and professional contexts.
+During the 2020s
+AI boom
+, prompt engineering became regarded as a business capability across corporations and industries. Employees with the title
+prompt engineer
+were hired to create prompts that would increase productivity and efficacy, although the individual title has since lost traction amid AI models that produce better prompts than humans and corporate training in prompting for general employees.
+Common prompting techniques include multi-shot, chain-of-thought, and tree-of-thought prompting, as well as assigning roles to the model. Automated prompt generation methods, such as
+retrieval-augmented generation
+(RAG), provide for greater accuracy and a wider scope of functions for prompt engineers.
+Prompt injection
+is a type of
+cybersecurity
+attack that targets
+machine learning
+models through malicious prompts.
+Terminology
+[
+edit
+]
+The
+Oxford English Dictionary
+defines prompt engineering as "The action or process of formulating and refining prompts for an
+artificial intelligence
+program, algorithm, etc., in order to optimize its output or to achieve a desired outcome; the discipline or profession concerned with this."
+[
+1
+]
+In 2023, prompt ("an instruction given to an artificial intelligence program, algorithm, etc., which determines or influences the content it generates") was the runner-up to Oxford's
+word of the year
+.
+[
+2
+]
+Prompt
+[
+edit
+]
+A prompt is some
+natural language
+text that describes and prescribes the task that an artificial intelligence (AI) should perform.
+[
+3
+]
+A prompt for a text-to-text
+language model
+can be a query, a
+command
+, or a longer statement referencing context,
+instructions
+, and conversation history. The process of prompt engineering may involve designing clear queries, refining wording, providing relevant context, specifying the style of output, and assigning a character for the AI to mimic in order to guide the model toward more accurate, useful, and consistent responses.
+[
+4
+]
+[
+5
+]
+When communicating with a
+text-to-image
+or a text-to-audio model, a typical prompt contains a description of a desired output such as "a high-quality photo of an astronaut riding a horse"
+[
+6
+]
+or "Lo-fi slow BPM electro chill with organic samples".
+[
+7
+]
+Prompt engineering may be applied to text-to-image models to achieve a desired subject, style, layout, lighting, and aesthetic.
+[
+8
+]
+Techniques
+[
+edit
+]
+Common terms used to describe various specific prompt engineering techniques include
+chain-of-thought
+,
+[
+9
+]
+tree-of-thought
+,
+[
+10
+]
+and
+retrieval-augmented generation
+(RAG).
+[
+11
+]
+A 2024 survey of the field identified over 50 distinct text-based prompting techniques, 40 multimodal variants, and a vocabulary of 33 terms used across prompting research, highlighting a present lack of standardised terminology for prompt engineering.
+[
+12
+]
+Vibe coding
+is an
+AI-assisted software development
+method where a user prompts an LLM with a description of what they want and lets it generate or edit the code. In 2025, "vibe coding" was the
+Collins Dictionary
+word of the year.
+[
+13
+]
+Context engineering
+[
+edit
+]
+Context engineering
+is a related process that focuses on the context elements that accompany user prompts, which include system instructions, retrieved knowledge, tool definitions, conversation summaries, and task metadata. Context engineering is performed to improve reliability, provenance and token efficiency in
+production
+LLM systems.
+[
+14
+]
+[
+15
+]
+The concept emphasises operational practices such as token budgeting, provenance tags, versioning of context artifacts, observability (logging which context was supplied), and context regression tests to ensure that changes to supplied context do not silently alter system behaviour.
+[
+16
+]
+Rationale
+[
+edit
+]
+Research has found that the performance of
+large language models
+(LLMs) is highly sensitive to choices such as the ordering of examples, the quality of demonstration labels, and even small variations in phrasing. In some cases, reordering examples in a prompt produced accuracy shifts of more than 40 percent.
+[
+12
+]
+In-context learning
+[
+edit
+]
+A model's ability to temporarily learn from prompts is known as
+in-context learning
+. In-context learning is an
+emergent ability
+[
+17
+]
+of large language models. It is an emergent property of model scale, meaning that breaks in
+scaling laws
+occur, leading to its efficacy increasing at a different rate in larger models than in smaller models.
+[
+17
+]
+[
+18
+]
+Unlike training and
+fine-tuning
+, which produce lasting changes, in-context learning is temporary.
+[
+19
+]
+Training models to perform in-context learning can be viewed as a form of
+meta-learning
+, or "learning to learn".
+[
+20
+]
+Prompting to estimate model sensitivity
+[
+edit
+]
+Research consistently demonstrates that LLMs are highly sensitive to subtle variations in prompt formatting, structure, and linguistic properties. Some studies have shown up to 76 accuracy points across formatting changes in few-shot settings.
+[
+21
+]
+Linguistic features significantly influence prompt effectiveness—such as morphology, syntax, and lexico-semantic changes—which meaningfully enhance task performance across a variety of tasks.
+[
+5
+]
+[
+22
+]
+Clausal syntax, for example, improves consistency and reduces uncertainty in knowledge retrieval.
+[
+23
+]
+This sensitivity persists even with larger model sizes, additional few-shot examples, or instruction tuning.
+To address sensitivity of models and make them more robust, several evaluative methods have been proposed. FormatSpread facilitates systematic analysis by evaluating a range of plausible prompt formats, offering a more comprehensive performance interval.
+[
+21
+]
+Similarly, PromptEval estimates performance distributions across diverse prompts, enabling robust metrics such as performance quantiles and accurate evaluations under constrained budgets.
+[
+24
+]
+Prompting techniques
+[
+edit
+]
+Multi-shot
+[
+edit
+]
+A prompt may include a few examples for a model to learn from in-context, an implementation of
+few-shot learning
+for LLMs.
+[
+9
+]
+[
+25
+]
+[
+26
+]
+For example, the prompt may ask the model to complete "
+maison
+→
+house,
+chat
+→
+cat,
+chien
+→
+", with the expected response being
+dog.
+[
+27
+]
+Chain-of-thought
+[
+edit
+]
+See also:
+Reflection (artificial intelligence)
+Chain-of-thought
+(CoT) prompting is a technique that allows
+large language models
+(LLMs) to solve a problem as a series of intermediate steps before giving a final answer. In 2022,
+Google Brain
+reported that chain-of-thought prompting improves
+reasoning
+ability by inducing the model to answer a multi-step problem with steps of reasoning that mimic a
+train of thought
+.
+[
+9
+]
+[
+28
+]
+Chain-of-thought techniques were developed to help LLMs handle multi-step reasoning tasks, such as
+arithmetic
+or
+commonsense reasoning
+questions.
+[
+29
+]
+[
+30
+]
+When applied to
+PaLM
+, a 540 billion parameter
+language model
+, according to Google, CoT prompting significantly aided the model, allowing it to perform comparably with task-specific
+fine-tuned
+models on several tasks, achieving
+state-of-the-art
+results at the time on the GSM8K
+mathematical reasoning
+benchmark
+.
+[
+9
+]
+It is possible to fine-tune models on CoT reasoning datasets to enhance this capability further and stimulate better
+interpretability
+.
+[
+31
+]
+[
+32
+]
+As originally proposed by Google,
+[
+9
+]
+each CoT prompt is accompanied by a set of input/output examples—called
+exemplars
+—to demonstrate the desired model output, making it a
+few-shot
+prompting technique. However, according to a later paper from researchers at Google and the
+University of Tokyo
+, simply appending the words "Let's think step-by-step"
+[
+33
+]
+was also effective, which allowed for CoT to be employed as a
+zero-shot
+technique.
+Self-consistency
+[
+edit
+]
+Self-consistency
+performs several chain-of-thought rollouts, then selects the most commonly reached conclusion out of all the rollouts.
+[
+34
+]
+[
+35
+]
+Tree-of-thought
+[
+edit
+]
+Tree-of-thought
+prompting generalizes chain-of-thought by generating multiple lines of reasoning in parallel, with the ability to backtrack or explore other paths. It can use
+tree search algorithms
+like
+breadth-first
+,
+depth-first
+, or
+beam
+.
+[
+10
+]
+Text-to-image prompting
+[
+edit
+]
+See also:
+Artificial intelligence visual art §
+Prompt engineering and sharing
+, and
+Artificial intelligence visual art
+In 2022,
+text-to-image
+models like
+DALL-E 2
+,
+Stable Diffusion
+, and
+Midjourney
+were released to the public. These models take text prompts as input and use them to generate images.
+[
+36
+]
+[
+8
+]
+Early text-to-image models typically do not understand negation, grammar and sentence structure in the same way as
+large language models
+, and may thus require a different set of prompting techniques. The prompt "a party with no cake" may produce an image including a cake.
+[
+37
+]
+Demonstration of the effect of negative prompts on images generated with
+Stable Diffusion
+Top
+: no negative prompt
+Centre
+: "green trees"
+Bottom
+: "round stones, round rocks"
+A text-to-image prompt commonly includes a description of the subject of the art, the desired medium (such as
+digital painting
+or
+photography
+), style (such as
+hyperrealistic
+or
+pop-art
+), lighting (such as
+rim lighting
+or
+crepuscular rays
+), color, and texture.
+[
+38
+]
+Word order also affects the output of a text-to-image prompt. Words closer to the start of a prompt may be emphasized more heavily.
+[
+39
+]
+Artist styles
+[
+edit
+]
+Some text-to-image models are capable of imitating the style of particular artists by name. For example, the phrase
+in the style of Greg Rutkowski
+has been used in Stable Diffusion and Midjourney prompts to generate images in the distinctive style of Polish digital artist
+Greg Rutkowski
+.
+[
+40
+]
+Famous artists such as
+Vincent van Gogh
+and
+Salvador Dalí
+have also been used for styling and testing.
+[
+41
+]
+Textual inversion and embeddings
+[
+edit
+]
+For text-to-image models,
+textual inversion
+performs an optimization process to create a new
+word embedding
+based on a set of example images. This embedding vector acts as a "pseudo-word" which can be included in a prompt to express the content or style of the examples.
+[
+42
+]
+Image prompting
+[
+edit
+]
+In 2023,
+Meta
+'s AI research released Segment Anything, a
+computer vision
+model that can perform
+image segmentation
+by prompting. As an alternative to text prompts, Segment Anything can accept bounding boxes, segmentation masks, and foreground/background points.
+[
+43
+]
+Limitations
+[
+edit
+]
+The process of writing and refining a prompt for an LLM or generative AI shares some parallels with an iterative engineering design process, such as by discovering reusable best practices through reproducible experimentation. However, several fundamental limitations constrain its reliability as a discipline. Effective prompting strategies are highly model specific, a technique that improves performance on one model may degrade it on another, making generalization difficult. Prompts are also brittle: minor surface-level changes in phrasing, punctuation, or word order can produce dramatically different outputs, even when the semantic intent remains identical.
+[
+44
+]
+This instability makes it difficult to establish durable, transferable prompt patterns across deployment contexts.
+[
+45
+]
+Furthermore, as AI models continue to improve in their ability to interpret user intent directly, many manual prompting techniques are becoming obsolete. Advances in instruction-following and model reasoning have reduced the marginal value of elaborate prompt construction for everyday tasks, raising questions about the long-term viability of prompt engineering as a standalone discipline.
+[
+46
+]
+Automated prompt generation
+[
+edit
+]
+Recent research has explored automated prompt engineering, using optimization algorithms to generate or refine prompts without human intervention. These automated approaches aim to identify effective prompt patterns by analyzing model gradients, reinforcement feedback, or evolutionary processes, reducing the need for manual experimentation.
+[
+47
+]
+Retrieval-augmented generation (RAG)
+[
+edit
+]
+Retrieval-augmented generation
+is a technique that enables GenAI models to retrieve and incorporate new information. It modifies interactions with an LLM so that the model responds to user queries with reference to a specified set of documents, using this information to supplement information from its pre-existing
+training data
+. This allows LLMs to use domain-specific and/or updated information.
+[
+11
+]
+RAG improves large language models by incorporating
+information retrieval
+before generating responses. Unlike traditional LLMs that rely on static training data, RAG pulls relevant text from databases, uploaded documents, or web sources. By dynamically retrieving information, RAG enables AI to generate more accurate responses and fewer
+AI hallucinations
+without frequent retraining.
+[
+48
+]
+Graph retrieval-augmented generation (GraphRAG)
+[
+edit
+]
+GraphRAG (coined by
+Microsoft Research
+) is a technique that extends RAG with the use of a
+knowledge graph
+to allow the model to connect disparate pieces of information, synthesize insights, and understand summarized semantic concepts over large data collections. It was shown to be effective on datasets like the Violent Incident Information from News Articles.
+[
+49
+]
+[
+50
+]
+[
+51
+]
+Using language models to generate prompts
+[
+edit
+]
+LLMs themselves can be used to compose prompts for LLMs.
+[
+52
+]
+The
+automatic prompt engineer
+algorithm uses one LLM to
+beam search
+over prompts for another LLM:
+[
+53
+]
+[
+54
+]
+There are two LLMs. One is the target LLM, and another is the prompting LLM.
+Prompting LLM is presented with example input-output pairs, and asked to generate instructions that could have caused a model following the instructions to generate the outputs, given the inputs.
+Each of the generated instructions is used to prompt the target LLM, followed by each of the inputs. The log-probabilities of the outputs are computed and added. This is the score of the instruction.
+The highest-scored instructions are given to the prompting LLM for further variations.
+Repeat until some stopping criteria is reached, then output the highest-scored instructions.
+CoT examples can be generated by LLM themselves. In "auto-CoT", a library of questions are converted to vectors by a model such as
+BERT
+. The question vectors are
+clustered
+. Questions close to the
+centroid
+of each cluster are selected, in order to have a subset of diverse questions. An LLM does zero-shot CoT on each selected question. The question and the corresponding CoT answer are added to a dataset of demonstrations. These diverse demonstrations can then added to prompts for few-shot learning.
+[
+55
+]
+Automatic prompt optimization
+[
+edit
+]
+Automatic prompt optimization techniques refine prompts for large language models by automatically searching over alternative prompt strings using evaluation datasets and task-specific metrics:
+MIPRO (Multi-prompt Instruction Proposal Optimizer) optimizes the instructions and few-shot demonstrations of multi-stage language model programs, proposing small changes to module prompts and retaining those that improve a downstream performance metric without access to module-level labels or gradients.
+[
+56
+]
+GEPA (Genetic-Pareto) is a reflective prompt optimizer for compound AI systems that combines language-model-based analysis of execution traces and textual feedback with a Pareto-based evolutionary search over a population of candidate systems; across four tasks, GEPA reports average gains of about 10% over
+reinforcement-learning
+-based Group Relative Policy Optimization (GRPO) and over 10% over the MIPROv2 prompt optimizer, while using up to 35 times fewer rollouts than GRPO.
+[
+57
+]
+Open-source frameworks such as DSPy and Opik expose these and related optimizers, allowing prompt search to be expressed as part of a programmatic pipeline rather than through manual trial and error.
+[
+58
+]
+[
+59
+]
+Using gradient descent to search for prompts
+[
+edit
+]
+In "prefix-tuning",
+[
+60
+]
+"prompt tuning", or "soft prompting",
+[
+61
+]
+floating-point
+vectors are searched directly by
+gradient descent
+to maximize the log-likelihood on outputs. An earlier result uses the same idea of gradient descent search, but is designed for masked language models like BERT, and searches only over token sequences, rather than numerical vectors. Formally, it searches for
+arg
+⁡
+max
+X
+~
+∑
+i
+log
+⁡
+P
+r
+[
+Y
+i
+|
+X
+~
+∗
+X
+i
+]
+{\displaystyle \arg \max _{\tilde {X}}\sum _{i}\log Pr[Y^{i}|{\tilde {X}}\ast X^{i}]}
+where
+X
+~
+{\displaystyle {\tilde {X}}}
+ranges over token sequences of a specified length.
+[
+62
+]
+History
+[
+edit
+]
+Early precedents of structured user interaction with ruled-based AI systems can be found in enterprise automation software from 1990s. For example, The Intelligent Filling Manager (1999), developed by Krishna C. Mukherjee, used a dynamic Q&A interface driven by rule-based
+expert system
+to collect user inputs for generating regulatory filings automatically across jurisdictions.
+[
+63
+]
+While not involving neural networks, such systems featured prompt-like workflows that influenced later human-in-the-loop AI designs. In 2018, researchers first proposed that all previously separate tasks in
+natural language processing
+(NLP) could be cast as question-answer problems over a context. In addition, they trained a first single, joint, multi-task model that would answer any task-related question like "What is the sentiment" or "Translate this sentence to German" or "Who is the president?"
+[
+64
+]
+The
+AI boom
+saw an increased focus within academic literature and professional practice on applying prompting techniques to get the model to output the desired outcome and avoid
+nonsensical output
+, a process characterized by
+trial-and-error
+.
+[
+65
+]
+After the release of
+ChatGPT
+in November 2022, prompt engineering was soon seen as an important business skill; companies began hiring dedicated prompt engineers, although, given advances in AI's ability to generate prompts better than humans, the employment market for prompt engineers has faced uncertainty.
+[
+4
+]
+According to
+The Wall Street Journal
+in 2025, the job of prompt engineer was one of the hottest in 2023, but has become obsolete due to models that better intuit user intent and to company trainings.
+[
+66
+]
+A repository for prompts reported that over 2,000 public prompts for around 170 datasets were available in February 2022.
+[
+67
+]
+In 2022, the
+chain-of-thought
+prompting technique was proposed by
+Google
+researchers.
+[
+9
+]
+[
+68
+]
+In 2023, several text-to-text and text-to-image prompt databases were made publicly available.
+[
+69
+]
+[
+70
+]
+The Personalized Image-Prompt (PIP) dataset, a generated image-text dataset that has been categorized by 3,115 users, has also been made available publicly in 2024.
+[
+71
+]
+Prompt injection
+[
+edit
+]
+Main article:
+Prompt injection
+See also:
+SQL injection
+,
+Cross-site scripting
+, and
+Social engineering (security)
+Prompt injection is a
+cybersecurity
+exploit in which adversaries craft inputs that appear legitimate but are designed to cause unintended behavior in
+machine learning models
+, particularly large language models. This attack takes advantage of the model's inability to distinguish between developer-defined prompts and user inputs, allowing adversaries to bypass safeguards and influence model behaviour. While LLMs are designed to follow trusted instructions, they can be manipulated into carrying out unintended responses through carefully crafted inputs.
+[
+72
+]
+[
+73
+]
+References
+[
+edit
+]
+↑
+"prompt engineering".
+Oxford English Dictionary
+.
+Oxford University Press
+. 2025.
+↑
+"Oxford Word of the Year 2023"
+.
+Oxford Languages
+.
+Oxford University Press
+.
+Archived
+from the original on January 31, 2024
+. Retrieved
+February 6,
+2026
+.
+↑
+Radford, Alec; Wu, Jeffrey; Child, Rewon; Luan, David;
+Amodei, Dario
+;
+Sutskever, Ilya
+(2019).
+"Language Models are Unsupervised Multitask Learners"
+(PDF)
+. OpenAI.
+Archived
+(PDF)
+from the original on February 6, 2021
+. Retrieved
+June 19,
+2023
+.
+We demonstrate language models can perform down-stream tasks in a zero-shot setting – without any parameter or architecture modification
+1
+2
+Genkina, Dina (March 6, 2024).
+"AI Prompt Engineering is Dead: Long live AI prompt engineering"
+.
+IEEE Spectrum
+.
+Archived
+from the original on January 17, 2025
+. Retrieved
+January 18,
+2025
+.
+1
+2
+Wahle, Jan Philip; Ruas, Terry; Xu, Yang; Gipp, Bela (2024).
+"Paraphrase Types Elicit Prompt Engineering Capabilities"
+. In Al-Onaizan, Yaser; Bansal, Mohit; Chen, Yun-Nung (eds.).
+Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing
+. Miami, Florida, USA: Association for Computational Linguistics. pp.
+11004–
+11033.
+arXiv
+:
+2406.19898
+.
+doi
+:
+10.18653/v1/2024.emnlp-main.617
+.
+↑
+Heaven, Will Douglas (April 6, 2022).
+"This horse-riding astronaut is a milestone on AI's long road towards understanding"
+.
+MIT Technology Review
+. Retrieved
+August 14,
+2023
+.
+↑
+Wiggers, Kyle (June 12, 2023).
+"Meta open sources an AI-powered music generator"
+. TechCrunch
+. Retrieved
+August 15,
+2023
+.
+Next, I gave a more complicated prompt to attempt to throw MusicGen for a loop: "Lo-fi slow BPM electro chill with organic samples."
+1
+2
+Mittal, Aayush (July 27, 2023).
+"Mastering AI Art: A Concise Guide to Midjourney and Prompt Engineering"
+.
+Unite.AI
+.
+Archived
+from the original on May 9, 2025
+. Retrieved
+May 9,
+2025
+.
+1
+2
+3
+4
+5
+6
+Wei, Jason; Wang, Xuezhi; Schuurmans, Dale; Bosma, Maarten; Ichter, Brian; Xia, Fei; Chi, Ed H.; Le, Quoc V.; Zhou, Denny (October 31, 2022).
+Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
+. Advances in Neural Information Processing Systems (NeurIPS 2022). Vol.
+35.
+arXiv
+:
+2201.11903
+.
+1
+2
+Tree of Thoughts: Deliberate Problem Solving with Large Language Models
+. NeurIPS. 2023.
+arXiv
+:
+2305.10601
+.
+1
+2
+"Why Google's AI Overviews gets things wrong"
+.
+MIT Technology Review
+. May 31, 2024.
+Archived
+from the original on May 3, 2025
+. Retrieved
+March 7,
+2025
+.
+1
+2
+Schulhoff, Sander; et
+al. (2024). "The Prompt Report: A Systematic Survey of Prompt Engineering Techniques".
+arXiv
+:
+2406.06608
+[
+cs.CL
+].
+↑
+Kolirin, Lianne (November 6, 2025).
+"
+'Vibe coding' named Collins Dictionary's Word of the Year"
+.
+CNN
+.
+Archived
+from the original on November 14, 2025
+. Retrieved
+February 7,
+2026
+.
+↑
+Casey, Matt M. (November 5, 2025).
+"Context Engineering: The Discipline Behind Reliable LLM Applications & Agents"
+. Comet.
+Archived
+from the original on November 11, 2025
+. Retrieved
+November 10,
+2025
+.
+↑
+"Context Engineering"
+. LangChain. July 2, 2025.
+Archived
+from the original on November 11, 2025
+. Retrieved
+November 10,
+2025
+.
+↑
+Mei, Lingrui (July 17, 2025). "A Survey of Context Engineering for Large Language Models".
+arXiv
+:
+2507.13334
+[
+cs.CL
+].
+1
+2
+Wei, Jason; Tay, Yi; Bommasani, Rishi; Raffel, Colin; Zoph, Barret; Borgeaud, Sebastian; Yogatama, Dani; Bosma, Maarten; Zhou, Denny; Metzler, Donald; Chi, Ed H.; Hashimoto, Tatsunori; Vinyals, Oriol; Liang, Percy; Dean, Jeff; Fedus, William (October 2022). "Emergent Abilities of Large Language Models".
+Transactions on Machine Learning Research
+.
+arXiv
+:
+2206.07682
+.
+In prompting, a pre-trained language model is given a prompt (e.g. a natural language instruction) of a task and completes the response without any further training or gradient updates to its parameters... The ability to perform a task via few-shot prompting is emergent when a model has random performance until a certain scale, after which performance increases to well-above random
+↑
+Caballero, Ethan; Gupta, Kshitij; Rish, Irina; Krueger, David (2023). "Broken Neural Scaling Laws".
+ICLR
+.
+arXiv
+:
+2210.14891
+.
+↑
+Musser, George
+.
+"How AI Knows Things No One Told It"
+.
+Scientific American
+.
+Archived
+from the original on July 3, 2023
+. Retrieved
+May 17,
+2023
+.
+By the time you type a query into ChatGPT, the network should be fixed; unlike humans, it should not continue to learn. So it came as a surprise that LLMs do, in fact, learn from their users' prompts—an ability known as in-context learning.
+↑
+Garg, Shivam; Tsipras, Dimitris; Liang, Percy; Valiant, Gregory (2022). "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes".
+NeurIPS
+.
+arXiv
+:
+2208.01066
+.
+Training a model to perform in-context learning can be viewed as an instance of the more general learning-to-learn or meta-learning paradigm
+1
+2
+Quantifying Language Models' Sensitivity to Spurious Features in Prompt Design or: How I learned to start worrying about prompt formatting
+. ICLR. 2024.
+arXiv
+:
+2310.11324
+.
+↑
+Leidinger, Alina; van Rooij, Robert; Shutova, Ekaterina (2023). Bouamor, Houda; Pino, Juan; Bali, Kalika (eds.).
+"The language of prompting: What linguistic properties make a prompt successful?"
+.
+Findings of the Association for Computational Linguistics: EMNLP 2023
+. Singapore: Association for Computational Linguistics:
+9210–
+9232.
+arXiv
+:
+2311.01967
+.
+doi
+:
+10.18653/v1/2023.findings-emnlp.618
+.
+Archived
+from the original on December 13, 2024
+. Retrieved
+November 18,
+2024
+.
+↑
+Linzbach, Stephan; Dimitrov, Dimitar; Kallmeyer, Laura; Evang, Kilian; Jabeen, Hajira; Dietze, Stefan (June 2024).
+"Dissecting Paraphrases: The Impact of Prompt Syntax and supplementary Information on Knowledge Retrieval from Pretrained Language Models"
+. In Duh, Kevin; Gomez, Helena; Bethard, Steven (eds.).
+Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)
+. Mexico City, Mexico: Association for Computational Linguistics. pp.
+3645–
+3655.
+arXiv
+:
+2404.01992
+.
+doi
+:
+10.18653/v1/2024.naacl-long.201
+.
+Archived
+from the original on November 3, 2024
+. Retrieved
+November 18,
+2024
+.
+↑
+Efficient multi-prompt evaluation of LLMs
+. NeurIPS. 2024.
+arXiv
+:
+2405.17202
+.
+↑
+Brown, Tom; Mann, Benjamin; Ryder, Nick; Subbiah, Melanie; Kaplan, Jared D.; Dhariwal, Prafulla; Neelakantan, Arvind (2020). "Language models are few-shot learners".
+Advances in Neural Information Processing Systems
+.
+33
+:
+1877–
+1901.
+arXiv
+:
+2005.14165
+.
+↑
+Wang, Yaqing; Yao, Quanming; Kwok, James T.; Ni, Lionel M. (June 12, 2020).
+"Generalizing from a Few Examples: A Survey on Few-shot Learning"
+.
+ACM Comput. Surv
+.
+53
+(3): 63:1–63:34.
+doi
+:
+10.1145/3386252
+.
+ISSN
+0360-0300
+.
+↑
+Garg, Shivam; Tsipras, Dimitris;
+Liang, Percy
+; Valiant, Gregory (2022). "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes".
+NeurIPS
+.
+arXiv
+:
+2208.01066
+.
+↑
+Narang, Sharan; Chowdhery, Aakanksha (April 4, 2022).
+"Pathways Language Model (PaLM): Scaling to 540 Billion Parameters for Breakthrough Performance"
+.
+ai.googleblog.com
+.
+Archived
+from the original on April 4, 2022
+. Retrieved
+August 14,
+2023
+.
+↑
+Dang, Ekta (February 8, 2023).
+"Harnessing the power of GPT-3 in scientific research"
+.
+VentureBeat
+.
+Archived
+from the original on March 18, 2023
+. Retrieved
+March 10,
+2023
+.
+↑
+Montti, Roger (May 13, 2022).
+"Google's Chain of Thought Prompting Can Boost Today's Best Algorithms"
+.
+Search Engine Journal
+.
+Archived
+from the original on March 26, 2023
+. Retrieved
+March 10,
+2023
+.
+↑
+"Scaling Instruction-Finetuned Language Models"
+(PDF)
+.
+Journal of Machine Learning Research
+. 2024.
+Archived
+(PDF)
+from the original on May 8, 2025
+. Retrieved
+May 9,
+2025
+.
+↑
+Wei, Jason; Tay, Yi (November 29, 2022).
+"Better Language Models Without Massive Compute"
+.
+ai.googleblog.com
+.
+Archived
+from the original on March 10, 2023
+. Retrieved
+March 10,
+2023
+.
+↑
+Kojima, Takeshi; Shixiang Shane Gu; Reid, Machel; Matsuo, Yutaka; Iwasawa, Yusuke (2022). "Large Language Models are Zero-Shot Reasoners".
+NeurIPS
+.
+arXiv
+:
+2205.11916
+.
+↑
+Self-Consistency Improves Chain of Thought Reasoning in Language Models
+. ICLR. 2023.
+arXiv
+:
+2203.11171
+.
+↑
+Mittal, Aayush (May 27, 2024).
+"Latest Modern Advances in Prompt Engineering: A Comprehensive Guide"
+.
+Unite.AI
+.
+Archived
+from the original on August 19, 2025
+. Retrieved
+May 8,
+2025
+.
+↑
+Goldman, Sharon (January 5, 2023).
+"Two years after DALL-E debut, its inventor is "surprised" by impact"
+.
+VentureBeat
+.
+Archived
+from the original on January 18, 2025
+. Retrieved
+May 9,
+2025
+.
+↑
+"Prompts"
+.
+docs.midjourney.com
+. Archived from
+the original
+on August 23, 2023
+. Retrieved
+August 14,
+2023
+.
+↑
+"Stable Diffusion prompt: a definitive guide"
+. May 14, 2023.
+Archived
+from the original on August 14, 2023
+. Retrieved
+August 14,
+2023
+.
+↑
+Diab, Mohamad; Herrera, Julian; Chernow, Bob (October 28, 2022).
+"Stable Diffusion Prompt Book"
+(PDF)
+.
+Archived
+(PDF)
+from the original on March 30, 2023
+. Retrieved
+August 7,
+2023
+.
+Prompt engineering is the process of structuring words that can be interpreted and understood by a
+text-to-image
+model. Think of it as the language you need to speak in order to tell an AI model what to draw.
+↑
+Heikkilä, Melissa (September 16, 2022).
+"This Artist Is Dominating AI-Generated Art and He's Not Happy About It"
+.
+MIT Technology Review
+.
+Archived
+from the original on January 14, 2023
+. Retrieved
+August 14,
+2023
+.
+↑
+Solomon, Tessa (August 28, 2024).
+"The AI-Powered Ask Dalí and Hello Vincent Installations Raise Uncomfortable Questions about Ventriloquizing the Dead"
+.
+ARTnews.com
+.
+Archived
+from the original on January 24, 2025
+. Retrieved
+January 10,
+2025
+.
+↑
+Gal, Rinon; Alaluf, Yuval; Atzmon, Yuval; Patashnik, Or; Bermano, Amit H.; Chechik, Gal; Cohen-Or, Daniel (2023). "An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion".
+ICLR
+.
+arXiv
+:
+2208.01618
+.
+Using only 3-5 images of a user-provided concept, like an object or a style, we learn to represent it through new "words" in the embedding space of a frozen text-to-image model.
+↑
+Segment Anything
+(PDF)
+. ICCV. 2023.
+Archived
+(PDF)
+from the original on April 28, 2025
+. Retrieved
+May 9,
+2025
+.
+↑
+Berry, David M. (June 2, 2026).
+"Prompt anxiety and the algorithmic politics of uncertainty"
+.
+AI & Society
+.
+doi
+:
+10.1007/s00146-026-03093-8
+.
+ISSN
+1435-5655
+.
+↑
+Meincke, Lennart; Mollick, Ethan R.; Mollick, Lilach; Shapiro, Dan (March 4, 2025). Prompting Science Report 1: Prompt Engineering is Complicated and Contingent (Report).
+SSRN
+5165270
+.
+↑
+Bousquette, Isabelle (April 25, 2025).
+"The Hottest AI Job of 2023 Is Already Obsolete"
+.
+The Wall Street Journal
+.
+ISSN
+0099-9660
+.
+Archived
+from the original on May 7, 2025
+. Retrieved
+May 24,
+2026
+.
+↑
+Li, Wenwu; Wang, Xiangfeng; Li, Wenhao; Jin, Bo (2025). "A Survey of Automatic Prompt Engineering: An Optimization Perspective".
+arXiv
+:
+2502.11560
+[
+cs.AI
+].
+↑
+"Can a technology called RAG keep AI models from making stuff up?"
+.
+Ars Technica
+. June 6, 2024.
+Archived
+from the original on June 6, 2024
+. Retrieved
+March 7,
+2025
+.
+↑
+Larson, Jonathan; Truitt, Steven (February 13, 2024),
+GraphRAG: Unlocking LLM discovery on narrative private data
+, Microsoft,
+archived
+from the original on May 7, 2024
+, retrieved
+May 7,
+2024
+↑
+"An Introduction to Graph RAG"
+.
+KDnuggets
+.
+Archived
+from the original on August 20, 2025
+. Retrieved
+May 9,
+2025
+.
+↑
+Sequeda, Juan; Allemang, Dean; Jacob, Bryon (2023). "A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model's Accuracy for Question Answering on Enterprise SQL Databases".
+Grades-Nda
+.
+arXiv
+:
+2311.07509
+.
+↑
+Explaining Patterns in Data with Language Models via Interpretable Autoprompting
+(PDF)
+. BlackboxNLP Workshop. 2023.
+arXiv
+:
+2210.01848
+.
+Archived
+(PDF)
+from the original on May 9, 2025
+. Retrieved
+May 9,
+2025
+.
+↑
+Large Language Models are Human-Level Prompt Engineers
+. ICLR. 2023.
+arXiv
+:
+2211.01910
+.
+↑
+Pryzant, Reid; Iter, Dan; Li, Jerry; Lee, Yin Tat; Zhu, Chenguang; Zeng, Michael (2023).
+"Automatic Prompt Optimization with "Gradient Descent" and Beam Search"
+.
+Conference on Empirical Methods in Natural Language Processing
+:
+7957–
+7968.
+arXiv
+:
+2305.03495
+.
+doi
+:
+10.18653/v1/2023.emnlp-main.494
+.
+Archived
+from the original on April 27, 2025
+. Retrieved
+May 9,
+2025
+.
+↑
+Automatic Chain of Thought Prompting in Large Language Models
+. ICLR. 2023.
+arXiv
+:
+2210.03493
+.
+↑
+Opsahl-Ong, Krista; Ryan, Michael J.; Purtell, Josh; Broman, David; Potts, Christopher; Zaharia, Matei; Khattab, Omar (2024).
+Optimizing Instructions and Demonstrations for Multi-Stage Language Model Programs
+. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP). Miami, Florida: Association for Computational Linguistics.
+arXiv
+:
+2406.11695
+.
+doi
+:
+10.18653/v1/2024.emnlp-main.525
+.
+↑
+Agrawal, Lakshya A. (2025). "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning".
+arXiv
+:
+2507.19457
+[
+cs.CL
+].
+↑
+Khattab, Omar (2023). "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines".
+arXiv
+:
+2310.03714
+[
+cs.CL
+].
+↑
+"Agent Optimization"
+.
+comet.com
+. Archived from
+the original
+on January 22, 2026
+. Retrieved
+November 29,
+2025
+.
+↑
+Li, Xiang Lisa; Liang, Percy (2021). "Prefix-Tuning: Optimizing Continuous Prompts for Generation".
+Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)
+. pp.
+4582–
+4597.
+doi
+:
+10.18653/V1/2021.ACL-LONG.353
+.
+S2CID
+230433941
+.
+In this paper, we propose prefix-tuning, a lightweight alternative to fine-tuning... Prefix-tuning draws inspiration from prompting
+↑
+Lester, Brian; Al-Rfou, Rami; Constant, Noah (2021). "The Power of Scale for Parameter-Efficient Prompt Tuning".
+Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing
+. pp.
+3045–
+3059.
+arXiv
+:
+2104.08691
+.
+doi
+:
+10.18653/V1/2021.EMNLP-MAIN.243
+.
+S2CID
+233296808
+.
+In this work, we explore "prompt tuning," a simple yet effective mechanism for learning "soft prompts"...Unlike the discrete text prompts used by GPT-3, soft prompts are learned through back-propagation
+↑
+Shin, Taylor; Razeghi, Yasaman; Logan IV, Robert L.; Wallace, Eric; Singh, Sameer (November 2020).
+"AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts"
+.
+Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)
+. Online: Association for Computational Linguistics. pp.
+4222–
+4235.
+doi
+:
+10.18653/v1/2020.emnlp-main.346
+.
+S2CID
+226222232
+.
+Archived
+from the original on June 11, 2023
+. Retrieved
+June 11,
+2023
+.
+↑
+Mukherjee, Krishna C. (1999).
+Automating Forms Publishing with the Intelligent Filing Manager
+. IEEE International Conference on Systems, Man, and Cybernetics. pp.
+378–
+383.
+doi
+:
+10.1109/ICSMC.1999.814108
+.
+↑
+McCann, Bryan; Keskar, Nitish; Xiong, Caiming; Socher, Richard (June 20, 2018).
+The Natural Language Decathlon: Multitask Learning as Question Answering
+. ICLR.
+arXiv
+:
+1806.08730
+.
+↑
+Knoth, Nils; Tolzin, Antonia; Janson, Andreas; Leimeister, Jan Marco (June 1, 2024).
+"AI literacy and its implications for prompt engineering strategies"
+.
+Computers and Education: Artificial Intelligence
+.
+6
+100225.
+doi
+:
+10.1016/j.caeai.2024.100225
+.
+ISSN
+2666-920X
+.
+↑
+Bousquette, Isabelle (April 25, 2025).
+"The Hottest AI Job of 2023 Is Already Obsolete"
+.
+Wall Street Journal
+.
+ISSN
+0099-9660
+.
+Archived
+from the original on May 7, 2025
+. Retrieved
+May 7,
+2025
+.
+↑
+PromptSource: An Integrated Development Environment and Repository for Natural Language Prompts
+. Association for Computational Linguistics. 2022.
+Archived
+from the original on May 19, 2025
+. Retrieved
+May 9,
+2025
+.
+↑
+Brubaker, Ben (March 21, 2024).
+"How Chain-of-Thought Reasoning Helps Neural Networks Compute"
+.
+Quanta Magazine
+.
+Archived
+from the original on May 9, 2025
+. Retrieved
+May 9,
+2025
+.
+↑
+Chen, Brian X. (June 23, 2023).
+"How to Turn Your Chatbot Into a Life Coach"
+.
+The New York Times
+.
+Archived
+from the original on August 14, 2023
+. Retrieved
+August 14,
+2023
+.
+↑
+Chen, Brian X. (May 25, 2023).
+"Get the Best From ChatGPT With These Golden Prompts"
+.
+The New York Times
+.
+ISSN
+0362-4331
+.
+Archived
+from the original on August 14, 2023
+. Retrieved
+August 16,
+2023
+.
+↑
+Chen, Zijie; Zhang, Lichao; Weng, Fangsheng; Pan, Lili; Lan, Zhenzhong (June 16, 2024).
+"Tailored Visions: Enhancing Text-to-Image Generation with Personalized Prompt Rewriting"
+.
+2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+. IEEE. pp.
+7727–
+7736.
+arXiv
+:
+2310.08129
+.
+doi
+:
+10.1109/cvpr52733.2024.00738
+.
+ISBN
+979-8-3503-5300-6
+.
+↑
+Vigliarolo, Brandon (September 19, 2022).
+"GPT-3 'prompt injection' attack causes bot bad manners"
+.
+The Register
+.
+Archived
+from the original on March 29, 2023
+. Retrieved
+February 9,
+2023
+.
+↑
+"What is a prompt injection attack?"
+.
+IBM
+. March 26, 2024.
+Archived
+from the original on March 3, 2025
+. Retrieved
+March 7,
+2025
+.
+Scholia
+has a
+topic
+profile for
+Prompt engineering
+.
+v
+t
+e
+Generative AI
+Concepts
+Autoencoder
+Deep learning
+Fine-tuning
+Foundation model
+Generative adversarial network
+Generative pre-trained transformer
+Large language model
+Model Context Protocol
+Neural network
+Prompt engineering
+Reinforcement learning from human feedback
+Retrieval-augmented generation
+Self-supervised learning
+Stochastic parrot
+Synthetic data
+Top-p sampling
+Transformer
+Variational autoencoder
+Vibe coding
+Vision transformer
+Word embedding
+Models
+Text
+Amazon Nova
+Character.ai
+Claude
+Command
+DeepSeek
+Doubao
+Ernie
+EXAONE
+Gemini
+Gemma
+GLM
+GPT
+ChatGPT
+Grok
+IBM Granite
+Kimi
+MAI
+Microsoft Copilot
+Mistral
+MiniMax
+Muse Spark
+Nemotron
+Perplexity
+Solar
+Poe
+HKChat
+Qwen
+Tencent Hy
+Xiaomi MiMo
+You.com
+Image
+Adobe Firefly
+Flux
+GPT Image
+Ideogram
+Midjourney
+Nano Banana
+Recraft
+Seedream
+Stable Diffusion
+Video
+Dream Machine
+Genie
+world model
+Hailuo AI
+Kling AI
+LTX
+Runway Gen
+Seedance
+Sora
+Veo
+Speech
+15.ai
+Eleven
+Gemini Speech
+MiniMax Speech
+Music
+Eleven Music
+Endel
+MiniMax Music
+Riffusion
+Suno
+Udio
+Products
+Coding tools
+Claude Code
+Codex
+Cursor
+Devin AI
+GitHub Copilot
+Google Antigravity
+Replit
+Agents
+AutoGPT
+ChatGPT agent
+Claude Cowork
+Gemini Spark
+Manus
+MiniMax Agent
+OpenClaw
+Applications
+Deepfake
+audio
+Slop
+slopaganda
+Companies
+Aleph Alpha
+Anthropic
+Anysphere
+Baichuan
+Canva
+Cognition AI
+Cohere
+Contextual AI
+DeepSeek
+DeepL
+EleutherAI
+ElevenLabs
+Google
+AI
+DeepMind
+HeyGen
+Hugging Face
+Inflection AI
+Kuaishou
+Lightricks
+Lovable
+Luma Labs
+Meta AI
+Meta Superintelligence Labs
+Microsoft AI
+MiniMax
+Mistral AI
+Moonshot AI
+OpenAI
+Perplexity AI
+Runway
+Safe Superintelligence
+Sakana AI
+Salesforce
+Scale AI
+SoundHound AI
+SpaceXAI
+Stability AI
+StepFun
+Synthesia
+Thinking Machines Lab
+Upstage
+Xiaomi
+Z.ai
+Controversies
+Generative AI pornography
+Deepfake pornography
+on Grok
+of Taylor Swift
+Pause Giant AI Experiments
+Removal of Sam Altman from OpenAI
+Statement on AI Risk
+Tay (chatbot)
+Théâtre D'opéra Spatial
+Voiceverse NFT plagiarism
+Category
+Commons
+v
+t
+e
+Artificial intelligence
+(AI)
+History
+timeline
+Glossary
+Companies
+Projects
+List of open-source AI software
+Concepts
+Automated reasoning
+Automated planning
+Constraint satisfaction
+Knowledge representation
+Parameter
+Hyperparameter
+Loss functions
+Regression
+Bias–variance tradeoff
+Double descent
+Overfitting
+Clustering
+Gradient descent
+SGD
+Quasi-Newton method
+Conjugate gradient method
+Backpropagation
+Attention
+Convolution
+Normalization
+Batchnorm
+Activation
+Softmax
+Sigmoid
+Rectifier
+Gating
+Weight initialization
+Regularization
+Datasets
+Augmentation
+Prompt engineering
+Reinforcement learning
+Q-learning
+SARSA
+Imitation
+Policy gradient
+Diffusion
+Latent diffusion model
+Autoregression
+Adversary
+RAG
+Uncanny valley
+LLM post-training
+RLHF
+Self-supervised learning
+Reflection
+Recursive self-improvement
+Hallucination
+Word embedding
+Vibe coding
+Symbolic AI
+Neuro-symbolic AI
+Applications
+Automated theorem proving
+General game playing
+Machine learning
+In-context learning
+Artificial neural network
+Deep learning
+Language model
+Large
+NMT
+Reasoning
+Model Context Protocol
+Intelligent agent
+AI agent
+Artificial human companion
+Humanity's Last Exam
+Lethal autonomous weapons (LAWs)
+Generative AI
+Weak AI
+Hypothetical
+Artificial general intelligence (AGI)
+Artificial superintelligence (ASI)
+Agent2Agent protocol
+Physical AI
+Implementations
+Audio–visual
+AlexNet
+WaveNet
+Human image synthesis
+HWR
+OCR
+Computer vision
+Speech synthesis
+15.ai
+ElevenLabs
+Speech recognition
+Whisper
+Facial recognition
+AlphaFold
+Text-to-image models
+Aurora
+DALL-E
+Firefly
+Flux
+GPT Image
+Ideogram
+Imagen
+Midjourney
+Recraft
+Stable Diffusion
+Text-to-video models
+Dream Machine
+Runway Gen
+Hailuo AI
+Kling
+Sora
+Seedance
+Veo
+Music generation
+Riffusion
+Suno
+Udio
+World models
+Genie
+Oasis
+Text
+List of large language models
+Project Debater
+IBM Watson
+IBM Watsonx
+Decisional
+AlphaGo
+AlphaZero
+OpenAI Five
+Self-driving car
+MuZero
+Action selection
+AutoGPT
+Robot control
+Reasoning systems
+Deductive classifiers
+Expert systems
+Inference engines
+Knowledge-based systems
+Logic programs
+Procedural reasoning systems
+Semantic reasoners
+Rule-based systems
+Cognitive architectures
+ACT-R
+Soar
+CLARION
+LIDA
+OpenCog
+Knowledge bases
+ConceptNet
+Wikidata
+DBpedia
+YAGO
+People
+Alan Turing
+Warren Sturgis McCulloch
+Walter Pitts
+John von Neumann
+Christopher D. Manning
+Claude Shannon
+Shun'ichi Amari
+Kunihiko Fukushima
+Takeo Kanade
+Marvin Minsky
+John McCarthy
+Nathaniel Rochester
+Allen Newell
+Cliff Shaw
+Herbert A. Simon
+Oliver Selfridge
+Frank Rosenblatt
+Bernard Widrow
+Joseph Weizenbaum
+Seymour Papert
+Seppo Linnainmaa
+Paul Werbos
+Geoffrey Hinton
+John Hopfield
+Jürgen Schmidhuber
+Yann LeCun
+Yoshua Bengio
+Lotfi A. Zadeh
+Stephen Grossberg
+Alex Graves
+James Goodnight
+Andrew Ng
+Fei-Fei Li
+Alex Krizhevsky
+Ilya Sutskever
+Oriol Vinyals
+Quoc V. Le
+Ian Goodfellow
+Demis Hassabis
+David Silver
+Andrej Karpathy
+Ashish Vaswani
+Noam Shazeer
+Aidan Gomez
+John Schulman
+Mustafa Suleyman
+Jan Leike
+Daniel Kokotajlo
+François Chollet
+Neural network architectures
+Neural Turing machine
+Differentiable neural computer
+Transformer
+Vision transformer (ViT)
+Recurrent neural network (RNN)
+Long short-term memory (LSTM)
+Gated recurrent unit (GRU)
+Echo state network
+Multilayer perceptron (MLP)
+Convolutional neural network (CNN)
+Residual neural network (RNN)
+Highway network
+Mamba
+Autoencoder
+Variational autoencoder (VAE)
+Generative adversarial network (GAN)
+Graph neural network (GNN)
+Political
+AI Cold War
+AI in government
+AI safety
+(
+Alignment
+)
+AI takeover
+Elections
+Ethics of AI
+EU
+AI Act
+Nationalism
+Precautionary principle
+Regulation of AI
+US
+Virtual politician
+Propaganda
+Social and economic
+AI boom
+AI bubble
+AI data center
+AI effect
+AI infrastructure
+AI literacy
+AI slop
+AI winter
+Anthropomorphism
+Arms race
+Competition
+Environmental impact
+Explainable AI
+Generative engine optimization
+In architecture
+In education
+In fiction
+In healthcare
+Chatbot psychosis
+In marketing
+In video games
+In visual art
+Military applications
+AI warfare
+Workplace impact
+Category
+v
+t
+e
+Natural language processing
+General terms
+AI-complete
+Bag-of-words
+n
+-gram
+Bigram
+Trigram
+Computational linguistics
+Natural language understanding
+Stop words
+Text processing
+Text analysis
+Argument mining
+Collocation extraction
+Concept mining
+Coreference resolution
+Deep linguistic processing
+Distant reading
+Information extraction
+Knowledge extraction
+Logic translation
+Named-entity recognition
+Ontology learning
+Parsing
+semantic
+syntactic
+Part-of-speech tagging
+Semantic analysis
+Semantic role labeling
+Semantic decomposition
+Semantic similarity
+Sentiment analysis
+Stance detection
+Stylometry
+adversarial
+Terminology extraction
+Text mining
+Textual entailment
+Truecasing
+Word-sense disambiguation
+Word-sense induction
+Text segmentation
+Compound-term processing
+Lemmatization
+Lexical analysis
+Text chunking
+Stemming
+Sentence segmentation
+Word segmentation
+Automatic summarization
+Multi-document summarization
+Sentence extraction
+Text simplification
+Machine translation
+Computer-assisted
+Example-based
+Rule-based
+Statistical
+Transfer-based
+Neural
+Distributional semantics
+models
+BERT
+Document-term matrix
+Explicit semantic analysis
+fastText
+GloVe
+Language model
+large
+small
+Latent semantic analysis
+Long short-term memory
+Seq2seq
+Transformer
+Word embedding
+Word2vec
+Language resources
+,
+datasets and corpora
+Types and
+standards
+Corpus linguistics
+Lexical resource
+Linguistic Linked Open Data
+Machine-readable dictionary
+Parallel text
+PropBank
+Semantic network
+Simple Knowledge Organization System
+Speech corpus
+Text corpus
+Thesaurus (information retrieval)
+Treebank
+Universal Dependencies
+Data
+BabelNet
+Bank of English
+DBpedia
+FrameNet
+Google Ngram Viewer
+UBY
+WordNet
+Wikidata
+Automatic identification
+and data capture
+Speech recognition
+Speech segmentation
+Speech synthesis
+Natural language generation
+Topic model
+Document classification
+Dynamic topic model
+Latent Dirichlet allocation
+Pachinko allocation
+Computer-assisted
+reviewing
+Automated essay scoring
+Concordancer
+Grammar checker
+Predictive text
+Pronunciation assessment
+Spell checker
+Natural language
+user interface
+Chatbot
+Interactive fiction
+Prompt engineering
+Question answering
+Virtual assistant
+Voice user interface
+Visual-linguistic
+Automatic image annotation
+CLIP
+Multimodal sentiment analysis
+Optical character recognition
+Vision-language model
+Vision–language–action model
+Related
+Formal semantics
+Gensim
+Hallucination
+Language model benchmark
+Natural Language Toolkit
+spaCy
+Retrieved from "
+https://en.wikipedia.org/w/index.php?title=Prompt_engineering&oldid=1364148843
+"
+Categories
+:
+Deep learning
+Machine learning
+Natural language processing
+Unsupervised learning
+2022 neologisms
+Linguistics
+Generative AI
+Hidden categories:
+Articles with short description
+Short description is different from Wikidata
+Use mdy dates from January 2025
+Pages using multiple image with auto scaled images

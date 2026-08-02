@@ -1,0 +1,1039 @@
+From Wikipedia, the free encyclopedia
+Type of knowledge base
+For other uses, see
+Knowledge graph (disambiguation)
+.
+In
+knowledge representation and reasoning
+, a
+knowledge graph
+is a
+knowledge base
+that uses a
+graph
+-structured
+data model
+or
+topology
+to represent and operate on
+data
+. Knowledge graphs are often used to store interlinked descriptions of
+entities
+–
+objects, events, situations or abstract concepts
+–
+while also encoding the free-form
+semantics
+or relationships underlying these entities.
+[
+1
+]
+[
+2
+]
+Since the development of the
+Semantic Web
+, knowledge graphs have often been associated with
+linked open data
+projects, focusing on the connections between
+concepts
+and entities.
+[
+3
+]
+[
+4
+]
+They are also historically associated with and used by
+search engines
+such as
+Google
+,
+Bing
+, and
+Yahoo
+;
+knowledge engines
+and question-answering services such as
+WolframAlpha
+, Apple's
+Siri
+, and
+Amazon Alexa
+; and
+social networks
+such as
+LinkedIn
+and
+Facebook
+.
+Recent developments in data science and
+machine learning
+, particularly in
+graph neural networks
+, representation learning, and machine learning, have broadened the scope of knowledge graphs beyond their traditional use in search engines and
+recommender systems
+. They are increasingly used in scientific research, with notable applications in fields such as
+genomics
+,
+proteomics
+, and
+systems biology
+.
+[
+5
+]
+History
+[
+edit
+]
+The term was coined as early as 1972 by the Austrian
+linguist
+Edgar W. Schneider
+, in a discussion of how to build modular instructional systems for courses.
+[
+6
+]
+In the late 1980s, the
+University of Groningen
+and
+University of Twente
+jointly began a project called Knowledge Graphs, focusing on the design of
+semantic networks
+with edges restricted to a limited set of relations, to facilitate
+algebras on the graph
+.
+[
+7
+]
+In subsequent decades, the distinction between semantic networks and knowledge graphs was blurred.
+Some early knowledge graphs were topic-specific. In 1985,
+Wordnet
+was founded, capturing semantic relationships between words and meanings
+–
+an application of this idea to language itself. In 2005, Marc Wirk founded
+Geonames
+to capture relationships between different geographic names and locales and associated entities. In 1998, Andrew Edmonds of Science in Finance Ltd in the UK created a system called ThinkBase that offered
+fuzzy-logic
+based reasoning in a graphical context.
+[
+8
+]
+In 2007, both
+DBpedia
+and
+Freebase
+were founded as graph-based knowledge
+repositories
+for general-purpose knowledge.
+[
+9
+]
+DBpedia focused exclusively on data extracted from
+Wikipedia
+, while Freebase also included a range of public datasets. Neither described themselves as a 'knowledge graph' but developed and described related concepts.
+In 2012, Google introduced their
+Knowledge Graph
+,
+[
+10
+]
+building on DBpedia and Freebase among other sources. They later incorporated
+RDFa
+,
+Microdata
+,
+JSON-LD
+content extracted from indexed web pages, including the
+CIA World Factbook
+,
+Wikidata
+, and Wikipedia.
+[
+10
+]
+[
+11
+]
+Entity and relationship types associated with this knowledge graph have been further organized using terms from the
+schema.org
+[
+12
+]
+vocabulary. The Google Knowledge Graph became a complement to string-based search within Google, and its popularity online brought the term into more common use.
+[
+12
+]
+Since then, several large multinationals have advertised their use of knowledge graphs, further popularising the term. These include
+Facebook
+,
+LinkedIn
+,
+Airbnb
+,
+Microsoft
+,
+Amazon
+,
+Uber
+and
+eBay
+.
+[
+13
+]
+In 2019,
+IEEE
+combined its annual international conferences on "Big Knowledge" and "Data Mining and Intelligent Computing" into the International Conference on Knowledge Graph.
+[
+14
+]
+The development of large language models expanded interest in knowledge graphs as a way to structure information from unstructured text, with advances in language processing enabling their automatic or semi-automatic generation and expansion.
+[
+15
+]
+[
+16
+]
+[
+17
+]
+The term knowledge graph has since broadened to include the dynamically constructed and adaptive graph structures, which support retrieval, reasoning, and summarization in generative systems. Microsoft Research's
+GraphRAG
+(2024) exemplified this development by integrating LLM-generated graphs into retrieval-augmented generation.
+Definitions
+[
+edit
+]
+There is no single commonly accepted definition of a knowledge graph. Most definitions view the topic through a Semantic Web lens and include these features:
+[
+18
+]
+Flexible relations among knowledge in topical domains
+: A knowledge graph (i) defines
+abstract classes
+and relations of entities in a schema, (ii) mainly describes real world entities and their interrelations, organized in a graph, (iii) allows for potentially interrelating arbitrary entities with each other, and (iv) covers various topical domains.
+[
+19
+]
+General structure
+: A network of entities, their semantic types, properties, and relationships.
+[
+20
+]
+[
+21
+]
+To represent properties, categorical or numerical values are often used.
+Supporting reasoning over inferred ontologies
+: A knowledge graph acquires and integrates information into an ontology and applies a reasoner to derive new knowledge.
+[
+3
+]
+There are, however, many knowledge graph representations for which some of these features are not relevant. For those knowledge graphs, this simpler definition may be more useful:
+A digital structure that represents knowledge as concepts and the relationships between them (facts). A knowledge graph can include an ontology that allows both humans and machines to understand and reason about its contents.
+[
+22
+]
+[
+23
+]
+Implementations
+[
+edit
+]
+In addition to the above examples, the term has been used to describe open knowledge projects such as
+YAGO
+and Wikidata; federations like the Linked Open Data cloud;
+[
+24
+]
+a range of commercial search tools, including Yahoo's semantic search assistant Spark, Google's
+Knowledge Graph
+, and Microsoft's Satori; and the LinkedIn and Facebook entity graphs.
+[
+3
+]
+The term is also used in the context of
+note-taking software
+applications that allow a user to build a
+personal knowledge graph
+.
+[
+25
+]
+The popularization of knowledge graphs and their accompanying methods have led to the development of graph databases such as Neo4j,
+[
+26
+]
+GraphDB
+[
+27
+]
+and
+AgensGraph
+.
+[
+28
+]
+These graph databases allow users to easily store data as entities and their interrelationships, and facilitate operations such as data reasoning, node embedding, and ontology development on knowledge bases.
+In contrast, virtual knowledge graphs do not store information in specialized databases.
+[
+29
+]
+They rely on an underlying relational database or data lake to answer queries on the graph. Such a virtual knowledge graph system must be properly configured in order to answer the queries correctly. This specific configuration is done through a set of mappings that define the relationship between the elements of the data source and the structure and ontology of the virtual knowledge graph.
+[
+30
+]
+Using a knowledge graph for reasoning over data
+[
+edit
+]
+Main article:
+Ontology (information science)
+A knowledge graph formally represents semantics by describing entities and their relationships.
+[
+31
+]
+Knowledge graphs may make use of
+ontologies
+as a schema layer. By doing this, they allow
+logical inference
+for retrieving
+implicit knowledge
+rather than only allowing queries requesting explicit knowledge.
+[
+32
+]
+In order to allow the use of knowledge graphs in various machine learning tasks, several methods for deriving latent feature representations of entities and relations have been devised.
+[
+33
+]
+These knowledge graph embeddings allow them to be connected to machine learning methods that require feature vectors like
+word embeddings
+. This can complement other estimates of conceptual similarity.
+[
+34
+]
+[
+35
+]
+Models for generating useful knowledge graph embeddings are commonly the domain of graph neural networks (GNNs).
+[
+36
+]
+GNNs are deep learning architectures that comprise edges and nodes, which correspond well to the entities and relationships of knowledge graphs. The topology and data structures afforded by GNNs provide a convenient domain for semi-supervised learning, wherein the network is trained to predict the value of a node embedding (provided a group of adjacent nodes and their edges) or edge (provided a pair of nodes). These tasks serve as fundamental abstractions for more complex tasks such as knowledge graph reasoning and alignment.
+[
+37
+]
+Entity alignment
+[
+edit
+]
+As new knowledge graphs are produced across a variety of fields and contexts, the same entity will inevitably be represented in multiple graphs. However, because no single standard for the construction or representation of knowledge graph exists, resolving which entities from disparate graphs correspond to the same real world subject is a non-trivial task. This task is known as
+knowledge graph entity alignment
+, and is an active area of research.
+[
+38
+]
+Strategies for entity alignment generally seek to identify similar substructures, semantic relationships, shared attributes, or combinations of all three between two distinct knowledge graphs.
+[
+39
+]
+Entity alignment methods use these structural similarities between generally non-isomorphic graphs to predict which nodes correspond to the same entity.
+[
+40
+]
+In 2023, researchers found success in using large language models (LLMs) in the task of entity alignment.
+[
+41
+]
+This was in particular thanks to their effectiveness at producing syntactically meaningful embeddings.
+[
+42
+]
+As the amount of data stored in knowledge graphs grows, developing dependable methods for knowledge graph entity alignment becomes an increasingly crucial step in the integration and cohesion of knowledge graph data.
+See also
+[
+edit
+]
+Concept map
+– Diagram showing relationships among concepts
+Formal semantics (natural language)
+– Formal study of linguistic meaning
+Graph database
+– Database using graph structures for queries
+Knowledge base
+– Information repository with multiple applications
+Knowledge graph embedding
+– Dimensionality reduction of graph-based semantic data objects [machine learning task]
+Logical graph
+– Type of diagrammatic notation for propositional logic
+Pages displaying short descriptions of redirect targets
+Semantic integration
+– Interrelating info from diverse sources
+Semantic technology
+– Technology to help machines understand data
+Topic map
+– Knowledge organization system
+Vadalog
+– Type of Knowledge Graph Management System
+Wikibase
+- Mediawiki Software extensions for creating knowledge bases
+Wikidata
+- Free Knowledge Database Project
+YAGO (database)
+– Open-source information repository
+References
+[
+edit
+]
+↑
+"What is a Knowledge Graph?"
+.
+ontotext
+. 2018
+. Retrieved
+2025-12-05
+.
+↑
+Kumar Pandey, Atul (2020-12-18).
+"What defines a knowledge graph?"
+.
+AtulHost
+. Retrieved
+2025-12-05
+.
+1
+2
+3
+Ehrlinger, Lisa; Wöß, Wolfram (2016).
+Towards a Definition of Knowledge Graphs
+(PDF)
+. SEMANTiCS2016. Leipzig: Joint Proceedings of the Posters and Demos Track of 12th International Conference on Semantic Systems – SEMANTiCS2016 and 1st International Workshop on Semantic Change & Evolving Semantics (SuCCESS16). pp.
+13–
+16.
+↑
+Soylu, Ahmet (2020).
+"Enhancing Public Procurement in the European Union Through Constructing and Exploiting an Integrated Knowledge Graph"
+.
+The Semantic Web – ISWC 2020
+. Lecture Notes in Computer Science. Vol.
+12507. pp.
+430–
+446.
+doi
+:
+10.1007/978-3-030-62466-8_27
+.
+ISBN
+978-3-030-62465-1
+.
+S2CID
+226229398
+.
+↑
+Mohamed, Sameh K.; Nounu, Aayah; Nováček, Vít (2021).
+"Biological applications of knowledge graph embedding models"
+.
+Briefings in Bioinformatics
+.
+22
+(2):
+1679–
+1693.
+doi
+:
+10.1093/bib/bbaa012
+.
+hdl
+:
+1983/919db5c6-6e10-4277-9ff9-f86bbcedcee8
+.
+PMID
+32065227
+–
+via Oxford Academic.
+↑
+Schneider, Edward W. (1973).
+"Course Modularization Applied: The Interface System and Its Implications For Sequence Control and Data Analysis"
+(PDF)
+. Retrieved
+5 December
+2025
+.
+↑
+Victor, Filippov; Natalya, Ayusheeva; Maria, Kusheeva (2024-03-17).
+"Algorithms and methods for automated construction of knowledge graphs based on text sources"
+(PDF)
+.
+E3S Web of Conferences
+.
+531
+: 03017.
+Bibcode
+:
+2024E3SWC.53103017F
+.
+doi
+:
+10.1051/e3sconf/202453103017
+. Retrieved
+2025-08-18
+.
+↑
+"US Trademark no 75589756"
+.
+{{
+cite web
+}}
+: CS1 maint: url-status (
+link
+)
+↑
+Michael, Färber; Basil, Ell; Carsten, Menne; Achim, Rettinger (2015-01-15).
+"A Comparative Survey of DBpedia, Freebase, OpenCyc, Wikidata, and YAGO"
+(PDF)
+.
+KIT
+. Retrieved
+2025-08-18
+.
+1
+2
+Singhal, Amit (May 16, 2012).
+"Introducing the Knowledge Graph: things, not strings"
+.
+Official Google Blog
+. Retrieved
+21 March
+2017
+.
+↑
+Schwartz, Barry (December 17, 2014).
+"Google's Freebase To Close After Migrating To Wikidata: Knowledge Graph Impact?"
+.
+Search Engine Roundtable
+. Retrieved
+December 10,
+2017
+.
+1
+2
+McCusker, James P.; McGuiness, Deborah L.
+"What is a Knowledge Graph?"
+.
+www.authorea.com
+. Retrieved
+21 March
+2017
+.
+↑
+"Knowledge Graph Enterprises"
+. 2020. Archived from
+the original
+on 2020-07-17
+. Retrieved
+2020-07-17
+.
+↑
+"2021 IEEE International Conference on Knowledge Graph (ICKG)*"
+.
+KMedu Hub
+. 2017-07-09
+. Retrieved
+2021-03-22
+.
+↑
+Edge, Darren; Trinh, Ha; Cheng, Newman; Bradley, Joshua; Chao, Alex; Mody, Apurva; Truitt, Steven; Metropolitansky, Dasha; Ness, Robert Osazuwa (2025-02-19),
+From Local to Global: A Graph RAG Approach to Query-Focused Summarization
+,
+arXiv
+:
+2404.16130
+, retrieved
+2025-11-20
+↑
+Yih, Wen-tau; Chang, Ming-Wei; He, Xiaodong; Gao, Jianfeng (July 2015).
+"Semantic Parsing via Staged Query Graph Generation: Question Answering with Knowledge Base"
+. In Zong, Chengqing; Strube, Michael (eds.).
+Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)
+. Beijing, China: Association for Computational Linguistics. pp.
+1321–
+1331.
+doi
+:
+10.3115/v1/P15-1128
+.
+↑
+Lewis, Patrick; Perez, Ethan; Piktus, Aleksandra; Petroni, Fabio; Karpukhin, Vladimir; Goyal, Naman; Küttler, Heinrich; Lewis, Mike; Yih, Wen-tau; Rocktäschel, Tim; Riedel, Sebastian; Kiela, Douwe (2020).
+"Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+.
+Advances in Neural Information Processing Systems
+.
+33
+. Curran Associates, Inc.:
+9459–
+9474.
+↑
+Hogan, Aidan; Blomqvist, Eva; Cochez, Michael; d'Amato, Claudia; de Melo, Gerard; Gutierrez, Claudio; Labra Gayo, José Emilio; Kirrane, Sabrina; Neumaier, Sebastian; Polleres, Axel; Navigli, Roberto; Ngonga Ngomo, Axel-Cyrille; Rashid, Sabbir M.; Rula, Anisa; Schmelzeisen, Lukas; Sequeda, Juan; Staab, Steffen; Zimmermann, Antoine (2021-01-24). "Knowledge Graphs".
+ACM Computing Surveys
+.
+54
+(4):
+1–
+37.
+arXiv
+:
+2003.02320
+.
+doi
+:
+10.1145/3447772
+.
+ISSN
+0360-0300
+.
+S2CID
+235716181
+.
+↑
+Paulheim, Heiko (2017).
+"Knowledge Graph Refinement: A Survey of Approaches and Evaluation Methods"
+(PDF)
+.
+Semantic Web
+:
+489–
+508
+. Retrieved
+21 March
+2017
+.
+↑
+Krötsch, Markus; Weikum, Gerhard (March 2016).
+"Editorial of the Special Issue on Knowledge Graphs"
+.
+Journal of Web Semantics
+.
+37–
+38:
+53–
+54.
+doi
+:
+10.1016/j.websem.2016.04.002
+. Retrieved
+10 February
+2021
+.
+↑
+"What is a Knowledge Graph?|Ontotext"
+.
+Ontotext
+. Retrieved
+2020-07-01
+.
+↑
+Peng, Ciyuan; Feng, Xia; Naseriparsa, Mehdi; Osborne, Francesco (2023).
+"Knowledge Graphs: Opportunities and Challenges"
+.
+Artificial Intelligence Review
+.
+56
+(11):
+13071–
+13102.
+arXiv
+:
+2303.13948
+.
+doi
+:
+10.1007/s10462-023-10465-9
+.
+ISSN
+1573-7462
+.
+PMC
+10068207
+.
+PMID
+37362886
+.
+↑
+"The Knowledge Graph about Knowledge Graphs"
+. 2020. Archived from
+the original
+on 2020-07-17.
+↑
+"The Linked Open Data Cloud"
+.
+lod-cloud.net
+. Retrieved
+2020-06-30
+.
+↑
+Pyne, Yvette; Stewart, Stuart (March 2022).
+"Meta-work: how we research is as important as what we research"
+.
+British Journal of General Practice
+.
+72
+(716):
+130–
+131.
+doi
+:
+10.3399/bjgp22X718757
+.
+PMC
+8884432
+.
+PMID
+35210247
+.
+↑
+"Neo4j Graph Database & Analytics | Graph Database Management System"
+.
+Neo4j
+. Retrieved
+8 November
+2023
+.
+↑
+"Ontotext GraphDB"
+.
+Ontotext
+. Retrieved
+8 November
+2023
+.
+↑
+"An Enterprise Graph Database Management System"
+.
+Bitnine.net
+. Retrieved
+19 February
+2025
+.
+↑
+Sa, Wang (2025-02-07).
+"Knowledge Graph"
+.
+www.puppygraph.com
+. Retrieved
+2025-08-18
+.
+↑
+Xiao, Guohui; Ding, Linfang; Cogrel, Benjamin; Calvanese, Diego (2019).
+"Virtual Knowledge Graphs: An Overview of Systems and Use Cases"
+.
+Data Intelligence
+.
+1
+(3):
+201–
+223.
+doi
+:
+10.1162/dint_a_00011
+.
+↑
+"How do knowledge graphs work?"
+.
+Stardog
+. 2022-04-05
+. Retrieved
+2022-04-05
+.
+↑
+"Unlocking the Power of Google Knowledge Panel: How to Obtain and Claim Yours in 2023 – RH Razu"
+.
+rhrazu.com
+. 2023-09-01
+. Retrieved
+2023-09-05
+.
+↑
+Jens, Lehmann (2021-07-15).
+"Representation Learning in Knowledge Graphs"
+.
+jens-lehmann.org
+. Retrieved
+2025-08-18
+.
+↑
+Hongwei Wang (October 2018). "RippleNet: Propagating User Preferences on the Knowledge Graph for Recommender Systems".
+Proceedings of the 27th ACM International Conference on Information and Knowledge Management
+. pp.
+417–
+426.
+arXiv
+:
+1803.03467
+.
+doi
+:
+10.1145/3269206.3271739
+.
+ISBN
+9781450360142
+.
+S2CID
+3766110
+.
+↑
+Ristoski, Petar; Paulheim, Heiko (2016),
+"RDF2Vec: RDF Graph Embeddings for Data Mining"
+(PDF)
+,
+The Semantic Web – ISWC 2016
+, Lecture Notes in Computer Science, vol.
+9981, pp.
+498–
+514,
+doi
+:
+10.1007/978-3-319-46523-4_30
+,
+ISBN
+978-3-319-46522-7
+↑
+Zhou, Jie; et
+al. (2020).
+"Graph neural networks: A review of methods and applications"
+.
+AI Open
+.
+1
+(1):
+57–
+81.
+arXiv
+:
+1812.08434
+.
+doi
+:
+10.1016/j.aiopen.2021.01.001
+.
+S2CID
+56517517
+–
+via Elsevier Science Direct.
+↑
+Ye, Zi; Kumar, Yogan Jaya; Sing, Goh Ong; Song, Fengyan; Wang, Junsong (2022).
+"A comprehensive survey of graph neural networks for knowledge graphs"
+.
+IEEE Access
+.
+10
+:
+75729–
+7574.
+Bibcode
+:
+2022IEEEA..1075729Y
+.
+doi
+:
+10.1109/ACCESS.2022.3191784
+.
+S2CID
+250654689
+–
+via IEEE Xplore.
+↑
+Berrendorf, Max; Faerman, Evgeniy; Melnychuk, Valentyn; Tresp, Volker; Seidl, Thomas (April 14–17, 2020).
+Knowledge graph entity alignment with graph convolutional networks: lessons learned
+. Advances in Information Retrieval: 42nd European Conference on IR Research, ECIR 2020, Lisbon, Portugal. Lecture Notes in Computer Science. Vol.
+Proceedings, Part II. pp.
+3–
+11.
+arXiv
+:
+1911.08342
+.
+doi
+:
+10.1007/978-3-030-45442-5_1
+.
+ISBN
+978-3-030-45441-8
+.
+S2CID
+208158314
+–
+via Springer International Publishing.
+↑
+Zequn, Sun; Qingheng, Zhang; Wei, Hu; Chengming, Wang; Muhao, Chen; Farahnaz, Akrami; Chengkai, Li (2020-03-26).
+"A Benchmarking Study of Embedding-based Entity Alignment for Knowledge Graphs"
+.
+Proceedings of the VLDB Endowment
+.
+13
+(12):
+2326–
+2340.
+arXiv
+:
+2003.07743
+.
+doi
+:
+10.14778/3407790.3407828
+. Retrieved
+2025-08-18
+.
+↑
+Chaurasiya, Deepak; Surisetty, Anil; Kumar, Nitish; Singh, Alok; Dey, Vikrant; Malhotra, Aakarsh; Dhama, Gaurav; Arora, Ankur (2022). "Entity alignment for knowledge graphs: progress, challenges, and empirical studies".
+arXiv
+:
+2205.08777
+[
+cs.AI
+].
+↑
+Hogan, Aidan; Lippolis, Anna Sofia; Klironomos, Antonis; Milon-Flores, Daniela F.; Zheng, Heng; Jouglar, Alexane; Norouzi, Ebrahim (2023).
+"Enhancing Entity Alignment Between Wikidata and ArtGraph using LLMs"
+(PDF)
+.
+Proceedings of the International Workshop on Semantic Web and Ontology Design for Cultural Heritage
+–
+via International Workshop on Semantic Web and Ontology Design for Cultural Heritage (SWODCH), Athens, Greece.
+↑
+Wang, Quan; Mao, Zhendong; Wang, Bin; Guo, Li (2017). "Knowledge Graph Embedding: A Survey of Approaches and Applications".
+IEEE Transactions on Knowledge and Data Engineering
+.
+29
+(12).
+IEEE
+:
+2724–
+2743.
+doi
+:
+10.1109/TKDE.2017.2754499
+.
+External links
+[
+edit
+]
+Knowledge graph
+at Wikipedia's
+sister projects
+:
+Media
+from Commons
+Data
+from Wikidata
+Will Douglas Heaven (4 September 2020).
+"This know-it-all AI learns by reading the entire web nonstop"
+.
+MIT Technology Review
+. Retrieved
+5 September
+2020
+.
+Diffbot is building the biggest-ever knowledge graph by applying image recognition and natural-language processing to billions of web pages.
+Scholia
+has a
+topic
+profile for
+Knowledge graph
+.
+v
+t
+e
+Knowledge representation and reasoning
+Automated reasoning
+Argumentation frameworks
+Backward chaining
+Belief revision
+Case-based reasoning
+Commonsense reasoning
+Forward chaining
+Model-based reasoning
+Qualitative reasoning
+Reason maintenance
+Spatio-temporal reasoning
+Reasoning systems
+Expert systems
+CLIPS
+Connectionist expert systems
+Expert systems for mortgages
+Legal expert systems
+Theorem provers
+CARINE
+E
+Nqthm
+Otter
+Paradox
+Prover9
+SPASS
+TPS
+Z3
+Logic programs
+Prolog
+Datalog
+ASP
+Constraint solvers
+Constraint Handling Rules
+MiniZinc
+OR-Tools
+Others
+Deductive classifiers
+Procedural reasoning systems
+Rule engines
+Ontology languages
+Attempto Controlled English
+CycL
+F-logic
+FO(.)
+Knowledge Interchange Format
+Web Ontology Language
+Constraint satisfaction
+Constraint programming
+Constraint logic programming
+Local consistency
+SMT solvers
+Automated planning
+Motion planning
+Multi-agent planning
+Partial-order planning
+Preference-based planning
+Reactive planning
+State-space planning
+Knowledge bases
+Cyc
+ConceptNet
+DBpedia
+Knowledge Graph
+YAGO
+Wikidata
+Blackboard systems
+Commonsense knowledge
+Inference engines
+Knowledge engineering
+Knowledge acquisition
+Knowledge extraction
+Rule-based systems
+Authority control databases
+: National
+Czech Republic
+Retrieved from "
+https://en.wikipedia.org/w/index.php?title=Knowledge_graph&oldid=1366997604
+"
+Categories
+:
+Knowledge graphs
+Ontology (information science)
+Formal semantics (natural language)
+Information science
+Hidden categories:
+Articles with short description
+Short description is different from Wikidata
+CS1 maint: url-status
+CS1: long volume value
+Pages displaying short descriptions of redirect targets via Module:Annotated link

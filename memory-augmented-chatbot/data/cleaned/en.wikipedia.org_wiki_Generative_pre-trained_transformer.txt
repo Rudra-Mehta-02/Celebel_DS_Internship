@@ -1,0 +1,2300 @@
+From Wikipedia, the free encyclopedia
+Type of large language model
+This article is about the general class of large language model. For OpenAI's line of GPT models, see
+GPT (OpenAI model)
+.
+Part of
+a series
+on
+Machine learning
+and
+data mining
+Paradigms
+Supervised learning
+Unsupervised learning
+Semi-supervised learning
+Self-supervised learning
+Reinforcement learning
+Transfer learning
+Meta-learning
+Few-shot learning
+Zero-shot learning
+Online learning
+Batch learning
+Curriculum learning
+Rule-based learning
+Neuro-symbolic AI
+Neuromorphic engineering
+Quantum machine learning
+Problems
+Classification
+Generative modeling
+Regression
+Clustering
+Dimensionality reduction
+Density estimation
+Anomaly detection
+Data cleaning
+AutoML
+Association rules
+Semantic analysis
+Structured prediction
+Feature engineering
+Feature learning
+Learning to rank
+Grammar induction
+Ontology learning
+Multimodal learning
+Supervised learning
+(
+classification
+•
+regression
+)
+Apprenticeship learning
+Decision trees
+Ensembles
+Bagging
+Boosting
+Random forest
+k
+-NN
+Linear regression
+Naive Bayes
+Artificial neural networks
+Logistic regression
+Perceptron
+Relevance vector machine (RVM)
+Support vector machine (SVM)
+Clustering
+BIRCH
+CURE
+Hierarchical
+k
+-means
+Fuzzy
+Expectation–maximization (EM)
+DBSCAN
+OPTICS
+Mean shift
+Dimensionality reduction
+Factor analysis
+Exploratory
+CCA
+ICA
+LDA
+NMF
+PCA
+PGD
+t-SNE
+SDL
+Structured prediction
+Graphical models
+Bayes net
+Conditional random field
+Hidden Markov
+Anomaly detection
+RANSAC
+k
+-NN
+Local outlier factor
+Isolation forest
+Neural networks
+Autoencoder
+Deep learning
+Feedforward neural network
+Recurrent neural network
+LSTM
+GRU
+ESN
+reservoir computing
+Boltzmann machine
+Restricted
+GAN
+Diffusion model
+SOM
+Convolutional neural network
+U-Net
+LeNet
+AlexNet
+DeepDream
+Neural field
+Neural radiance field
+Physics-informed neural networks
+Transformer
+Vision
+Mamba
+Spiking neural network
+Memtransistor
+Electrochemical RAM
+(ECRAM)
+Reinforcement learning
+Q-learning
+Policy gradient
+SARSA
+Temporal difference (TD)
+Multi-agent
+Self-play
+Learning with humans
+Active learning
+Crowdsourcing
+Human-in-the-loop
+Mechanistic interpretability
+RLHF
+Model diagnostics
+Coefficient of determination
+Confusion matrix
+Learning curve
+ROC curve
+Mathematical foundations
+Kernel machines
+Bias–variance tradeoff
+Computational learning theory
+Empirical risk minimization
+Occam learning
+PAC learning
+Statistical learning
+VC theory
+Topological deep learning
+Journals and conferences
+AAAI
+CVPR
+ECCV
+ECML PKDD
+EMNLP
+ICCV
+NeurIPS
+ICML
+ICLR
+IJCAI
+ML
+JMLR
+Related articles
+Glossary of artificial intelligence
+List of datasets for machine-learning research
+List of datasets in computer vision and image processing
+Outline of machine learning
+v
+t
+e
+A
+generative pre-trained transformer
+(
+GPT
+) is a type of
+large language model
+(LLM)
+[
+1
+]
+[
+2
+]
+[
+3
+]
+that is widely used in
+generative artificial intelligence
+chatbots
+.
+[
+4
+]
+[
+5
+]
+GPTs are based on a
+deep learning
+architecture called the
+transformer
+. They are pre-trained on large
+datasets
+of unlabeled content, and able to generate novel content.
+[
+2
+]
+[
+3
+]
+OpenAI
+was the first to apply generative pre-training to the transformer architecture, introducing the
+GPT-1
+model in 2018.
+[
+6
+]
+The chatbot
+ChatGPT
+, released in late 2022 (using
+GPT-3.5
+), was followed by many competitor chatbots using their own generative pre-trained transformers to generate text, such as
+Gemini
+,
+DeepSeek
+and
+Claude
+.
+GPTs are primarily used to generate text, but can be trained to generate other kinds of data.
+Multimodal
+GPTs can process or generate multiple types of data, such as text, images and audio. To improve performance on complex tasks,
+reasoning
+GPTs allocate more computation time analyzing the problem before generating an output.
+Background
+[
+edit
+]
+During the 2010s, improved
+machine learning
+algorithms, more powerful computers, and an increase in the amount of digitized material allowed for an
+AI boom
+.
+[
+7
+]
+Separately, the concept of generative pre-training (GP) was a long-established technique in machine learning. GP is a form of
+self-supervised learning
+wherein a model is first trained on a large, unlabeled dataset (the "pre-training" step) to learn to generate data points. This pre-trained model is then adapted to a specific task using a labeled dataset (the "
+fine-tuning
+" step).
+[
+8
+]
+The transformer architecture for deep learning is the core technology of a GPT. Developed by researchers at
+Google
+, it was introduced in the paper "
+Attention Is All You Need
+", which was released in 2017. The transformer architecture solved many of the performance issues that were associated with older
+recurrent neural network
+(RNN) designs for
+natural language processing
+(NLP). The architecture's use of an
+attention mechanism
+allows models to process entire sequences of text at once, enabling the training of much larger and more sophisticated models.
+[
+9
+]
+Since 2017, available transformer-based NLP systems have been capable of processing, mining, organizing, connecting, contrasting, and
+summarizing texts
+as well as
+answering questions
+from textual input.
+[
+citation needed
+]
+History
+[
+edit
+]
+On June 11, 2018, OpenAI researchers and engineers published a paper called "Improving Language Understanding by Generative Pre-Training", which introduced
+GPT-1
+, the first GPT model.
+[
+10
+]
+It was designed as a transformer-based
+large language model
+that used generative pre-training (GP) on
+BookCorpus
+, a diverse
+text corpus
+, followed by discriminative
+fine-tuning
+to focus on specific language tasks.
+[
+citation needed
+]
+This
+semi-supervised
+approach was seen as a breakthrough. GPT models use only the decoder part of the transformer architecture, pre-trained to predict the next
+token
+in a sequence.
+[
+11
+]
+[
+12
+]
+Previously, the best-performing neural models in
+natural language processing
+(NLP) had commonly employed
+supervised learning
+from large amounts of manually labeled data
+–
+training a large language model with this approach would have been prohibitively expensive and time-consuming.
+[
+10
+]
+On February 14, 2019, OpenAI introduced
+GPT-2
+, a larger model that could generate coherent text. Created as a direct scale-up of its predecessor, it had both its parameter count and dataset size increased by a factor of 10. GPT-2 has 1.5 billion parameters and was trained on WebText, a 40-gigabyte dataset of 8 million
+web pages
+.
+[
+13
+]
+[
+11
+]
+Citing risks of malicious use, OpenAI opted for a "staged release", initially publishing smaller versions of the model before releasing the full 1.5-billion-parameter model in November.
+[
+14
+]
+On February 10, 2020,
+Microsoft
+introduced its Turing Natural Language Generation, which it claimed was the "largest language model ever published at 17 billion parameters." The model outperformed all previous language models at a variety of tasks, including
+summarizing texts
+and
+answering questions
+.
+[
+15
+]
+On May 28, 2020, OpenAI introduced
+GPT-3
+, a model with 175 billion parameters that was trained on a larger dataset compared to GPT-2. It marked a significant advancement in few-shot and zero-shot learning abilities. With few examples, it could perform various tasks that it was not explicitly trained for.
+[
+16
+]
+[
+12
+]
+Following the release of GPT-3, OpenAI started using
+reinforcement learning from human feedback
+(RLHF) to align models' behavior more closely with human preferences. This led to the development of
+InstructGPT
+, a fine-tuned version of GPT-3. OpenAI further refined InstructGPT to create
+ChatGPT
+, the flagship chatbot product of OpenAI that was launched on November 30, 2022.
+[
+17
+]
+ChatGPT was initially based on
+GPT-3.5
+, but it was later transitioned to the
+GPT-4
+model, which was released on March 14, 2023.
+[
+18
+]
+[
+19
+]
+GPT-4 was also integrated into parts of several applications, including
+Microsoft Copilot
+,
+GitHub Copilot
+,
+Snapchat
+,
+Khan Academy
+, and
+Duolingo
+.
+[
+20
+]
+The immense popularity of ChatGPT spurred widespread development of competing GPT-based systems from other organizations.
+EleutherAI
+released a series of
+open-weight models
+, including
+GPT-J
+in 2021. Other major technology companies later developed their own GPT models, such as
+Google
+'s
+PaLM
+and
+Gemini
+as well as
+Meta AI
+'s
+Llama
+.
+[
+21
+]
+Many subsequent GPT models have been trained to be
+multimodal
+(able to process or to generate multiple types of data). For example,
+GPT-4o
+can both process and generate text, images, and audio.
+[
+22
+]
+Additionally, GPT models like
+o3
+and
+DeepSeek R1
+have been trained with
+reinforcement learning
+to generate multi-step
+chain-of-thought
+reasoning before producing a final answer, which helps to solve complex problems in domains such as mathematics.
+[
+23
+]
+Foundation models
+[
+edit
+]
+A
+foundation model
+is an AI model trained on broad data at scale such that it can be adapted to a wide range of downstream tasks.
+[
+24
+]
+[
+25
+]
+Foundational GPTs can also employ
+modalities
+other than text, for input and/or output.
+[
+26
+]
+Regarding multimodal
+output
+, some generative transformer-based models are used for
+text-to-image
+technologies such as
+diffusion
+[
+27
+]
+and parallel decoding.
+[
+28
+]
+Such kinds of models can serve as visual foundation models (VFMs) for developing downstream systems that can work with images.
+[
+29
+]
+Efficient transformer architectures
+[
+edit
+]
+The computational and memory requirements of
+transformer-based models
+increase significantly as they scale to larger sizes and longer input sequences. The standard
+self-attention
+mechanism has a quadratic complexity with respect to input sequence length, as described in
+Attention Is All You Need
+.
+[
+30
+]
+Researchers proposed a number of efficiency improvements like sparse attention mechanisms and memory-efficient architectures that reduce computational costs while supporting longer context windows.
+[
+31
+]
+Models like BigBird, Reformer, and FlashAttention demonstrate structured attention patterns or optimized computation to improve scalability and efficiency.
+[
+32
+]
+[
+33
+]
+[
+34
+]
+This has helped
+large language models
+to efficiently process long input sequences with reduced memory and computation during both training and inference.
+Scaling laws
+[
+edit
+]
+Scaling laws describe empirical relationships between the performance of large
+language models
+and factors such as model size, dataset size, and computational resources. Empirical work has found that performance tends to follow approximate power-law relationships as these factors increase.
+[
+35
+]
+Larger models trained on more data generally achieve lower training loss and better generalization. Later work suggests that performance is not determined by parameter count alone, but by how model size, data, and compute are balanced during training.
+[
+36
+]
+These observations have influenced the development of successive GPT models, particularly in decisions about architecture design, dataset composition, and training strategies.
+Emergent abilities
+[
+edit
+]
+Emergent abilities refer to capabilities that appear in large language models only when they reach a certain scale and are not present in smaller versions of the same models. These abilities are considered "emergent" because they arise as model size, training data, and compute increase.
+[
+37
+]
+[
+38
+]
+Examples of emergent abilities include multi-step reasoning, in-context learning (the ability to perform tasks based on examples provided in prompts without additional training), and improved performance on complex language and reasoning benchmarks.
+Research suggests that these capabilities do not scale linearly, but instead appear once models exceed certain thresholds in size and training scale.
+[
+38
+]
+This phenomenon has influenced the development of larger GPT models and contributed to their increased effectiveness across a wide range of tasks.
+Brand issues
+[
+edit
+]
+OpenAI
+, which created the first generative pre-trained transformer (GPT) in 2018, asserted in 2023 that "GPT" should be regarded as a
+brand
+of OpenAI.
+[
+39
+]
+In April 2023, OpenAI revised the brand guidelines in its
+terms of service
+to indicate that other businesses using its
+API
+to run their AI services would no longer be able to include "GPT" in such names or branding.
+[
+40
+]
+In May 2023, OpenAI engaged a brand management service to notify its API customers of this policy, although these notifications stopped short of making overt legal claims (such as allegations of
+trademark infringement
+or demands to
+cease and desist
+).
+[
+39
+]
+As of November 2023, OpenAI still prohibits its API licensees from naming their own products with "GPT",
+[
+41
+]
+but it has begun enabling its ChatGPT Plus subscribers to make "custom versions of ChatGPT" called
+GPTs
+on the OpenAI site.
+[
+42
+]
+OpenAI's terms of service says that its subscribers may use "GPT" in the names of these, although it's "discouraged".
+[
+41
+]
+Relatedly, OpenAI has applied to the
+United States Patent and Trademark Office
+(USPTO) to seek domestic
+trademark registration
+for the term "GPT" in the field of AI.
+[
+39
+]
+OpenAI sought to expedite handling of its application, but the USPTO declined that request in April 2023.
+[
+43
+]
+In May 2023, the USPTO rejected OpenAI's trademark application, determining that "GPT" was both descriptive and generic.
+[
+44
+]
+[
+45
+]
+[
+46
+]
+[
+47
+]
+In the
+European Union
+, the
+European Union Intellectual Property Office
+registered "GPT" as a trade mark of OpenAI in spring 2023. However, since spring 2024 the registration is being challenged and is pending cancellation.
+[
+48
+]
+In
+Switzerland
+, the
+Swiss Federal Institute of Intellectual Property
+registered "GPT" as a trade mark of OpenAI in spring 2023.
+[
+49
+]
+[
+50
+]
+The
+China National Intellectual Property Administration
+denied OpenAI's applications to trademark the terms "GPT" and "ChatGPT" in 2024, and the term "GPT-5" in August 2025, after which OpenAI filed appeals.
+[
+51
+]
+Evaluation and benchmarking
+[
+edit
+]
+The evaluation of generative pre-trained transformer models is carried out using a range of benchmarks and metrics, which aim to assess their performance across different tasks. Common approaches include accuracy on standard datasets, as well as other features such as robustness, bias, and toxicity.
+[
+52
+]
+These models are typically tested on tasks such as natural language understanding, reasoning, answering queries, and code generation. Sometimes they combine multiple tasks to provide a broader assessment of model performance across domains.
+[
+53
+]
+More recent approaches extend these evaluations to include other features such as fairness, efficiency, and transparency, in order to get a more accurate assessment of these models.
+[
+52
+]
+Evaluation remains an active area of research, as existing tests may not accurately reflect real-world performance or the risks associated with large-scale generative models.
+[
+52
+]
+Ethical considerations and societal impact
+[
+edit
+]
+Generative pre-trained transformer models have raised a range of ethical and societal concerns, particularly regarding bias, misinformation, and environmental impact. Large language models can reproduce and amplify patterns present in their training data, including social biases, which may lead to unfair or misleading outputs.
+[
+54
+]
+[
+55
+]
+These models have also been associated with generating inaccurate or misleading information as they are designed to produce fluent text rather than to verify factual accuracy. This has an impact on their use in applications such as automated content generation and information dissemination.
+[
+56
+]
+Training large-scale models also requires huge computational resources, contributing to increased energy consumption and environmental costs. Concerns about the environmental impact of large AI systems have led to calls for more efficient training methods and more transparency in reporting resource usage.
+[
+57
+]
+[
+58
+]
+See also
+[
+edit
+]
+Vision transformer
+References
+[
+edit
+]
+↑
+Haddad, Mohammed.
+"How does GPT-4 work and how can you start using it in ChatGPT?"
+.
+www.aljazeera.com
+.
+Archived
+from the original on July 5, 2023
+. Retrieved
+April 10,
+2023
+.
+1
+2
+"Generative AI: a game-changer society needs to be ready for"
+.
+World Economic Forum
+. January 9, 2023.
+Archived
+from the original on April 25, 2023
+. Retrieved
+April 8,
+2023
+.
+1
+2
+"The A to Z of Artificial Intelligence"
+.
+Time
+. April 13, 2023.
+Archived
+from the original on June 16, 2023
+. Retrieved
+April 14,
+2023
+.
+↑
+Hu, Luhui (November 15, 2022).
+"Generative AI and Future"
+.
+Medium
+.
+Archived
+from the original on June 5, 2023
+. Retrieved
+April 29,
+2023
+.
+↑
+"CSDL
+|
+IEEE Computer Society"
+.
+www.computer.org
+.
+Archived
+from the original on April 28, 2023
+. Retrieved
+April 29,
+2023
+.
+↑
+"Improving language understanding with unsupervised learning"
+.
+openai.com
+. June 11, 2018.
+Archived
+from the original on March 18, 2023
+. Retrieved
+March 18,
+2023
+.
+↑
+"An understanding of AI's limitations is starting to sink in"
+.
+The Economist
+. June 11, 2020.
+ISSN
+0013-0613
+.
+Archived
+from the original on July 31, 2020
+. Retrieved
+July 31,
+2020
+.
+↑
+Erhan, Dumitru; Courville, Aaron; Bengio, Yoshua; Vincent, Pascal (March 31, 2010).
+"Why Does Unsupervised Pre-training Help Deep Learning?"
+.
+Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics
+. JMLR Workshop and Conference Proceedings:
+201–
+208.
+Archived
+from the original on January 24, 2024
+. Retrieved
+January 24,
+2024
+.
+↑
+Levy, Steven.
+"8 Google Employees Invented Modern AI. Here's the Inside Story"
+.
+Wired
+.
+ISSN
+1059-1028
+.
+Archived
+from the original on March 20, 2024
+. Retrieved
+June 1,
+2026
+.
+1
+2
+Radford, Alec; Narasimhan, Karthik; Salimans, Tim; Sutskever, Ilya (June 11, 2018).
+"Improving Language Understanding by Generative Pre-Training"
+(PDF)
+. p.
+12.
+Archived
+(PDF)
+from the original on January 26, 2021
+. Retrieved
+July 31,
+2020
+.
+1
+2
+Radford, Alec; Wu, Jeffrey; Child, Rewon; Luan, David; Amodei, Dario; Sutskever, Ilua (February 14, 2019).
+"Language models are unsupervised multitask learners"
+(PDF)
+.
+OpenAI
+.
+1
+(8).
+Archived
+(PDF)
+from the original on February 6, 2021
+. Retrieved
+December 19,
+2020
+.
+1
+2
+Brown, Tom B.; Mann, Benjamin; Ryder, Nick; Subbiah, Melanie; Kaplan, Jared; Dhariwal, Prafulla; Neelakantan, Arvind; Shyam, Pranav; Sastry, Girish; Askell, Amanda; Agarwal, Sandhini; Herbert-Voss, Ariel; Krueger, Gretchen; Henighan, Tom; Child, Rewon; Ramesh, Aditya; Ziegler, Daniel M.; Wu, Jeffrey; Winter, Clemens; Hesse, Christopher; Chen, Mark; Sigler, Eric; Litwin, Mateusz; Gray, Scott; Chess, Benjamin; Clark, Jack; Berner, Christopher; McCandlish, Sam; Radford, Alec; Sutskever, Ilya; Amodei, Dario (May 28, 2020). "Language Models are Few-Shot Learners".
+arXiv
+:
+2005.14165
+[
+cs.CL
+].
+↑
+Vincent, James (February 14, 2019).
+"OpenAI's new multitalented AI writes, translates, and slanders"
+.
+The Verge
+.
+Archived
+from the original on December 18, 2020
+. Retrieved
+December 19,
+2020
+.
+↑
+Vincent, James (November 7, 2019).
+"OpenAI has published the text-generating AI it said was too dangerous to share"
+.
+The Verge
+.
+Archived
+from the original on June 11, 2020
+. Retrieved
+April 28,
+2023
+.
+↑
+Sterling, Bruce (February 13, 2020).
+"Web Semantics: Microsoft Project Turing introduces Turing Natural Language Generation (T-NLG)"
+.
+Wired
+.
+ISSN
+1059-1028
+.
+Archived
+from the original on November 4, 2020
+. Retrieved
+July 31,
+2020
+.
+↑
+Sagar, Ram (June 3, 2020).
+"OpenAI Releases GPT-3, The Largest Model So Far"
+.
+Analytics India Magazine
+.
+Archived
+from the original on August 4, 2020
+. Retrieved
+July 31,
+2020
+.
+↑
+Fu, Yao; Peng, Hao; Khot, Tushar (2022).
+"How does GPT Obtain its Ability? Tracing Emergent Abilities of Language Models to their Sources"
+.
+Yao Fu's Notion
+.
+Archived
+from the original on April 19, 2023
+. Retrieved
+June 24,
+2023
+.
+↑
+Edwards, Benj (March 14, 2023).
+"OpenAI's GPT-4 exhibits "human-level performance" on professional benchmarks"
+.
+Ars Technica
+.
+Archived
+from the original on March 14, 2023
+. Retrieved
+March 15,
+2023
+.
+↑
+OpenAI (March 15, 2023). "GPT-4 Technical Report".
+arXiv
+:
+2303.08774
+[
+cs.CL
+].
+↑
+Gupta, Aman (March 21, 2023).
+"GPT-4 takes the world by storm - List of companies that integrated the chatbot"
+.
+Mint
+.
+Archived
+from the original on February 24, 2024
+. Retrieved
+January 23,
+2024
+.
+↑
+Alford, Anthony (July 13, 2021).
+"EleutherAI Open-Sources Six Billion Parameter GPT-3 Clone GPT-J"
+.
+InfoQ
+.
+Archived
+from the original on February 10, 2023
+. Retrieved
+April 3,
+2023
+.
+↑
+Colburn, Thomas (May 13, 2024).
+"OpenAI unveils GPT-4o, a fresh multimodal AI flagship model"
+.
+The Register
+.
+Archived
+from the original on May 21, 2024
+. Retrieved
+May 18,
+2024
+.
+↑
+Zia, Dr Tehseen (March 29, 2025).
+"How OpenAI's o3, Grok 3, DeepSeek R1, Gemini 2.0, and Claude 3.7 Differ in Their Reasoning Approaches"
+.
+Unite.AI
+. Retrieved
+August 3,
+2025
+.
+↑
+"Introducing the Center for Research on Foundation Models (CRFM)"
+.
+Stanford HAI
+. August 18, 2021.
+Archived
+from the original on June 4, 2023
+. Retrieved
+April 26,
+2023
+.
+↑
+"Reflections on Foundation Models"
+.
+hai.stanford.edu
+. October 18, 2021.
+Archived
+from the original on August 15, 2024
+. Retrieved
+August 15,
+2024
+.
+↑
+Islam, Arham (March 27, 2023).
+"Multimodal Language Models: The Future of Artificial Intelligence (AI)"
+. Archived from
+the original
+on May 15, 2023
+. Retrieved
+May 15,
+2023
+.
+↑
+Islam, Arham (November 14, 2022).
+"How Do DALL·E 2, Stable Diffusion, and Midjourney Work?"
+.
+MarkTechPost
+.
+Archived
+from the original on July 18, 2023
+. Retrieved
+May 21,
+2023
+.
+↑
+Saha, Shritama (January 4, 2023).
+"Google Launches Muse, A New Text-to-Image Transformer Model"
+.
+Analytics India Magazine
+.
+Archived
+from the original on May 15, 2023
+. Retrieved
+May 15,
+2023
+.
+↑
+Wu (et-al), Chenfei (March 8, 2023). "Visual ChatGPT".
+arXiv
+:
+2303.04671
+[
+cs.CV
+].
+↑
+Vaswani, Ashish; Shazeer, Noam; Parmar, Niki; Uszkoreit, Jakob; Jones, Llion; Gomez, Aidan N.; Kaiser, Łukasz; Polosukhin, Illia (2017).
+"Attention Is All You Need"
+.
+Advances in Neural Information Processing Systems 30 (NeurIPS 2017)
+.
+Archived
+from the original on August 8, 2020
+. Retrieved
+March 31,
+2026
+.
+↑
+Tay, Yi; Dehghani, Mostafa; Bahri, Dara; Metzler, Donald (2022). "Efficient Transformers: A Survey".
+ACM Computing Surveys
+.
+55
+(6): 109:1–109:28.
+doi
+:
+10.1145/3530811
+.
+↑
+Zaheer, Manzil; Guruganesh, Guru; Dubey, Kumar Avinava; Ainslie, Joshua; Alberti, Chris; Ontañón, Santiago; Pham, Peter; Ravula, Anirudh; Wang, Qifan; Ahmed, Murtaza; Smola, Alexander J. (2020).
+"Big Bird: Transformers for Longer Sequences"
+(PDF)
+.
+Advances in Neural Information Processing Systems 33 (NeurIPS 2020)
+.
+↑
+Kitaev, Nikita; Kaiser, Łukasz; Levskaya, Anselm (2020).
+"Reformer: The Efficient Transformer"
+.
+International Conference on Learning Representations (ICLR 2020)
+.
+Archived
+from the original on March 10, 2026
+. Retrieved
+March 31,
+2026
+.
+↑
+Mittal, Aayush (July 17, 2024).
+"Flash Attention: Revolutionizing Transformer Efficiency"
+.
+Unite.AI
+.
+Archived
+from the original on November 5, 2025
+. Retrieved
+November 16,
+2024
+.
+↑
+Kaplan, Jared; McCandlish, Sam; Henighan, Tom (2020). "Scaling Laws for Neural Language Models".
+arXiv
+:
+2001.08361
+[
+cs.LG
+].
+↑
+Hoffmann, Jordan (2022). "Training Compute-Optimal Large Language Models".
+arXiv
+:
+2203.15556
+[
+cs.CL
+].
+↑
+Wei, Jason (2022). "Emergent Abilities of Large Language Models".
+arXiv
+:
+2206.07682
+[
+cs.CL
+].
+1
+2
+Zhao, Wayne Xin (2023). "A Survey of Large Language Models".
+arXiv
+:
+2303.18223
+[
+cs.CL
+].
+1
+2
+3
+Hicks, William (May 10, 2023).
+"ChatGPT creator OpenAI is asking startups to remove 'GPT' from their names"
+.
+The Business Journal
+.
+Archived
+from the original on June 28, 2023
+. Retrieved
+May 21,
+2023
+.
+↑
+OpenAI (April 24, 2023).
+"Brand Guidelines"
+.
+Archived
+from the original on July 18, 2023
+. Retrieved
+May 21,
+2023
+.
+1
+2
+"Brand guidelines"
+.
+Archived
+from the original on July 18, 2023
+. Retrieved
+November 28,
+2023
+.
+↑
+"Introducing GPTS"
+. March 13, 2024.
+Archived
+from the original on March 20, 2024
+. Retrieved
+November 28,
+2023
+.
+↑
+Heah, Alexa (April 26, 2023).
+"OpenAI Unsuccessful At Speeding Up Its Attempt To Trademark 'GPT'
+"
+.
+DesignTAXI
+.
+Archived
+from the original on April 26, 2023
+. Retrieved
+May 21,
+2023
+.
+↑
+Serrano, Jody (February 16, 2024).
+"OpenAI's Effort to Trademark 'GPT' Crushed by Feds"
+.
+Gizmodo
+. Retrieved
+July 18,
+2026
+.
+↑
+David, Emilia (February 16, 2024).
+"OpenAI can't register 'GPT' as a trademark — yet"
+.
+The Verge
+. Retrieved
+July 18,
+2026
+.
+↑
+Coldewey, Devin (February 15, 2024).
+"No 'GPT' trademark for OpenAI"
+.
+TechCrunch
+. Retrieved
+July 18,
+2026
+.
+↑
+"NONFINAL OFFICE ACTION"
+.
+USPTO
+. May 25, 2023.
+Archived
+from the original on December 3, 2023
+. Retrieved
+December 30,
+2023
+.
+↑
+"EUIPO - eSearch"
+.
+euipo.europa.eu
+.
+Archived
+from the original on June 19, 2026
+. Retrieved
+September 4,
+2025
+.
+↑
+"IPI Database"
+.
+www.swissreg.ch
+.
+Archived
+from the original on August 20, 2025
+. Retrieved
+September 4,
+2025
+.
+↑
+Vogt, Reto (February 20, 2024).
+"OpenAI sichert sich in der Schweiz "GPT" als Markenname"
+.
+www.inside-it.ch
+(in German). Archived from
+the original
+on March 21, 2025
+. Retrieved
+September 4,
+2025
+.
+↑
+Jiang, Ben (August 12, 2025).
+"China rejects OpenAI's GPT-5 trademark application"
+.
+South China Morning Post
+. Retrieved
+July 18,
+2026
+.
+1
+2
+3
+"Holistic Evaluation of Language Models (HELM)"
+.
+Stanford Center for Research on Foundation Models
+.
+Archived
+from the original on February 17, 2026
+. Retrieved
+March 31,
+2026
+.
+↑
+"Holistic Evaluation of Language Models (HELM)"
+.
+Stanford Center for Research on Foundation Models
+.
+Archived
+from the original on February 4, 2026
+. Retrieved
+March 31,
+2026
+.
+↑
+Bender, Emily M.; Gebru, Timnit; McMillan-Major, Angelina; Shmitchell, Shmargaret (2021).
+On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?
+. Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT '21). pp.
+610–
+623.
+doi
+:
+10.1145/3442188.3445922
+.
+↑
+Weidinger, Laura; Mellor, John; Rauh, Maribeth (2022).
+Taxonomy of Risks posed by Language Models
+. 2022 ACM Conference on Fairness, Accountability, and Transparency (FAccT '22). pp.
+214–
+229.
+doi
+:
+10.1145/3531146.3533088
+.
+↑
+Pan, Yikang; Pan, Liangming; Chen, Wenhu; Nakov, Preslav; Kan, Min-Yen; Wang, William Yang (2023).
+On the Risk of Misinformation Pollution with Large Language Models
+. Findings of the Association for Computational Linguistics: EMNLP 2023. pp.
+1389–
+1403.
+doi
+:
+10.18653/v1/2023.findings-emnlp.97
+.
+↑
+Strubell, Emma; Ganesh, Ananya; McCallum, Andrew (2019).
+Energy and Policy Considerations for Deep Learning in NLP
+. Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. pp.
+3645–
+3650.
+arXiv
+:
+1906.02243
+.
+doi
+:
+10.18653/v1/P19-1355
+.
+↑
+Ren, Shaolei; Tomlinson, Bill; Black, Rebecca W.; Torrance, Andrew W. (2024).
+"Reconciling the contrasting narratives on the environmental impact of large language models"
+.
+Scientific Reports
+.
+14
+(1) 26310.
+Bibcode
+:
+2024NatSR..1426310R
+.
+doi
+:
+10.1038/s41598-024-76682-6
+.
+PMC
+11530614
+.
+PMID
+39487230
+.
+v
+t
+e
+Generative AI
+Concepts
+Autoencoder
+Deep learning
+Fine-tuning
+Foundation model
+Generative adversarial network
+Generative pre-trained transformer
+Large language model
+Model Context Protocol
+Neural network
+Prompt engineering
+Reinforcement learning from human feedback
+Retrieval-augmented generation
+Self-supervised learning
+Stochastic parrot
+Synthetic data
+Top-p sampling
+Transformer
+Variational autoencoder
+Vibe coding
+Vision transformer
+Word embedding
+Models
+Text
+Amazon Nova
+Character.ai
+Claude
+Command
+DeepSeek
+Doubao
+Ernie
+EXAONE
+Gemini
+Gemma
+GLM
+GPT
+ChatGPT
+Grok
+IBM Granite
+Kimi
+MAI
+Microsoft Copilot
+Mistral
+MiniMax
+Muse Spark
+Nemotron
+Perplexity
+Solar
+Poe
+HKChat
+Qwen
+Tencent Hy
+Xiaomi MiMo
+You.com
+Image
+Adobe Firefly
+Flux
+GPT Image
+Ideogram
+Midjourney
+Nano Banana
+Recraft
+Seedream
+Stable Diffusion
+Video
+Dream Machine
+Genie
+world model
+Hailuo AI
+Kling AI
+LTX
+Runway Gen
+Seedance
+Sora
+Veo
+Speech
+15.ai
+Eleven
+Gemini Speech
+MiniMax Speech
+Music
+Eleven Music
+Endel
+MiniMax Music
+Riffusion
+Suno
+Udio
+Products
+Coding tools
+Claude Code
+Codex
+Cursor
+Devin AI
+GitHub Copilot
+Google Antigravity
+Replit
+Agents
+AutoGPT
+ChatGPT agent
+Claude Cowork
+Gemini Spark
+Manus
+MiniMax Agent
+OpenClaw
+Applications
+Deepfake
+audio
+Slop
+slopaganda
+Companies
+Aleph Alpha
+Anthropic
+Anysphere
+Baichuan
+Canva
+Cognition AI
+Cohere
+Contextual AI
+DeepSeek
+DeepL
+EleutherAI
+ElevenLabs
+Google
+AI
+DeepMind
+HeyGen
+Hugging Face
+Inflection AI
+Kuaishou
+Lightricks
+Lovable
+Luma Labs
+Meta AI
+Meta Superintelligence Labs
+Microsoft AI
+MiniMax
+Mistral AI
+Moonshot AI
+OpenAI
+Perplexity AI
+Runway
+Safe Superintelligence
+Sakana AI
+Salesforce
+Scale AI
+SoundHound AI
+SpaceXAI
+Stability AI
+StepFun
+Synthesia
+Thinking Machines Lab
+Upstage
+Xiaomi
+Z.ai
+Controversies
+Generative AI pornography
+Deepfake pornography
+on Grok
+of Taylor Swift
+Pause Giant AI Experiments
+Removal of Sam Altman from OpenAI
+Statement on AI Risk
+Tay (chatbot)
+Théâtre D'opéra Spatial
+Voiceverse NFT plagiarism
+Category
+Commons
+v
+t
+e
+Artificial intelligence
+(AI)
+History
+timeline
+Glossary
+Companies
+Projects
+List of open-source AI software
+Concepts
+Automated reasoning
+Automated planning
+Constraint satisfaction
+Knowledge representation
+Parameter
+Hyperparameter
+Loss functions
+Regression
+Bias–variance tradeoff
+Double descent
+Overfitting
+Clustering
+Gradient descent
+SGD
+Quasi-Newton method
+Conjugate gradient method
+Backpropagation
+Attention
+Convolution
+Normalization
+Batchnorm
+Activation
+Softmax
+Sigmoid
+Rectifier
+Gating
+Weight initialization
+Regularization
+Datasets
+Augmentation
+Prompt engineering
+Reinforcement learning
+Q-learning
+SARSA
+Imitation
+Policy gradient
+Diffusion
+Latent diffusion model
+Autoregression
+Adversary
+RAG
+Uncanny valley
+LLM post-training
+RLHF
+Self-supervised learning
+Reflection
+Recursive self-improvement
+Hallucination
+Word embedding
+Vibe coding
+Symbolic AI
+Neuro-symbolic AI
+Applications
+Automated theorem proving
+General game playing
+Machine learning
+In-context learning
+Artificial neural network
+Deep learning
+Language model
+Large
+NMT
+Reasoning
+Model Context Protocol
+Intelligent agent
+AI agent
+Artificial human companion
+Humanity's Last Exam
+Lethal autonomous weapons (LAWs)
+Generative AI
+Weak AI
+Hypothetical
+Artificial general intelligence (AGI)
+Artificial superintelligence (ASI)
+Agent2Agent protocol
+Physical AI
+Implementations
+Audio–visual
+AlexNet
+WaveNet
+Human image synthesis
+HWR
+OCR
+Computer vision
+Speech synthesis
+15.ai
+ElevenLabs
+Speech recognition
+Whisper
+Facial recognition
+AlphaFold
+Text-to-image models
+Aurora
+DALL-E
+Firefly
+Flux
+GPT Image
+Ideogram
+Imagen
+Midjourney
+Recraft
+Stable Diffusion
+Text-to-video models
+Dream Machine
+Runway Gen
+Hailuo AI
+Kling
+Sora
+Seedance
+Veo
+Music generation
+Riffusion
+Suno
+Udio
+World models
+Genie
+Oasis
+Text
+List of large language models
+Project Debater
+IBM Watson
+IBM Watsonx
+Decisional
+AlphaGo
+AlphaZero
+OpenAI Five
+Self-driving car
+MuZero
+Action selection
+AutoGPT
+Robot control
+Reasoning systems
+Deductive classifiers
+Expert systems
+Inference engines
+Knowledge-based systems
+Logic programs
+Procedural reasoning systems
+Semantic reasoners
+Rule-based systems
+Cognitive architectures
+ACT-R
+Soar
+CLARION
+LIDA
+OpenCog
+Knowledge bases
+ConceptNet
+Wikidata
+DBpedia
+YAGO
+People
+Alan Turing
+Warren Sturgis McCulloch
+Walter Pitts
+John von Neumann
+Christopher D. Manning
+Claude Shannon
+Shun'ichi Amari
+Kunihiko Fukushima
+Takeo Kanade
+Marvin Minsky
+John McCarthy
+Nathaniel Rochester
+Allen Newell
+Cliff Shaw
+Herbert A. Simon
+Oliver Selfridge
+Frank Rosenblatt
+Bernard Widrow
+Joseph Weizenbaum
+Seymour Papert
+Seppo Linnainmaa
+Paul Werbos
+Geoffrey Hinton
+John Hopfield
+Jürgen Schmidhuber
+Yann LeCun
+Yoshua Bengio
+Lotfi A. Zadeh
+Stephen Grossberg
+Alex Graves
+James Goodnight
+Andrew Ng
+Fei-Fei Li
+Alex Krizhevsky
+Ilya Sutskever
+Oriol Vinyals
+Quoc V. Le
+Ian Goodfellow
+Demis Hassabis
+David Silver
+Andrej Karpathy
+Ashish Vaswani
+Noam Shazeer
+Aidan Gomez
+John Schulman
+Mustafa Suleyman
+Jan Leike
+Daniel Kokotajlo
+François Chollet
+Neural network architectures
+Neural Turing machine
+Differentiable neural computer
+Transformer
+Vision transformer (ViT)
+Recurrent neural network (RNN)
+Long short-term memory (LSTM)
+Gated recurrent unit (GRU)
+Echo state network
+Multilayer perceptron (MLP)
+Convolutional neural network (CNN)
+Residual neural network (RNN)
+Highway network
+Mamba
+Autoencoder
+Variational autoencoder (VAE)
+Generative adversarial network (GAN)
+Graph neural network (GNN)
+Political
+AI Cold War
+AI in government
+AI safety
+(
+Alignment
+)
+AI takeover
+Elections
+Ethics of AI
+EU
+AI Act
+Nationalism
+Precautionary principle
+Regulation of AI
+US
+Virtual politician
+Propaganda
+Social and economic
+AI boom
+AI bubble
+AI data center
+AI effect
+AI infrastructure
+AI literacy
+AI slop
+AI winter
+Anthropomorphism
+Arms race
+Competition
+Environmental impact
+Explainable AI
+Generative engine optimization
+In architecture
+In education
+In fiction
+In healthcare
+Chatbot psychosis
+In marketing
+In video games
+In visual art
+Military applications
+AI warfare
+Workplace impact
+Category
+v
+t
+e
+Large language models
+(LLMs)
+List of LLMs
+AI Companies
+Benchmarks
+List of chatbots
+Foundation model
+Generative AI
+Concepts
+Language model
+NLP
+NLG
+Computational linguistics
+Foundation model
+Small language model
+Reasoning model
+Generative pre-trained transformer
+Transformer
+Attention
+KV cache
+Context window
+Tokenization
+Word embedding
+Parameter
+Hyperparameter
+Autoregression
+Mixture of experts (MoE)
+Inference
+Model compression
+Knowledge distillation
+Speculative decoding
+PagedAttention
+Neural scaling law
+Multimodality
+Open weights
+Training, prompting,
+and alignment
+Self-supervised learning
+Supervised learning
+Fine-tuning
+Instruction tuning
+RLHF
+Constitutional AI
+AI alignment
+AI safety
+Mechanistic interpretability
+Prompt engineering
+In-context learning
+Chain-of-thought prompting
+RAG
+Prompt injection
+Adversarial machine learning
+Hallucination
+Stochastic parrot
+Glitch token
+Generative engine optimization
+Models
+Apertus
+BERT
+BLOOM
+Chinchilla
+Claude
+DBRX
+Gemini
+Gemma
+GloVe
+GLM
+GPT
+GPT-J
+PanGu
+Granite
+Jais
+LaMDA
+Llama
+MiMo
+Minerva
+Mistral and Mixtral
+Nemotron
+PaLM
+Phi
+Qwen
+Seq2seq
+T5
+Vicuna
+Word2vec
+XLNet
+Chatbots and assistants
+Amazon Q
+ChatGPT
+Character.ai
+Claude
+DeepSeek
+Doubao
+Ernie Bot
+GLM
+Google Gemini
+Grok
+Kimi
+Microsoft Copilot
+Meta AI
+Perplexity AI
+Sparrow
+You.com
+Agents, coding,
+and applications
+AI agent
+Intelligent agent
+AutoGPT
+CrewAI
+LangChain
+Manus
+Model Context Protocol
+Agent2Agent
+OpenAI Codex
+Vibe coding
+Code generation
+Question answering
+Machine translation
+Text summarization
+Chatbot
+Virtual assistant
+LLMs in higher education
+Software
+PyTorch
+TensorFlow
+Hugging Face
+Inference engine
+llama.cpp
+Ollama
+SGLang
+TensorRT-LLM
+vLLM
+ONNX
+OpenVINO
+Vector database
+ChromaDB
+Deep learning software
+Open-source AI software
+Hardware and infrastructure
+AI data center
+AI accelerator
+GPU
+CUDA
+TPU
+High-bandwidth memory
+Benchmarks, evaluation,
+and detection
+Language model benchmark
+MMLU
+Humanity's Last Exam
+LMArena
+LLM-as-a-Judge
+Perplexity metric
+GPTZero
+Artificial intelligence content detection
+Undetectable.ai
+Datasets and data
+Data set
+Text corpus
+Common Crawl
+The Pile
+Web scraping
+Synthetic data
+Training, validation, and test data sets
+Organizations
+AI21 Labs
+Alibaba
+Anthropic
+Baidu
+Cohere
+DeepSeek
+EleutherAI
+Google DeepMind
+Hugging Face
+Meta AI
+Microsoft AI
+Mistral AI
+MiniMax
+Moonshot AI
+Nvidia
+OpenAI
+Sarvam AI
+StepFun
+Technology Innovation Institute
+Thinking Machines Lab
+xAI
+People
+Sam Altman
+Dario Amodei
+Yoshua Bengio
+Aidan Gomez
+Demis Hassabis
+Geoffrey Hinton
+Andrej Karpathy
+Yann LeCun
+Percy Liang
+Liang Wenfeng
+Christopher D. Manning
+Arthur Mensch
+Mira Murati
+Alec Radford
+Noam Shazeer
+Ilya Sutskever
+Ashish Vaswani
+Andrew Ng
+Social, economic,
+and governance
+AI boom
+AI bubble
+AI slop
+AI anthropomorphism
+AI arms race
+Chatbot psychosis
+Competition
+Copyright
+Deaths linked to chatbots
+Dependency (GAID)
+Environmental impact
+Regulation
+Ethics
+Existential risk
+In education
+In healthcare
+Workplace impact
+Category:Large language models
+v
+t
+e
+Natural language processing
+General terms
+AI-complete
+Bag-of-words
+n
+-gram
+Bigram
+Trigram
+Computational linguistics
+Natural language understanding
+Stop words
+Text processing
+Text analysis
+Argument mining
+Collocation extraction
+Concept mining
+Coreference resolution
+Deep linguistic processing
+Distant reading
+Information extraction
+Knowledge extraction
+Logic translation
+Named-entity recognition
+Ontology learning
+Parsing
+semantic
+syntactic
+Part-of-speech tagging
+Semantic analysis
+Semantic role labeling
+Semantic decomposition
+Semantic similarity
+Sentiment analysis
+Stance detection
+Stylometry
+adversarial
+Terminology extraction
+Text mining
+Textual entailment
+Truecasing
+Word-sense disambiguation
+Word-sense induction
+Text segmentation
+Compound-term processing
+Lemmatization
+Lexical analysis
+Text chunking
+Stemming
+Sentence segmentation
+Word segmentation
+Automatic summarization
+Multi-document summarization
+Sentence extraction
+Text simplification
+Machine translation
+Computer-assisted
+Example-based
+Rule-based
+Statistical
+Transfer-based
+Neural
+Distributional semantics
+models
+BERT
+Document-term matrix
+Explicit semantic analysis
+fastText
+GloVe
+Language model
+large
+small
+Latent semantic analysis
+Long short-term memory
+Seq2seq
+Transformer
+Word embedding
+Word2vec
+Language resources
+,
+datasets and corpora
+Types and
+standards
+Corpus linguistics
+Lexical resource
+Linguistic Linked Open Data
+Machine-readable dictionary
+Parallel text
+PropBank
+Semantic network
+Simple Knowledge Organization System
+Speech corpus
+Text corpus
+Thesaurus (information retrieval)
+Treebank
+Universal Dependencies
+Data
+BabelNet
+Bank of English
+DBpedia
+FrameNet
+Google Ngram Viewer
+UBY
+WordNet
+Wikidata
+Automatic identification
+and data capture
+Speech recognition
+Speech segmentation
+Speech synthesis
+Natural language generation
+Topic model
+Document classification
+Dynamic topic model
+Latent Dirichlet allocation
+Pachinko allocation
+Computer-assisted
+reviewing
+Automated essay scoring
+Concordancer
+Grammar checker
+Predictive text
+Pronunciation assessment
+Spell checker
+Natural language
+user interface
+Chatbot
+Interactive fiction
+Prompt engineering
+Question answering
+Virtual assistant
+Voice user interface
+Visual-linguistic
+Automatic image annotation
+CLIP
+Multimodal sentiment analysis
+Optical character recognition
+Vision-language model
+Vision–language–action model
+Related
+Formal semantics
+Gensim
+Hallucination
+Language model benchmark
+Natural Language Toolkit
+spaCy
+v
+t
+e
+OpenAI
+Products
+ChatGPT
+Atlas
+Deep Research
+GPT Store
+Search
+Foundation
+models
+GPT models
+GPT-1
+GPT-2
+GPT-3
+GPT-3.5
+GPT-4
+GPT-4o
+o1
+o3
+GPT-4.5
+GPT-4.1
+o4-mini
+GPT-OSS
+GPT-5
+GPT-5.1
+GPT-5.2
+GPT-5.4
+GPT-5.5
+GPT-5.6
+Specialized
+DALL-E
+Codex
+GPT Image
+Sora
+Whisper
+Intelligent
+agents
+ChatGPT agent
+Codex
+GPT-5.3-Codex
+Operator
+People
+Senior
+management
+Current
+Sam Altman
+removal
+Greg Brockman
+Sarah Friar
+Jakub Pachocki
+Scott Schools
+Fidji Simo
+Former
+Dario Amodei
+Mira Murati
+Emmett Shear
+Board of
+directors
+Current
+Sam Altman
+Adam D'Angelo
+Sue Desmond-Hellmann
+Zico Kolter
+Paul Nakasone
+Adebayo Ogunlesi
+Nicole Seligman
+Bret Taylor
+(chair)
+Former
+Greg Brockman
+(2017–2023)
+Reid Hoffman
+(2019–2023)
+Will Hurd
+(2021–2023)
+Holden Karnofsky
+(2017–2021)
+Elon Musk
+(2015–2018)
+Ilya Sutskever
+(2017–2023)
+Helen Toner
+(2021–2023)
+Shivon Zilis
+(2019–2023)
+Lawrence Summers
+(2023-2025)
+Fidji Simo
+(2024-2025)
+JVs
+Stargate LLC
+Related
+Apple Intelligence
+AI Dungeon
+AutoGPT
+Generative pre-trained transformer
+GitHub Copilot
+Contrastive Language-Image Pre-training
+"
+Deep Learning
+"
+LangChain
+Microsoft Copilot
+OpenAI and unions
+OpenAI Five
+Transformer
+GPT-J
+Category
+Portals
+:
+Computer programming
+Technology
+Generative pre-trained transformer
+at Wikipedia's
+sister projects
+:
+Data
+from Wikidata
+Retrieved from "
+https://en.wikipedia.org/w/index.php?title=Generative_pre-trained_transformer&oldid=1364843852
+"
+Categories
+:
+Large language models
+Generative AI
+Artificial neural networks
+Generative pre-trained transformers
+OpenAI
+2018 in artificial intelligence
+Hidden categories:
+Articles with short description
+Short description matches Wikidata
+Use mdy dates from April 2025
+Use American English from April 2025
+All Wikipedia articles written in American English
+All articles with unsourced statements
+Articles with unsourced statements from January 2026
+Articles with unsourced statements from July 2026
+CS1 German-language sources (de)
