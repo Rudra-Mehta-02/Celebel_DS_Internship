@@ -1,0 +1,688 @@
+{
+  "summary": {
+    "total_cases": 30,
+    "categories": {
+      "rag": {
+        "count": 10,
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.039,
+        "avg_latency_ms": 2025.5
+      },
+      "kg": {
+        "count": 5,
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.013,
+        "avg_latency_ms": 16.5
+      },
+      "tool": {
+        "count": 5,
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0,
+        "avg_latency_ms": 15.8
+      },
+      "memory": {
+        "count": 5,
+        "answer_relevance": 0.104,
+        "personalisation": 0.0,
+        "factual_consistency": 0.0,
+        "memory_recall": 0.0,
+        "avg_latency_ms": 15.0
+      },
+      "multi_hop": {
+        "count": 5,
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0,
+        "avg_latency_ms": 14.9
+      }
+    },
+    "overall": {
+      "answer_relevance": 0.017,
+      "personalisation": 0.0,
+      "factual_consistency": 0.018,
+      "memory_recall": 0.0,
+      "avg_latency_ms": 685.6,
+      "avg_confidence": 0.0
+    }
+  },
+  "results": [
+    {
+      "question": "What is deep learning?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Deep learning is a subset of machine learning that uses artificial neural networks with multiple layers to learn representations of data.",
+      "category": "rag",
+      "route": "rag",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 20054.0,
+      "component_latency": {
+        "memory_node": 1.9955635070800781,
+        "rewrite_node": 0.0,
+        "router_node": 19574.537754058838,
+        "rag_node": 28.998613357543945,
+        "kg_node": 0.9992122650146484,
+        "answer_node": 0.0,
+        "fact_extraction_node": 10.99705696105957
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.053
+      }
+    },
+    {
+      "question": "Explain the transformer architecture",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "The transformer architecture uses self-attention mechanisms to process sequences in parallel, introduced in the 'Attention is All You Need' paper.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 17.0,
+      "component_latency": {
+        "memory_node": 1.9025802612304688,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 10.009050369262695
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.056
+      }
+    },
+    {
+      "question": "What is retrieval-augmented generation?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Retrieval-augmented generation (RAG) combines information retrieval with text generation, allowing language models to access external knowledge.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 17.3,
+      "component_latency": {
+        "memory_node": 1.9981861114501953,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 10.316133499145508
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "How does backpropagation work?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Backpropagation computes gradients of the loss function with respect to each weight by applying the chain rule, propagating errors backward through the network.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 16.5,
+      "component_latency": {
+        "memory_node": 1.9996166229248047,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.415626525878906
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "What are convolutional neural networks used for?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Convolutional neural networks (CNNs) are primarily used for image recognition and computer vision tasks, using convolutional layers to detect features.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 16.0,
+      "component_latency": {
+        "memory_node": 2.077341079711914,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 10.000944137573242
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "Explain the attention mechanism in machine learning",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "The attention mechanism allows models to focus on different parts of the input when generating each part of the output, computing weighted sums of value vectors.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 17.0,
+      "component_latency": {
+        "memory_node": 2.077817916870117,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 10.001420974731445
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.045
+      }
+    },
+    {
+      "question": "What is transfer learning?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Transfer learning is a machine learning technique where a model trained on one task is reused as the starting point for a model on a different task.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 16.0,
+      "component_latency": {
+        "memory_node": 3.002166748046875,
+        "rewrite_node": 0.0,
+        "router_node": 1.0023117065429688,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.010791778564453
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.053
+      }
+    },
+    {
+      "question": "How do generative adversarial networks work?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "GANs consist of two neural networks \u2014 a generator and a discriminator \u2014 that compete against each other. The generator creates fake data while the discriminator tries to distinguish real from fake.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 53.6,
+      "component_latency": {
+        "memory_node": 2.992868423461914,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 47.609567642211914
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.04
+      }
+    },
+    {
+      "question": "What is reinforcement learning?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Reinforcement learning is a type of machine learning where an agent learns to make decisions by taking actions in an environment to maximise cumulative reward.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 22.0,
+      "component_latency": {
+        "memory_node": 4.00233268737793,
+        "rewrite_node": 0.0,
+        "router_node": 0.9992122650146484,
+        "answer_node": 0.0,
+        "fact_extraction_node": 12.003898620605469
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.091
+      }
+    },
+    {
+      "question": "Explain word embeddings",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Word embeddings are dense vector representations of words in a continuous vector space where semantically similar words are mapped to nearby points.",
+      "category": "rag",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 26.0,
+      "component_latency": {
+        "memory_node": 9.003400802612305,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.998083114624023
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.053
+      }
+    },
+    {
+      "question": "What is the relationship between deep learning and neural networks?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Deep learning is a subset of machine learning that specifically uses deep neural networks with multiple layers.",
+      "category": "kg",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 18.0,
+      "component_latency": {
+        "memory_node": 3.016233444213867,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 12.012720108032227
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.067
+      }
+    },
+    {
+      "question": "How is BERT related to the Transformer architecture?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "BERT (Bidirectional Encoder Representations from Transformers) is based on the Transformer architecture, specifically using only the encoder component.",
+      "category": "kg",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 15.2,
+      "component_latency": {
+        "memory_node": 2.0117759704589844,
+        "rewrite_node": 0.0,
+        "router_node": 1.0993480682373047,
+        "answer_node": 0.0,
+        "fact_extraction_node": 10.037422180175781
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "What concepts are connected to natural language processing?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "NLP is connected to machine learning, deep learning, transformers, word embeddings, text classification, sentiment analysis, and language models.",
+      "category": "kg",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 15.0,
+      "component_latency": {
+        "memory_node": 1.4390945434570312,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 10.522842407226562
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "Which techniques are used in computer vision?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Computer vision uses CNNs, image classification, object detection, image segmentation, transfer learning, and data augmentation.",
+      "category": "kg",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 19.0,
+      "component_latency": {
+        "memory_node": 4.000425338745117,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 11.002302169799805
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "What is the connection between GPT and large language models?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "GPT (Generative Pre-trained Transformer) is one of the most prominent large language model families, based on the Transformer decoder architecture.",
+      "category": "kg",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 15.2,
+      "component_latency": {
+        "memory_node": 2.0003318786621094,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 8.214950561523438
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "What is the weather in London right now?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "",
+      "category": "tool",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 16.0,
+      "component_latency": {
+        "memory_node": 1.9979476928710938,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 11.006832122802734
+      },
+      "metrics": {
+        "answer_relevance": 0.0
+      }
+    },
+    {
+      "question": "What is 145 * 37 + 892?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "6257",
+      "category": "tool",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 15.3,
+      "component_latency": {
+        "memory_node": 1.9989013671875,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 8.287191390991211
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "What is the current price of Bitcoin?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "",
+      "category": "tool",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 16.4,
+      "component_latency": {
+        "memory_node": 2.9954910278320312,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.428977966308594
+      },
+      "metrics": {
+        "answer_relevance": 0.0
+      }
+    },
+    {
+      "question": "What date is it today?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "",
+      "category": "tool",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 17.0,
+      "component_latency": {
+        "memory_node": 2.9959678649902344,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 8.99648666381836
+      },
+      "metrics": {
+        "answer_relevance": 0.0
+      }
+    },
+    {
+      "question": "Search the web for latest AI news",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "",
+      "category": "tool",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 14.4,
+      "component_latency": {
+        "memory_node": 1.997232437133789,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 8.381366729736328
+      },
+      "metrics": {
+        "answer_relevance": 0.0
+      }
+    },
+    {
+      "question": "What programming language should I use for my next project?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Based on user preferences",
+      "category": "memory",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 16.0,
+      "component_latency": {
+        "memory_node": 2.001523971557617,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 8.998394012451172
+      },
+      "metrics": {
+        "answer_relevance": 0.1,
+        "factual_consistency": 0.0,
+        "memory_recall": 0.0,
+        "personalisation": 0.0
+      }
+    },
+    {
+      "question": "Suggest a machine learning framework for me",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Based on user preferences",
+      "category": "memory",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 15.6,
+      "component_latency": {
+        "memory_node": 1.9986629486083984,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.608745574951172
+      },
+      "metrics": {
+        "answer_relevance": 0.143,
+        "factual_consistency": 0.0,
+        "memory_recall": 0.0,
+        "personalisation": 0.0
+      }
+    },
+    {
+      "question": "What topics should I study next?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Based on user interests",
+      "category": "memory",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 14.7,
+      "component_latency": {
+        "memory_node": 1.6241073608398438,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.084939956665039
+      },
+      "metrics": {
+        "answer_relevance": 0.167,
+        "factual_consistency": 0.0,
+        "memory_recall": 0.0,
+        "personalisation": 0.0
+      }
+    },
+    {
+      "question": "Do you remember what I told you about my work?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Should recall user's work information",
+      "category": "memory",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 14.8,
+      "component_latency": {
+        "memory_node": 1.9943714141845703,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.775400161743164
+      },
+      "metrics": {
+        "answer_relevance": 0.111,
+        "factual_consistency": 0.0,
+        "memory_recall": 0.0,
+        "personalisation": 0.0
+      }
+    },
+    {
+      "question": "Based on my interests, explain autoencoders",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Should personalise the explanation based on user background",
+      "category": "memory",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 14.0,
+      "component_latency": {
+        "memory_node": 1.9991397857666016,
+        "rewrite_node": 0.0,
+        "router_node": 0.8373260498046875,
+        "answer_node": 0.0,
+        "fact_extraction_node": 8.115291595458984
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0,
+        "memory_recall": 0.0,
+        "personalisation": 0.0
+      }
+    },
+    {
+      "question": "Compare CNNs and RNNs \u2014 which is better for text classification?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "While both can handle text, RNNs are traditionally used for sequential data. However, CNNs with 1D convolutions can also be effective for text classification and are often faster to train.",
+      "category": "multi_hop",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 16.4,
+      "component_latency": {
+        "memory_node": 3.0014514923095703,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.367227554321289
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "How has the attention mechanism influenced modern NLP?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "The attention mechanism led to the Transformer architecture, which revolutionised NLP through models like BERT, GPT, and T5, enabling unprecedented performance on various tasks.",
+      "category": "multi_hop",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 15.1,
+      "component_latency": {
+        "memory_node": 3.000020980834961,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 9.081125259399414
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "What are the pros and cons of using pre-trained language models?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Pros: reduced training time, better performance with less data, transfer learning capabilities. Cons: computational cost, potential bias, domain specificity issues.",
+      "category": "multi_hop",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 15.0,
+      "component_latency": {
+        "memory_node": 2.0189285278320312,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.0,
+        "fact_extraction_node": 10.00213623046875
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "Explain how gradient boosting differs from random forests",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Random forests build trees independently in parallel (bagging), while gradient boosting builds trees sequentially, with each tree correcting the errors of the previous ones.",
+      "category": "multi_hop",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 14.1,
+      "component_latency": {
+        "memory_node": 1.9989013671875,
+        "rewrite_node": 0.0,
+        "router_node": 0.9992122650146484,
+        "answer_node": 0.0,
+        "fact_extraction_node": 8.119583129882812
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    },
+    {
+      "question": "What role does feature engineering play in modern deep learning?",
+      "answer": "I encountered an error generating a response: All LLM providers failed:\n  - groq: cooling down / unavailable\n  - gemini: cooling down / unavailable\n  - ollama: cooling down / unavailable",
+      "ground_truth": "Deep learning has reduced the need for manual feature engineering as models can learn representations automatically, but feature engineering remains important for tabular data and domain-specific appl",
+      "category": "multi_hop",
+      "route": "direct",
+      "provider": "error",
+      "confidence": 0.0,
+      "total_latency_ms": 14.0,
+      "component_latency": {
+        "memory_node": 0.9820461273193359,
+        "rewrite_node": 0.0,
+        "router_node": 0.0,
+        "answer_node": 0.9992122650146484,
+        "fact_extraction_node": 9.001493453979492
+      },
+      "metrics": {
+        "answer_relevance": 0.0,
+        "factual_consistency": 0.0
+      }
+    }
+  ],
+  "timestamp": "2026-08-01T19:28:49Z"
+}
